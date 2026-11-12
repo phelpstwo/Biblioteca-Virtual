@@ -31,3 +31,23 @@ CREATE TABLE IF NOT EXISTS newsletter_subscribers (
 CREATE INDEX IF NOT EXISTS idx_books_category ON books (category_id);
 CREATE INDEX IF NOT EXISTS idx_books_ranking  ON books (is_ranking, ranking_position);
 CREATE INDEX IF NOT EXISTS idx_books_author    ON books (author);
+
+CREATE TABLE IF NOT EXISTS orders (
+  id             SERIAL PRIMARY KEY,
+  customer_name  TEXT NOT NULL,
+  customer_email TEXT NOT NULL,
+  payment_method TEXT NOT NULL,
+  total          NUMERIC(10, 2) NOT NULL,
+  status         TEXT NOT NULL DEFAULT 'pendente',
+  created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE TABLE IF NOT EXISTS order_items (
+  id         SERIAL PRIMARY KEY,
+  order_id   INTEGER NOT NULL REFERENCES orders(id) ON DELETE CASCADE,
+  book_id    INTEGER NOT NULL REFERENCES books(id) ON DELETE RESTRICT,
+  quantity   INTEGER NOT NULL CHECK (quantity > 0),
+  unit_price NUMERIC(10, 2) NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_order_items_order ON order_items (order_id);

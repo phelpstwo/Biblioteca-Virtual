@@ -68,6 +68,8 @@ Configure o arquivo `.env` (copie de `.env.example`).
 | GET | `/api/categories` | Categorias |
 | GET | `/api/authors` | Autores e quantidade de livros |
 | POST | `/api/newsletter` | Cadastra e-mail (`{ "email": "..." }`) |
+| POST | `/api/orders` | Cria pedido (`{ name, email, payment_method, items[] }`) |
+| GET | `/api/orders/<id>` | Detalhe de um pedido |
 | GET | `/covers/<slug>.svg` | Capa do livro em SVG |
 
 ## Funcionalidades
@@ -76,6 +78,8 @@ Configure o arquivo `.env` (copie de `.env.example`).
 - Busca por título/autor e filtro por categoria e autor.
 - Modal de detalhe do livro com deep link (`#livro/<slug>`).
 - Favoritos no navegador (localStorage), com contador no menu.
+- Carrinho de compras com quantidades e total, e checkout que grava o pedido
+  no PostgreSQL (ambiente de demonstração, sem pagamento real).
 - Alternador de tamanho de fonte (persistente).
 - Newsletter com validação no back-end e cadastro no banco.
 - Menu hambúrguer no mobile, skip link, `:focus-visible`,

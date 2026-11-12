@@ -88,6 +88,7 @@
           <h3 class="card__title">${escapeHtml(book.title)}</h3>
           <p class="card__author">por ${escapeHtml(book.author)}</p>
         </a>
+        <button class="card__buy" type="button" data-buy="${escapeHtml(book.slug)}">Comprar</button>
       </article>`;
   }
 
@@ -166,6 +167,7 @@
       $("[data-modal-price]").textContent = formatPrice(book.price);
       $("[data-modal-description]").textContent = book.description;
       $("[data-modal-fav]").dataset.slug = book.slug;
+      $("[data-modal-buy]").dataset.slug = book.slug;
       updateFavButton(book.slug);
       search.hidden = true;
       favorites.hidden = true;
@@ -293,6 +295,167 @@
     document.body.style.overflow = "";
   }
 
+  // ---------- Carrinho de compras ----------
+
+  const CART_KEY = "aurora:cart";
+  const cartPanel = $("[data-cart]");
+  const cartBody = $("[data-cart-body]");
+  const cartItems = $("[data-cart-items]");
+  const cartSummary = $("[data-cart-summary]");
+  const cartSuccess = $("[data-cart-success]");
+  const checkoutForm = $("[data-checkout-form]");
+
+  function getCart() {
+    try {
+      const list = JSON.parse(localStorage.getItem(CART_KEY));
+      if (!Array.isArray(list)) return [];
+      return list
+        .filter((item) => item && item.slug)
+        .map((item) => ({
+          slug: String(item.slug),
+          quantity: Math.max(1, Math.min(10, Number(item.quantity) || 1))
+        }));
+    } catch {
+      return [];
+    }
+  }
+
+  function setCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateCartBadge();
+    if (!cartPanel.hidden) renderCart();
+  }
+
+  function cartCount() {
+    return getCart().reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  function updateCartBadge() {
+    const badge = $("[data-cart-count]");
+    if (!badge) return;
+    const total = cartCount();
+    badge.textContent = String(total);
+    badge.hidden = total === 0;
+  }
+
+  function addToCart(slug) {
+    const cart = getCart();
+    const item = cart.find((entry) => entry.slug === slug);
+    if (item) item.quantity = Math.min(10, item.quantity + 1);
+    else cart.push({ slug, quantity: 1 });
+    setCart(cart);
+    toast("Adicionado ao carrinho");
+  }
+
+  function changeQty(slug, delta) {
+    const cart = getCart();
+    const item = cart.find((entry) => entry.slug === slug);
+    if (!item) return;
+    item.quantity = Math.max(1, Math.min(10, item.quantity + delta));
+    setCart(cart);
+  }
+
+  function removeFromCart(slug) {
+    setCart(getCart().filter((entry) => entry.slug !== slug));
+  }
+
+  function renderCart() {
+    const cart = getCart();
+    const items = cart
+      .map((entry) => ({ ...entry, book: allBooks.find((book) => book.slug === entry.slug) }))
+      .filter((entry) => entry.book);
+
+    if (!items.length) {
+      cartItems.innerHTML = '<p class="cart__empty">Seu carrinho está vazio.</p>';
+      cartSummary.innerHTML = "";
+      checkoutForm.style.display = "none";
+      return;
+    }
+
+    checkoutForm.style.display = "";
+    cartItems.innerHTML = items.map(({ book, quantity }) => {
+      const slug = encodeURIComponent(book.slug);
+      return `
+        <div class="cart__item">
+          <img class="cart__thumb" src="/covers/${slug}.svg" alt="" width="40" height="58" loading="lazy">
+          <span class="search__meta">
+            <span class="cart__item-title">${escapeHtml(book.title)}</span>
+            <span class="cart__item-author">${escapeHtml(book.author)}</span>
+            <span class="cart__item-price">${formatPrice(book.price)}</span>
+          </span>
+          <span class="cart__qty">
+            <button type="button" data-action="dec" data-slug="${escapeHtml(book.slug)}" aria-label="Diminuir quantidade">−</button>
+            <span data-qty="${escapeHtml(book.slug)}">${quantity}</span>
+            <button type="button" data-action="inc" data-slug="${escapeHtml(book.slug)}" aria-label="Aumentar quantidade">+</button>
+          </span>
+          <button class="favorites__remove" type="button" data-cart-remove="${escapeHtml(book.slug)}">Remover</button>
+        </div>`;
+    }).join("");
+
+    const total = items.reduce((sum, { book, quantity }) => sum + Number(book.price) * quantity, 0);
+    cartSummary.innerHTML = `<span>Total</span><strong data-cart-total>${formatPrice(total)}</strong>`;
+  }
+
+  function openCart() {
+    cartBody.hidden = false;
+    cartSuccess.hidden = true;
+    renderCart();
+    cartPanel.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeCart() {
+    cartPanel.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  async function submitCheckout(event) {
+    event.preventDefault();
+    const feedback = $("[data-checkout-feedback]");
+    const name = checkoutForm.elements.name.value.trim();
+    const email = checkoutForm.elements.email.value.trim();
+    const payment = checkoutForm.elements.payment_method.value;
+    const items = getCart().map(({ slug, quantity }) => ({ slug, quantity }));
+
+    feedback.dataset.state = "";
+    feedback.textContent = "Registrando pedido…";
+
+    try {
+      const { order } = await fetchJSON("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, payment_method: payment, items })
+      });
+      localStorage.removeItem(CART_KEY);
+      updateCartBadge();
+      cartBody.hidden = true;
+      cartSuccess.hidden = false;
+      $("[data-cart-success-text]").textContent =
+        `Pedido #${order.id} confirmado no valor de ${formatPrice(order.total)} via ${order.payment_method}. Registrado no banco de dados (demonstração).`;
+      checkoutForm.reset();
+    } catch (error) {
+      feedback.dataset.state = "error";
+      feedback.textContent = error.message || "Não foi possível confirmar o pedido.";
+    }
+  }
+
+  // ---------- Toast ----------
+
+  let toastTimer = null;
+  function toast(message) {
+    let el = $(".toast");
+    if (!el) {
+      el = document.createElement("div");
+      el.className = "toast";
+      el.setAttribute("role", "status");
+      document.body.appendChild(el);
+    }
+    el.textContent = message;
+    el.classList.add("toast--show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("toast--show"), 2200);
+  }
+
   // ---------- Tamanho da fonte ----------
 
   function setFontLarge(active) {
@@ -372,6 +535,36 @@
         return;
       }
 
+      const openCartButton = event.target.closest("[data-open-cart]");
+      if (openCartButton) {
+        openCart();
+        return;
+      }
+
+      const closeCartButton = event.target.closest("[data-cart-close]");
+      if (closeCartButton) {
+        closeCart();
+        return;
+      }
+
+      const buyButton = event.target.closest("[data-buy], [data-modal-buy]");
+      if (buyButton) {
+        addToCart(buyButton.dataset.buy || buyButton.dataset.slug);
+        return;
+      }
+
+      const qtyButton = event.target.closest("[data-action]");
+      if (qtyButton) {
+        changeQty(qtyButton.dataset.slug, qtyButton.dataset.action === "inc" ? 1 : -1);
+        return;
+      }
+
+      const cartRemoveButton = event.target.closest("[data-cart-remove]");
+      if (cartRemoveButton) {
+        removeFromCart(cartRemoveButton.dataset.cartRemove);
+        return;
+      }
+
       const categoryButton = event.target.closest("[data-category]");
       if (categoryButton) {
         openSearch({ category: categoryButton.dataset.category });
@@ -421,6 +614,7 @@
       if (!modal.hidden) closeModal();
       else if (!search.hidden) closeSearch();
       else if (!favorites.hidden) closeFavorites();
+      else if (!cartPanel.hidden) closeCart();
     });
 
     // Busca com debounce
@@ -439,6 +633,9 @@
 
     // Newsletter
     $("[data-newsletter-form]").addEventListener("submit", submitNewsletter);
+
+    // Checkout
+    checkoutForm.addEventListener("submit", submitCheckout);
   }
 
   // ---------- Inicialização ----------
@@ -446,6 +643,7 @@
   async function init() {
     setFontLarge(localStorage.getItem(FONT_KEY) === "1");
     updateFavBadge();
+    updateCartBadge();
     setupMenu();
     setupEvents();
 

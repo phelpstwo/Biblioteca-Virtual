@@ -61,4 +61,8 @@ jobs:
           curl -sf http://127.0.0.1:5000/api/books | grep -q "O Jardim Secreto"
           curl -sf "http://127.0.0.1:5000/api/books?category=misterio" | grep -q "O Nome da Rosa"
           curl -sf http://127.0.0.1:5000/covers/o-jardim-secreto.svg | grep -q "<svg"
+          curl -sf -X POST http://127.0.0.1:5000/api/orders \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Teste CI","email":"ci@example.com","payment_method":"pix","items":[{"slug":"torto-arado","quantity":1}]}' | grep -q '"ok":true'
+          curl -sf http://127.0.0.1:5000/api/orders/1 | grep -q "Teste CI"
           curl -sf -o /dev/null -w "index: %{http_code}\n" http://127.0.0.1:5000/

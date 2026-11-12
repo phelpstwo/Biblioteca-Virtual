@@ -176,6 +176,113 @@ def newsletter():
 
 
 # ---------------------------------------------------------------------------
+# API — pedidos (checkout)
+# ---------------------------------------------------------------------------
+
+PAYMENT_METHODS = {"cartao": "Cartão de crédito", "pix": "Pix", "boleto": "Boleto"}
+
+
+@app.post("/api/orders")
+def create_order():
+    payload = request.get_json(silent=True) or {}
+    name = str(payload.get("name", "")).strip()
+    email = str(payload.get("email", "")).strip().lower()
+    payment = str(payload.get("payment_method", "")).strip().lower()
+    items = payload.get("items") or []
+
+    if len(name) < 2:
+        return jsonify({"ok": False, "error": "Informe seu nome completo."}), 400
+    if not EMAIL_RE.match(email):
+        return jsonify({"ok": False, "error": "Informe um e-mail válido."}), 400
+    if payment not in PAYMENT_METHODS:
+        return jsonify({"ok": False, "error": "Forma de pagamento inválida."}), 400
+    if not isinstance(items, list) or not items:
+        return jsonify({"ok": False, "error": "O carrinho está vazio."}), 400
+
+    normalized: list[tuple[str, int]] = []
+    for item in items:
+        slug = str(item.get("slug", "")).strip()
+        try:
+            quantity = int(item.get("quantity", 1))
+        except (TypeError, ValueError):
+            quantity = 1
+        quantity = max(1, min(10, quantity))
+        if slug:
+            normalized.append((slug, quantity))
+    if not normalized:
+        return jsonify({"ok": False, "error": "O carrinho está vazio."}), 400
+
+    slugs = list({slug for slug, _ in normalized})
+    rows = query_all("SELECT id, slug, price FROM books WHERE slug = ANY(%s)", (slugs,))
+    price_by_slug = {row["slug"]: row for row in rows}
+    if len(price_by_slug) != len(slugs):
+        return jsonify({"ok": False, "error": "Um dos livros não foi encontrado."}), 400
+
+    total = sum(float(price_by_slug[slug]["price"]) * qty for slug, qty in normalized)
+
+    try:
+        with closing(_connect()) as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    """
+                    INSERT INTO orders (customer_name, customer_email, payment_method, total, status)
+                    VALUES (%s, %s, %s, %s, 'pendente')
+                    RETURNING id
+                    """,
+                    (name, email, PAYMENT_METHODS[payment], total),
+                )
+                row = cur.fetchone()
+                if row is None:
+                    raise RuntimeError("Falha ao criar pedido")
+                order_id = row["id"]  # type: ignore[index]
+                for slug, qty in normalized:
+                    book = price_by_slug[slug]
+                    cur.execute(
+                        """
+                        INSERT INTO order_items (order_id, book_id, quantity, unit_price)
+                        VALUES (%s, %s, %s, %s)
+                        """,
+                        (order_id, book["id"], qty, book["price"]),
+                    )
+            conn.commit()
+    except Exception:
+        return jsonify({"ok": False, "error": "Não foi possível registrar o pedido. Tente novamente."}), 500
+
+    return jsonify({
+        "ok": True,
+        "order": {
+            "id": order_id,
+            "total": total,
+            "payment_method": PAYMENT_METHODS[payment],
+            "name": name,
+            "email": email,
+            "items": [
+                {"slug": slug, "quantity": qty, "price": float(price_by_slug[slug]["price"])}
+                for slug, qty in normalized
+            ],
+        },
+    }), 201
+
+
+@app.get("/api/orders/<int:order_id>")
+def order_detail(order_id: int):
+    order = query_one("SELECT * FROM orders WHERE id = %s", (order_id,))
+    if not order:
+        abort(404, description="Pedido não encontrado")
+    items = query_all(
+        """
+        SELECT oi.quantity, oi.unit_price, b.title, b.slug
+        FROM order_items oi
+        JOIN books b ON b.id = oi.book_id
+        WHERE oi.order_id = %s
+        ORDER BY oi.id
+        """,
+        (order_id,),
+    )
+    return jsonify({"order": {**order, "items": items}})
+
+
+# ---------------------------------------------------------------------------
 # Capas geradas em SVG (sem arquivos de imagem quebrados)
 # ---------------------------------------------------------------------------
 
