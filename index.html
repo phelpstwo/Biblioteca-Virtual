@@ -1,297 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Título que irá aparecer na aba do navegador -->
+    <meta name="description" content="Aurora Livros — uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.">
     <title>Aurora Livros</title>
-    <!-- Ícone que irá aparecer junto ao título -->
     <link rel="icon" type="image/png" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
-    <nav>
-        <!-- A parte da logo deve ficar no lado esquerdo -->
-        <div>
-            <!-- Adicionar imagem que irá servir de logo do site -->
-            <img src="" alt="">
-            <a href="">
-                <!-- Adicionar uma imagem ou texto com tipografia com o nome da loja -->
-                <p>Aurora Livros</p>
-            </a>
-        </div>
-        <!-- Os botões de acesso as páginas devem ficar centralizados -->
-        <div>
-            <button>Início</button>
-            <button>Catálogo</button>
-            <button>Autores</button>
-            <button>Contato</button>
-        </div>
-        <!-- Os botões de ação devem ficar do lado direito -->
-        <div>
-            <button>
-                <img src="" alt="">
-            </button>
-            <button>
-                <img src="" alt="">
-            </button>
-            <button>Aa</button>
-        </div>
-    </nav>
-    <hr>
+    <header class="header">
+        <nav class="nav" aria-label="Navegação principal">
+            <div class="nav__logo">
+                <a href="#" class="nav__brand">
+                    <img src="" alt="" class="nav__logo-img">
+                    <span class="nav__brand-name">Aurora Livros</span>
+                </a>
+            </div>
+            <div class="nav__menu">
+                <a href="#" class="nav__link">Início</a>
+                <a href="#catalogo" class="nav__link">Catálogo</a>
+                <a href="#" class="nav__link">Autores</a>
+                <a href="#contato" class="nav__link">Contato</a>
+            </div>
+            <div class="nav__actions">
+                <button type="button" class="nav__action" aria-label="Buscar">
+                    <img src="" alt="">
+                </button>
+                <button type="button" class="nav__action" aria-label="Favoritos">
+                    <img src="" alt="">
+                </button>
+                <button type="button" class="nav__action nav__action--font" aria-label="Alterar tamanho da fonte">Aa</button>
+            </div>
+        </nav>
+    </header>
+
     <main>
-        <section>
-            <article>
-                <h2>LIVROS PARA GUARDAR POR PERTO</h2>
-                <p>Hisorias que ficam depois da última página.</p>
-                <p>Uma curadoria de clássicos e descobertas contemprâneas para transformar o seu tempo</p>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <div>
-                        <p>Explorar livros</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
+        <section class="hero">
+            <article class="hero__content">
+                <h1 class="hero__title">Livros para guardar por perto</h1>
+                <p class="hero__text">Histórias que ficam depois da última página.</p>
+                <p class="hero__text">Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.</p>
+                <a href="#catalogo" class="hero__cta">
+                    <span>Explorar livros</span>
+                    <img src="" alt="" class="hero__cta-icon">
+                </a>
             </article>
-            <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
-            <article>
-                <p>“Um leitor vivel mil vidas antes de morrer.”</p>
-                <p>George R. R. Martin</p>
+            <article class="hero__quote">
+                <blockquote class="hero__blockquote">
+                    <p>“Um leitor vive mil vidas antes de morrer.”</p>
+                    <cite class="hero__cite">George R. R. Martin</cite>
+                </blockquote>
             </article>
         </section>
-        <section>
-            <h2>NOSSA SELEÇÃO</h2>
-            <div>
-                <!-- Alinha horizontalmente o texto abaixo com o botão, cada um deve ficar nos extremos -->
-                <p>Escolhidos para você</p>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <div>
-                        <p>Ver catálogo completo</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                </button>
-            </div>
-            <article>
-                <div>
-                    <!-- Card do livro A -->
-                    <a href="#livroA">
-                        <!-- Imagem do livro A que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Clássicos</p>
-                    <!-- Título -->
-                    <p>O Jardim Secreto</p>
-                    <!-- Autor -->
-                    <p>por Frances Hodgson Burnett</p>
-                </div>
-                <div>
-                    <!-- Card do livro B -->
-                    <a href="#livroB">
-                        <!-- Imagem do livro B que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Fantasia</p>
-                    <!-- Título -->
-                    <p>A Biblioteca da Meia-Noite</p>
-                    <!-- Autor -->
-                    <p>por Matt Halg</p>
-                </div>
-                <div>
-                    <!-- Card do livro C -->
-                    <a href="#livroC">
-                        <!-- Imagem do livro C que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Romance</p>
-                    <!-- Título -->
-                    <p>Orgulho e Preconceito</p>
-                    <!-- Autor -->
-                    <p>por jane Austen</p>
-                </div>
-                <div>
-                    <!-- Card do livro D -->
-                    <a href="#livroD">
-                        <!-- Imagem do livro D que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Mistério</p>
-                    <!-- Título -->
-                    <p>O Nome da Rosa</p>
-                    <!-- Autor -->
-                    <p>por Umberto Eco</p>
-                </div>
-            </article>
-        </section>
+
         <hr>
-        <section>
-            <h2>ENCONTRE SUA PRÓXIMA LEITURA</h2>
-            <p>Qual história chama por você?</p>
-            <div>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Romance</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Fantasia</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Mistério</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Clássicos</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
+
+        <section class="catalog" id="catalogo">
+            <header class="catalog__header">
+                <h2 class="section__title">Nossa seleção</h2>
+                <div class="catalog__row">
+                    <p class="section__subtitle">Escolhidos para você</p>
+                    <a href="#" class="catalog__link">
+                        <span>Ver catálogo completo</span>
+                        <img src="" alt="" class="catalog__link-icon">
+                    </a>
+                </div>
+            </header>
+            <div class="catalog__grid">
+                <article class="card">
+                    <a href="#livroA" class="card__link">
+                        <img src="" alt="Capa do livro O Jardim Secreto" class="card__img">
+                    </a>
+                    <p class="card__category">Clássicos</p>
+                    <h3 class="card__title">O Jardim Secreto</h3>
+                    <p class="card__author">por Frances Hodgson Burnett</p>
+                </article>
+                <article class="card">
+                    <a href="#livroB" class="card__link">
+                        <img src="" alt="Capa do livro A Biblioteca da Meia-Noite" class="card__img">
+                    </a>
+                    <p class="card__category">Fantasia</p>
+                    <h3 class="card__title">A Biblioteca da Meia-Noite</h3>
+                    <p class="card__author">por Matt Haig</p>
+                </article>
+                <article class="card">
+                    <a href="#livroC" class="card__link">
+                        <img src="" alt="Capa do livro Orgulho e Preconceito" class="card__img">
+                    </a>
+                    <p class="card__category">Romance</p>
+                    <h3 class="card__title">Orgulho e Preconceito</h3>
+                    <p class="card__author">por Jane Austen</p>
+                </article>
+                <article class="card">
+                    <a href="#livroD" class="card__link">
+                        <img src="" alt="Capa do livro O Nome da Rosa" class="card__img">
+                    </a>
+                    <p class="card__category">Mistério</p>
+                    <h3 class="card__title">O Nome da Rosa</h3>
+                    <p class="card__author">por Umberto Eco</p>
+                </article>
             </div>
         </section>
+
         <hr>
-        <section>
-            <h2>MAIS AMADOS</h2>
-            <p>Os livros que todos comentam</p>
-            <article>
-                <div>
-                    <a href="#livroE">
-                        <hr>
-                        <div>
-                            <p>01</p>
-                            <img src="" alt="">
-                            <p>Torto Arado</p>
-                            <p>Itamar Vieira Junior</p>
-                        </div>
-                        <div>
-                            <p>R$ 52,90 →</p>
-                        </div>
+
+        <section class="categories">
+            <h2 class="section__title">Encontre sua próxima leitura</h2>
+            <p class="section__subtitle">Qual história chama por você?</p>
+            <div class="categories__list">
+                <a href="#" class="category">
+                    <span class="category__left">
+                        <img src="" alt="" class="category__icon">
+                        <span class="category__name">Romance</span>
+                    </span>
+                    <img src="" alt="" class="category__arrow">
+                </a>
+                <a href="#" class="category">
+                    <span class="category__left">
+                        <img src="" alt="" class="category__icon">
+                        <span class="category__name">Fantasia</span>
+                    </span>
+                    <img src="" alt="" class="category__arrow">
+                </a>
+                <a href="#" class="category">
+                    <span class="category__left">
+                        <img src="" alt="" class="category__icon">
+                        <span class="category__name">Mistério</span>
+                    </span>
+                    <img src="" alt="" class="category__arrow">
+                </a>
+                <a href="#" class="category">
+                    <span class="category__left">
+                        <img src="" alt="" class="category__icon">
+                        <span class="category__name">Clássicos</span>
+                    </span>
+                    <img src="" alt="" class="category__arrow">
+                </a>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="ranking">
+            <h2 class="section__title">Mais amados</h2>
+            <p class="section__subtitle">Os livros que todos comentam</p>
+            <div class="ranking__list">
+                <article class="ranking__item">
+                    <a href="#livroE" class="ranking__link">
+                        <span class="ranking__number">01</span>
+                        <img src="" alt="Capa do livro Torto Arado" class="ranking__img">
+                        <span class="ranking__info">
+                            <span class="ranking__title">Torto Arado</span>
+                            <span class="ranking__author">Itamar Vieira Junior</span>
+                        </span>
+                        <span class="ranking__price">R$ 52,90 <span class="ranking__arrow">→</span></span>
                     </a>
-                </div>
-                <!-- Alinhar esses itens horizontalmente -->
-                <div>
-                    <a href="#livroF">
-                        <hr>
-                        <div>
-                            <p>02</p>
-                            <img src="" alt="">
-                            <p>A Vida Invisível de Addie LaRue</p>
-                            <p>V. E. Schwab</p>
-                        </div>
-                        <div>
-                            <p>R$ 59,90 →</p>
-                        </div>
+                </article>
+                <article class="ranking__item">
+                    <a href="#livroF" class="ranking__link">
+                        <span class="ranking__number">02</span>
+                        <img src="" alt="Capa do livro A Vida Invisível de Addie LaRue" class="ranking__img">
+                        <span class="ranking__info">
+                            <span class="ranking__title">A Vida Invisível de Addie LaRue</span>
+                            <span class="ranking__author">V. E. Schwab</span>
+                        </span>
+                        <span class="ranking__price">R$ 59,90 <span class="ranking__arrow">→</span></span>
                     </a>
-                </div>
-                <article>
-                    <!-- Alinhar esses itens verticalmente -->
-                    <article>
-                        <div>
-                            <a href="#livroG">
-                                <hr>
-                                <div>
-                                    <p>03</p>
-                                    <img src="" alt="">
-                                    <p>Assasinato no Expresso do Oriente</p>
-                                    <p>Agatha Christie</p>
-                                </div>
-                                <div>
-                                    <p>R$ 39,90 →</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Alinhar esses itens horizontalmente -->
-                        <div>
-                            <a href="#livroH">
-                                <hr>
-                                <div>
-                                    <p>04</p>
-                                    <img src="" alt="">
-                                    <p>Cem Anos de Solidão</p>
-                                    <p>Gabriel Garcia Marques</p>
-                                </div>
-                                <div>
-                                    <p>R$ 58,50 →</p>
-                                </div>
-                            </a>
-                        </div>
-                    </article>
+                </article>
+                <article class="ranking__item">
+                    <a href="#livroG" class="ranking__link">
+                        <span class="ranking__number">03</span>
+                        <img src="" alt="Capa do livro Assassinato no Expresso do Oriente" class="ranking__img">
+                        <span class="ranking__info">
+                            <span class="ranking__title">Assassinato no Expresso do Oriente</span>
+                            <span class="ranking__author">Agatha Christie</span>
+                        </span>
+                        <span class="ranking__price">R$ 39,90 <span class="ranking__arrow">→</span></span>
+                    </a>
+                </article>
+                <article class="ranking__item">
+                    <a href="#livroH" class="ranking__link">
+                        <span class="ranking__number">04</span>
+                        <img src="" alt="Capa do livro Cem Anos de Solidão" class="ranking__img">
+                        <span class="ranking__info">
+                            <span class="ranking__title">Cem Anos de Solidão</span>
+                            <span class="ranking__author">Gabriel García Márquez</span>
+                        </span>
+                        <span class="ranking__price">R$ 58,50 <span class="ranking__arrow">→</span></span>
+                    </a>
+                </article>
+            </div>
         </section>
         <hr>
     </main>
-    <footer>
-        <article>
-            <div>
-                <!-- Logo do site -->
-                <img src="" alt="">
-                <p>Aurora Livros</p>
+
+    <footer class="footer" id="contato">
+        <div class="footer__brand">
+            <img src="" alt="" class="footer__logo">
+            <span class="footer__name">Aurora Livros</span>
+            <p class="footer__tagline">Histórias escolhidas com cuidado, para ler sem pressa.</p>
+        </div>
+        <div class="footer__cols">
+            <div class="footer__col">
+                <h3 class="footer__title">Descubra</h3>
+                <ul class="footer__links">
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="#">Autores</a></li>
+                    <li><a href="#">Vale-presente</a></li>
+                </ul>
             </div>
-            <div>
-                <p>Histórias escolhidas com cuidado, para leer sem pressa.</p>
+            <div class="footer__col">
+                <h3 class="footer__title">Ajuda</h3>
+                <ul class="footer__links">
+                    <li><a href="#">Fale conosco</a></li>
+                    <li><a href="#">Envios e devoluções</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                </ul>
             </div>
-        </article>
-        <article>
-            <div>
-                <p>Decrubra</p>
-                <div>
-                    <a href="#catalogo">Catalogo</a>
-                    <a href="#autores">Autores</a>
-                    <a href="#vale-presente">Vale-presente</a>
-                </div>
-            </div>
-            <div>
-                <p>Ajuda</p>
-                <div>
-                    <a href="#fale-conosco">Fale conosco</a>
-                    <a href="#envios-devolucoes">Envios e Devoluções</a>
-                    <a href="#privacidade">Privacidade</a>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Cartas da Aurora</p>
-                    <p>Novidades e boas leituras, uma vez por mês.</p>
-                </div>
-                <form action="">
-                    <p>Cartas da Aurora</p>
-                    <p>Novidade e boas leituras, uma vez por mês.</p>
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" placeholder="seu@email.com">
+            <div class="footer__col footer__col--newsletter">
+                <h3 class="footer__title">Cartas da Aurora</h3>
+                <p class="footer__text">Novidades e boas leituras, uma vez por mês.</p>
+                <form class="newsletter" action="" method="post">
+                    <label for="email" class="newsletter__label">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" class="newsletter__input" required>
+                    <button type="submit" class="newsletter__btn">Assinar</button>
                 </form>
             </div>
-        </article>
-        <hr>
+        </div>
     </footer>
 </body>
-
 </html>
