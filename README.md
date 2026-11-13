@@ -72,6 +72,48 @@ Configure o arquivo `.env` (copie de `.env.example`).
 | GET | `/api/orders/<id>` | Detalhe de um pedido |
 | GET | `/covers/<slug>.svg` | Capa do livro em SVG |
 
+## Painéis (administração e leitor)
+
+As duas áreas são **separadas**: têm login, sessão e permissões próprios.
+Quem está no painel do administrador não acessa a área do leitor (e vice-versa).
+
+| Área | URL | Quem acessa |
+|---|---|---|
+| Administração | `/admin` | Bibliotecário/equipe |
+| Área do leitor | `/conta` | Leitores cadastrados e aprovados |
+
+**Primeiro acesso do administrador:** ao abrir `/admin` pela primeira vez, o
+sistema pede nome, e-mail e senha — é nesse momento que a senha do admin é
+definida (por exemplo, `biblioteca123`). Depois disso, o login é normal e a
+senha pode ser trocada em **Segurança**.
+
+**Cadastro de leitor:** o leitor se cadastra em `/conta/cadastro` e fica com
+status *pendente*. O administrador aprova em **Usuários**. Só depois da
+aprovação o login do leitor funciona.
+
+### Painel do administrador
+
+- **Dashboard:** livros, exemplares, disponíveis, empréstimos ativos, atrasos,
+  leitores, cadastros pendentes e reservas na fila, além dos mais emprestados.
+- **Acervo:** cadastrar, editar, inativar/reativar e excluir livros (capa SVG,
+  ISBN, autor, categoria, cópias e localização).
+- **Empréstimos:** registrar saída, devolver e renovar; a devolução calcula a
+  multa por atraso e libera a próxima reserva da fila.
+- **Usuários:** aprovar, suspender, reativar e redefinir senha de leitores.
+- **Atrasos e multas:** lista de atrasados, aplicação e quitação de multas.
+- **Segurança:** troca da senha do administrador.
+
+### Área do leitor
+
+- **Catálogo:** disponibilidade por exemplar (`2 cópias disponíveis`,
+  `Indisponível`) e botão **Reservar** para livros indisponíveis.
+- **Meus empréstimos:** livros emprestados, data limite e status (no prazo ou
+  atrasado), com **Renovar**.
+- **Reservas:** fila de espera e cancelamento.
+- **Histórico:** tudo o que já foi devolvido.
+- **Perfil:** dados pessoais, troca de senha e preferência de notificação
+  (aviso 1 dia antes do vencimento).
+
 ## Funcionalidades
 
 - Catálogo e ranking vindos do PostgreSQL via API.
@@ -80,6 +122,8 @@ Configure o arquivo `.env` (copie de `.env.example`).
 - Favoritos no navegador (localStorage), com contador no menu.
 - Carrinho de compras com quantidades e total, e checkout que grava o pedido
   no PostgreSQL (ambiente de demonstração, sem pagamento real).
+- Painel do administrador (`/admin`) e área do leitor (`/conta`) separados,
+  com login, sessão e permissões próprios.
 - Alternador de tamanho de fonte (persistente).
 - Newsletter com validação no back-end e cadastro no banco.
 - Menu hambúrguer no mobile, skip link, `:focus-visible`,
@@ -99,8 +143,12 @@ Configure o arquivo `.env` (copie de `.env.example`).
 │   └── init_db.sh        # sobe o PostgreSQL local e popula o banco
 ├── static/
 │   ├── css/style.css     # BEM, responsivo, acessível
+│   ├── css/painel.css    # painel admin e área do leitor
 │   ├── js/app.js         # consumo da API e interações
 │   └── favicon.svg
+├── templates/
+│   ├── admin/            # dashboard, acervo, empréstimos, usuários, atrasos…
+│   └── member/           # catálogo, empréstimos, reservas, histórico, perfil
 ├── .env.example          # variáveis de ambiente
 └── .github/workflows/ci.yml
 ```

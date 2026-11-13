@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Área do leitor{% endblock %} · Aurora Livros</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/painel.css">
+</head>
+<body class="painel">
+  <header class="topbar">
+    <a class="topbar__brand" href="/conta">Aurora Livros <span>· Área do leitor</span></a>
+    <nav class="topbar__nav">
+      <a href="/conta/catalogo" class="{% if request.path == '/conta/catalogo' %}is-active{% endif %}">Catálogo</a>
+      <a href="/conta/emprestimos" class="{% if request.path == '/conta/emprestimos' %}is-active{% endif %}">Meus empréstimos</a>
+      <a href="/conta/reservas" class="{% if request.path == '/conta/reservas' %}is-active{% endif %}">Reservas</a>
+      <a href="/conta/historico" class="{% if request.path == '/conta/historico' %}is-active{% endif %}">Histórico</a>
+      <a href="/conta/perfil" class="{% if request.path == '/conta/perfil' %}is-active{% endif %}">Perfil</a>
+    </nav>
+    <div class="topbar__actions">
+      <span class="topbar__user">{{ session.get("member_name") }}</span>
+      <a class="btn btn--ghost" href="/">Ver loja</a>
+      <a class="btn btn--danger" href="/conta/logout">Sair</a>
+    </div>
+  </header>
+  <main class="content content--full">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <p class="flash flash--{{ category }}">{{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "member/base.html" %}
+{% block title %}Histórico{% endblock %}
+{% block content %}
+  <h1 class="page-title">Histórico de leitura</h1>
+  <div class="panel">
+    {% if loans %}
+      <table class="table">
+        <thead><tr><th>Livro</th><th>Empréstimo</th><th>Devolução</th></tr></thead>
+        <tbody>
+          {% for loan in loans %}
+            <tr>
+              <td>{{ loan.title }}</td>
+              <td>{{ loan.loan_date.strftime('%d/%m/%Y') }}</td>
+              <td>{{ loan.return_date.strftime('%d/%m/%Y') }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">Nenhum livro devolvido ainda.</p>
+    {% endif %}
+  </div>
+{% endblock %}

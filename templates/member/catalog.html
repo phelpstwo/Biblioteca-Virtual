@@ -1,0 +1,27 @@
+{% extends "member/base.html" %}
+{% block title %}Catálogo{% endblock %}
+{% block content %}
+  <h1 class="page-title">Catálogo da biblioteca</h1>
+  <div class="cards">
+    {% for book in books %}
+      <article class="book">
+        <img class="book__cover" src="/covers/{{ book.slug }}.svg" alt="Capa de {{ book.title }}" width="120" height="180" loading="lazy">
+        <div class="book__body">
+          <h2 class="book__title">{{ book.title }}</h2>
+          <p class="book__author">{{ book.author }}</p>
+          <p class="book__meta">{{ book.category }}{% if book.location %} · {{ book.location }}{% endif %}</p>
+          {% if book.available > 0 %}
+            <p class="book__status book__status--ok">{{ book.available }} cópia{{ 's' if book.available != 1 else '' }} disponível{{ 'eis' if book.available != 1 else '' }}</p>
+          {% else %}
+            <p class="book__status book__status--off">Indisponível</p>
+            {% if book.id in reserved %}
+              <span class="tag tag--warn">Reservado para você</span>
+            {% else %}
+              <form method="post" action="/conta/reservas/novo" class="inline-form"><input type="hidden" name="book_id" value="{{ book.id }}"><button class="btn btn--primary btn--sm" type="submit">Reservar</button></form>
+            {% endif %}
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+{% endblock %}

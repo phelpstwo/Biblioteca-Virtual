@@ -85,3 +85,13 @@ VALUES
     TRUE, 4
   )
 ON CONFLICT (slug) DO NOTHING;
+
+-- Dados operacionais do acervo (ISBN, exemplares e localização)
+UPDATE books SET isbn = '978-85-250-0456-8', copies = 3, location = 'Corredor A · Prateleira 1' WHERE slug = 'o-jardim-secreto';
+UPDATE books SET isbn = '978-85-359-3434-2', copies = 2, location = 'Corredor B · Prateleira 2' WHERE slug = 'a-biblioteca-da-meia-noite';
+UPDATE books SET isbn = '978-85-250-0249-7', copies = 3, location = 'Corredor A · Prateleira 2' WHERE slug = 'orgulho-e-preconceito';
+UPDATE books SET isbn = '978-85-250-0250-3', copies = 2, location = 'Corredor C · Prateleira 1' WHERE slug = 'o-nome-da-rosa';
+UPDATE books SET isbn = '978-85-359-4243-9', copies = 4, location = 'Corredor D · Prateleira 1' WHERE slug = 'torto-arado';
+UPDATE books SET isbn = '978-85-359-4244-6', copies = 2, location = 'Corredor B · Prateleira 3' WHERE slug = 'a-vida-invisivel-de-addie-larue';
+UPDATE books SET isbn = '978-85-250-0251-0', copies = 3, location = 'Corredor C · Prateleira 2' WHERE slug = 'assassinato-no-expresso-do-oriente';
+UPDATE books SET isbn = '978-85-250-0252-7', copies = 2, location = 'Corredor A · Prateleira 3' WHERE slug = 'cem-anos-de-solidao';

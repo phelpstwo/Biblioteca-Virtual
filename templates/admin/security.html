@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% block title %}Segurança{% endblock %}
+{% block content %}
+  <h1 class="page-title">Segurança</h1>
+  <form class="form panel" method="post" style="max-width: 520px">
+    <label class="field"><span>Senha atual</span><input type="password" name="current" required autocomplete="current-password"></label>
+    <label class="field"><span>Nova senha</span><input type="password" name="new" required minlength="6" autocomplete="new-password"></label>
+    <label class="field"><span>Confirmar nova senha</span><input type="password" name="confirm" required minlength="6" autocomplete="new-password"></label>
+    <button class="btn btn--primary" type="submit">Alterar senha</button>
+  </form>
+{% endblock %}

@@ -66,3 +66,30 @@ jobs:
             -d '{"name":"Teste CI","email":"ci@example.com","payment_method":"pix","items":[{"slug":"torto-arado","quantity":1}]}' | grep -q '"ok":true'
           curl -sf http://127.0.0.1:5000/api/orders/1 | grep -q "Teste CI"
           curl -sf -o /dev/null -w "index: %{http_code}\n" http://127.0.0.1:5000/
+
+          # Admin: primeiro acesso define a senha e abre o painel
+          curl -sf -c /tmp/admin.jar -o /dev/null -w "admin setup: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/login \
+            --data-urlencode "name=CI Admin" --data-urlencode "email=admin@ci.com" \
+            --data-urlencode "password=biblioteca123" --data-urlencode "confirm=biblioteca123"
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "admin dashboard: %{http_code}\n" http://127.0.0.1:5000/admin/dashboard
+          curl -sf -b /tmp/admin.jar http://127.0.0.1:5000/admin/acervo | grep -q "Novo livro"
+          curl -sf -b /tmp/admin.jar http://127.0.0.1:5000/admin/emprestimos | grep -q "Registrar empréstimo"
+
+          # Leitor: cadastro, aprovação, login e catálogo
+          curl -sf -c /tmp/member.jar -o /dev/null -w "cadastro: %{http_code}\n" -X POST http://127.0.0.1:5000/conta/cadastro \
+            --data-urlencode "name=Leitor CI" --data-urlencode "email=leitor@ci.com" \
+            --data-urlencode "password=leitor123" --data-urlencode "confirm=leitor123"
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "aprovar: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/usuarios/1/status --data-urlencode "status=ativo"
+          curl -sf -c /tmp/member.jar -o /dev/null -w "login leitor: %{http_code}\n" -X POST http://127.0.0.1:5000/conta/login \
+            --data-urlencode "email=leitor@ci.com" --data-urlencode "password=leitor123"
+          curl -sf -b /tmp/member.jar http://127.0.0.1:5000/conta/catalogo | grep -q "Catálogo da biblioteca"
+
+          # Separação de acessos: leitor não entra no admin (302) e vice-versa
+          curl -s -b /tmp/member.jar -o /dev/null -w "leitor->admin: %{http_code}\n" http://127.0.0.1:5000/admin/dashboard | grep -q 302
+          curl -s -b /tmp/admin.jar -o /dev/null -w "admin->leitor: %{http_code}\n" http://127.0.0.1:5000/conta/emprestimos | grep -q 302
+
+          # Empréstimo: registrar, ver na área do leitor e devolver
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "emprestimo: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/emprestimos/novo \
+            --data-urlencode "member_id=1" --data-urlencode "book_id=5" --data-urlencode "due_date=2099-01-01"
+          curl -sf -b /tmp/member.jar http://127.0.0.1:5000/conta/emprestimos | grep -q "Torto Arado"
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "devolver: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/emprestimos/1/devolver

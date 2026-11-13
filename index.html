@@ -45,6 +45,7 @@
         <a class="nav__link" href="#catalogo">Catálogo</a>
         <a class="nav__link" href="#autores">Autores</a>
         <a class="nav__link" href="#contato">Contato</a>
+        <a class="nav__link" href="/conta/login">Entrar</a>
       </div>
 
       <div class="nav__actions">
@@ -209,6 +210,8 @@
           <li><a href="#contato">Fale conosco</a></li>
           <li><a href="#ajuda">Envios e devoluções</a></li>
           <li><a href="#privacidade">Privacidade</a></li>
+          <li><a href="/conta/login">Área do leitor</a></li>
+          <li><a href="/admin/login">Administração</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -286,9 +289,9 @@
           <input class="checkout__input" type="email" id="checkout-email" name="email" autocomplete="email" required>
           <label class="checkout__label" for="checkout-pagamento">Forma de pagamento</label>
           <select class="checkout__input" id="checkout-pagamento" name="payment_method" required>
-            <option value="cartao">Cartão de crédito</option>
             <option value="pix">Pix</option>
-            <option value="boleto">Boleto</option>
+            <option value="cartao">Cartão de crédito</option>
+            <option value="debito">Cartão de débito</option>
           </select>
           <button class="checkout__btn" type="submit" data-checkout-submit>Confirmar pedido</button>
           <p class="checkout__feedback" data-checkout-feedback role="status" aria-live="polite"></p>
