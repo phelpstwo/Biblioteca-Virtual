@@ -813,10 +813,9 @@ def member_home():
 def member_login():
     if request.method == "POST":
         email = request.form.get("email", "").strip().lower()
-        password = request.form.get("password", "")
         member = query_one("SELECT * FROM members WHERE email = %s", (email,))
-        if not member or not check_password_hash(member["password_hash"], password):
-            flash("E-mail ou senha inválidos.", "error")
+        if not member:
+            flash("E-mail não encontrado. Faça o cadastro ou fale com a biblioteca.", "error")
         elif member["status"] != "ativo":
             flash("Sua conta está aguardando aprovação ou suspensa. Fale com a biblioteca.", "error")
         else:
@@ -831,24 +830,15 @@ def member_register():
     if request.method == "POST":
         name = request.form.get("name", "").strip()
         email = request.form.get("email", "").strip().lower()
-        password = request.form.get("password", "")
-        confirm = request.form.get("confirm", "")
 
         if len(name) < 2:
             flash("Informe seu nome.", "error")
         elif not EMAIL_RE.match(email):
             flash("Informe um e-mail válido.", "error")
-        elif len(password) < 6:
-            flash("A senha deve ter pelo menos 6 caracteres.", "error")
-        elif password != confirm:
-            flash("As senhas não conferem.", "error")
         elif query_one("SELECT id FROM members WHERE email = %s", (email,)):
             flash("Este e-mail já está cadastrado.", "error")
         else:
-            execute(
-                "INSERT INTO members (name, email, password_hash, status) VALUES (%s, %s, %s, 'pendente')",
-                (name, email, generate_password_hash(password)),
-            )
+            execute("INSERT INTO members (name, email, status) VALUES (%s, %s, 'pendente')", (name, email))
             flash("Cadastro enviado! Aguarde a aprovação da biblioteca para fazer login.", "ok")
             return redirect(url_for("member_login"))
     return render_template("member/register.html")
@@ -1005,20 +995,6 @@ def member_profile():
                 execute("UPDATE members SET name = %s, email = %s WHERE id = %s", (name, email, member["id"]))
                 session["member_name"] = name
                 flash("Dados atualizados.", "ok")
-
-        elif action == "senha":
-            current = request.form.get("current", "")
-            new = request.form.get("new", "")
-            confirm = request.form.get("confirm", "")
-            if not check_password_hash(member["password_hash"], current):
-                flash("Senha atual incorreta.", "error")
-            elif len(new) < 6:
-                flash("A nova senha deve ter pelo menos 6 caracteres.", "error")
-            elif new != confirm:
-                flash("As senhas não conferem.", "error")
-            else:
-                execute("UPDATE members SET password_hash = %s WHERE id = %s", (generate_password_hash(new), member["id"]))
-                flash("Senha alterada.", "ok")
 
         elif action == "notificacoes":
             notify = request.form.get("notify_due") == "1"

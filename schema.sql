@@ -71,11 +71,14 @@ CREATE TABLE IF NOT EXISTS members (
   id            SERIAL PRIMARY KEY,
   name          TEXT NOT NULL,
   email         TEXT NOT NULL UNIQUE,
-  password_hash TEXT NOT NULL,
+  password_hash TEXT,
   status        TEXT NOT NULL DEFAULT 'pendente' CHECK (status IN ('ativo', 'pendente', 'suspenso')),
   notify_due    BOOLEAN NOT NULL DEFAULT TRUE,
   created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+
+-- A área do leitor não usa senha (só e-mail)
+ALTER TABLE members ALTER COLUMN password_hash DROP NOT NULL;
 
 CREATE TABLE IF NOT EXISTS loans (
   id          SERIAL PRIMARY KEY,

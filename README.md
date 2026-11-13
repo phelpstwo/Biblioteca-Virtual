@@ -91,6 +91,10 @@ senha pode ser trocada em **Segurança**.
 status *pendente*. O administrador aprova em **Usuários**. Só depois da
 aprovação o login do leitor funciona.
 
+**A área do leitor não usa senha:** o leitor entra apenas com o e-mail
+(o cadastro também é só nome e e-mail). O administrador continua protegido
+por senha.
+
 ### Painel do administrador
 
 - **Dashboard:** livros, exemplares, disponíveis, empréstimos ativos, atrasos,
