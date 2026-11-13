@@ -74,8 +74,10 @@ Configure o arquivo `.env` (copie de `.env.example`).
 
 ## Painéis (administração e leitor)
 
-As duas áreas são **separadas**: têm login, sessão e permissões próprios.
-Quem está no painel do administrador não acessa a área do leitor (e vice-versa).
+As duas áreas são **totalmente separadas**: têm login, sessão e permissões
+próprios e **nenhum link entre si**. Quem está no painel do administrador não
+acessa a área do leitor (e vice-versa). O admin é acessado apenas por `/admin`
+e o leitor por `/conta`.
 
 | Área | URL | Quem acessa |
 |---|---|---|
@@ -115,8 +117,21 @@ por senha.
   atrasado), com **Renovar**.
 - **Reservas:** fila de espera e cancelamento.
 - **Histórico:** tudo o que já foi devolvido.
-- **Perfil:** dados pessoais, troca de senha e preferência de notificação
+- **Perfil:** dados pessoais e preferência de notificação
   (aviso 1 dia antes do vencimento).
+
+## Credenciais de demonstração
+
+No banco local atual (schema + seed + dados de teste):
+
+| Área | URL | E-mail | Senha |
+|---|---|---|---|
+| Administrador | `/admin` | `admin@aurora.com` | `biblioteca123` |
+| Leitor | `/conta` | `maria@ex.com` | (sem senha) |
+
+O leitor `joao@ex.com` fica como *pendente* para testar a aprovação no painel.
+Em uma instalação nova (só schema + seed), não há usuários: o primeiro acesso a
+`/admin` pede a senha do administrador e o leitor precisa ser aprovado.
 
 ## Funcionalidades
 
@@ -125,7 +140,8 @@ por senha.
 - Modal de detalhe do livro com deep link (`#livro/<slug>`).
 - Favoritos no navegador (localStorage), com contador no menu.
 - Carrinho de compras com quantidades e total, e checkout que grava o pedido
-  no PostgreSQL (ambiente de demonstração, sem pagamento real).
+  no PostgreSQL, com **Pix**, **cartão de crédito** ou **cartão de débito**
+  (ambiente de demonstração, sem pagamento real).
 - Painel do administrador (`/admin`) e área do leitor (`/conta`) separados,
   com login, sessão e permissões próprios.
 - Alternador de tamanho de fonte (persistente).
@@ -164,6 +180,59 @@ por senha.
 - BEM correto: elementos sempre ligados a um bloco (ex.: `catalog__title`).
 - Imagens com `alt` e `width`/`height` (sem layout shift).
 - CI valida o back-end e a API a cada push.
+
+## Hospedagem (deploy)
+
+O projeto está pronto para deploy com PostgreSQL.
+
+### Render (recomendado)
+
+O arquivo [`render.yaml`](render.yaml) define o serviço web + o banco
+PostgreSQL. No Render Dashboard, clique em **New → Blueprint**, aponte para
+este repositório e o Render cria o app e o banco automaticamente. O
+`preDeployCommand` aplica `schema.sql` + `seed.sql`.
+
+### Railway
+
+```bash
+npm i -g @railway/cli
+railway init
+railway add --database postgres
+railway up
+```
+
+### Variáveis de ambiente (produção)
+
+| Variável | Descrição |
+|---|---|
+| `DB_HOST` | Host do PostgreSQL |
+| `DB_PORT` | Porta (geralmente `5432`) |
+| `DB_USER` | Usuário do banco |
+| `DB_PASSWORD` | Senha do banco |
+| `DB_NAME` | Nome do banco (`biblioteca`) |
+| `SECRET_KEY` | Chave da sessão (gere uma longa e aleatória) |
+
+Em produção, aplique schema e seed uma vez:
+
+```bash
+psql "$DATABASE_URL" -f schema.sql -f seed.sql
+```
+
+## Testes
+
+O CI (GitHub Actions) roda a cada push e valida back-end, API, painel do
+administrador e área do leitor. Para rodar uma parte localmente:
+
+```bash
+python -m py_compile app.py
+.venv/bin/python app.py &
+curl -sf http://127.0.0.1:5000/api/health
+curl -sf http://127.0.0.1:5000/api/books | grep -q "O Jardim Secreto"
+```
+
+A verificação ponta a ponta (42 verificações — login, acervo, empréstimos,
+reservas, multas, checkout e loja) foi feita com navegador real (Chrome
+headless) e passou sem falhas.
 
 ## Licença
 
