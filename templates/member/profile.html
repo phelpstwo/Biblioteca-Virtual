@@ -1,0 +1,20 @@
+{% extends "member/base.html" %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+  <h1 class="page-title">Perfil e configurações</h1>
+
+  <form class="form panel" method="post" style="max-width: 560px">
+    <h2 class="panel__title">Dados pessoais</h2>
+    <input type="hidden" name="action" value="dados">
+    <label class="field"><span>Nome</span><input type="text" name="name" value="{{ member.name }}" required></label>
+    <label class="field"><span>E-mail</span><input type="email" name="email" value="{{ member.email }}" required></label>
+    <button class="btn btn--primary" type="submit">Salvar dados</button>
+  </form>
+
+  <form class="form panel" method="post" style="max-width: 560px">
+    <h2 class="panel__title">Notificações</h2>
+    <input type="hidden" name="action" value="notificacoes">
+    <label class="check"><input type="checkbox" name="notify_due" value="1" {% if member.notify_due %}checked{% endif %}> Avisar 1 dia antes do prazo de devolução</label>
+    <button class="btn btn--primary" type="submit">Salvar preferências</button>
+  </form>
+{% endblock %}

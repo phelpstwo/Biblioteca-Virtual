@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if setup %}Definir senha{% else %}Entrar{% endif %} · Administração</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/painel.css">
+</head>
+<body class="auth">
+  <div class="auth__card">
+    <span class="auth__brand">Aurora Livros</span>
+    <h1 class="auth__title">{% if setup %}Primeiro acesso: defina a senha{% else %}Painel do administrador{% endif %}</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <p class="flash flash--{{ category }}">{{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+    {% if setup %}
+      <form class="auth__form" method="post">
+        <label class="field">
+          <span>Nome</span>
+          <input type="text" name="name" required minlength="2" autocomplete="name">
+        </label>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label class="field">
+          <span>Senha</span>
+          <input type="password" name="password" required minlength="6" autocomplete="new-password">
+        </label>
+        <label class="field">
+          <span>Confirmar senha</span>
+          <input type="password" name="confirm" required minlength="6" autocomplete="new-password">
+        </label>
+        <button class="btn btn--primary" type="submit">Definir senha e entrar</button>
+        <p class="auth__note">Primeira vez no painel? A senha definida aqui será usada nos próximos logins.</p>
+      </form>
+    {% else %}
+      <form class="auth__form" method="post">
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label class="field">
+          <span>Senha</span>
+          <input type="password" name="password" required autocomplete="current-password">
+        </label>
+        <button class="btn btn--primary" type="submit">Entrar</button>
+      </form>
+    {% endif %}
+  </div>
+</body>
+</html>

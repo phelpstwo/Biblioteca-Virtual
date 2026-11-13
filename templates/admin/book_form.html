@@ -1,0 +1,32 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ 'Editar' if book else 'Novo' }} livro{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1 class="page-title">{{ 'Editar' if book else 'Novo' }} livro</h1>
+    <a class="btn btn--ghost" href="/admin/acervo">Voltar</a>
+  </div>
+  <form class="form panel" method="post">
+    <div class="form__grid">
+      <label class="field"><span>Título</span><input type="text" name="title" value="{{ book.title if book else '' }}" required></label>
+      <label class="field"><span>Autor</span><input type="text" name="author" value="{{ book.author if book else '' }}" required></label>
+      <label class="field"><span>Categoria</span>
+        <select name="category_id" required>
+          {% for category in categories %}
+            <option value="{{ category.id }}" {% if book and book.category_id == category.id %}selected{% endif %}>{{ category.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label class="field"><span>Preço (R$)</span><input type="number" step="0.01" min="0" name="price" value="{{ book.price if book else '0.00' }}"></label>
+      <label class="field"><span>ISBN</span><input type="text" name="isbn" value="{{ book.isbn if book else '' }}"></label>
+      <label class="field"><span>Cópias</span><input type="number" min="0" name="copies" value="{{ book.copies if book else '1' }}"></label>
+      <label class="field"><span>Localização</span><input type="text" name="location" value="{{ book.location if book else '' }}" placeholder="Corredor A · Prateleira 1"></label>
+      <label class="field"><span>Posição no ranking</span><input type="number" min="1" name="ranking_position" value="{{ book.ranking_position if book and book.ranking_position else '' }}"></label>
+    </div>
+    <label class="field"><span>Descrição</span><textarea name="description" rows="4">{{ book.description if book else '' }}</textarea></label>
+    <div class="form__checks">
+      <label class="check"><input type="checkbox" name="is_ranking" value="1" {% if book and book.is_ranking %}checked{% endif %}> Aparecer no ranking</label>
+      <label class="check"><input type="checkbox" name="is_active" value="1" {% if not book or book.is_active %}checked{% endif %}> Ativo na loja</label>
+    </div>
+    <button class="btn btn--primary" type="submit">Salvar</button>
+  </form>
+{% endblock %}

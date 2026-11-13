@@ -1,0 +1,45 @@
+{% extends "admin/base.html" %}
+{% block title %}Usuários{% endblock %}
+{% block content %}
+  <h1 class="page-title">Usuários</h1>
+  <section class="panel">
+    <h2 class="panel__title">Redefinir senha</h2>
+    <form class="form form--inline" method="post" action="/admin/usuarios/redefinir-senha">
+      <label class="field"><span>Usuário</span>
+        <select name="member_id" required>
+          <option value="">Selecione…</option>
+          {% for member in members %}
+            <option value="{{ member.id }}">{{ member.name }} ({{ member.email }})</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label class="field"><span>Nova senha</span><input type="text" name="password" required minlength="6"></label>
+      <button class="btn btn--primary" type="submit">Redefinir</button>
+    </form>
+  </section>
+  <div class="panel">
+    <table class="table">
+      <thead><tr><th>Nome</th><th>E-mail</th><th>Status</th><th>Desde</th><th></th></tr></thead>
+      <tbody>
+        {% for member in members %}
+          <tr>
+            <td>{{ member.name }}</td>
+            <td>{{ member.email }}</td>
+            <td><span class="tag tag--{{ 'ok' if member.status == 'ativo' else ('warn' if member.status == 'pendente' else 'off') }}">{{ member.status|capitalize }}</span></td>
+            <td>{{ member.created_at.strftime('%d/%m/%Y') }}</td>
+            <td class="actions">
+              {% if member.status == 'pendente' %}
+                <form method="post" action="/admin/usuarios/{{ member.id }}/status" class="inline-form"><input type="hidden" name="status" value="ativo"><button class="btn btn--primary btn--sm" type="submit">Aprovar</button></form>
+              {% endif %}
+              {% if member.status == 'ativo' %}
+                <form method="post" action="/admin/usuarios/{{ member.id }}/status" class="inline-form"><input type="hidden" name="status" value="suspenso"><button class="btn btn--danger btn--sm" type="submit">Suspender</button></form>
+              {% elif member.status == 'suspenso' %}
+                <form method="post" action="/admin/usuarios/{{ member.id }}/status" class="inline-form"><input type="hidden" name="status" value="ativo"><button class="btn btn--primary btn--sm" type="submit">Reativar</button></form>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,94 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:18
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: biblioteca
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      DB_HOST: 127.0.0.1
+      DB_PORT: "5432"
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: biblioteca
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instala dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Compila o back-end
+        run: python -m py_compile app.py
+
+      - name: Aplica schema e seed
+        env:
+          PGPASSWORD: postgres
+        run: |
+          psql -h 127.0.0.1 -U postgres -d biblioteca -f schema.sql
+          psql -h 127.0.0.1 -U postgres -d biblioteca -f seed.sql
+
+      - name: Sobe a API e testa as rotas
+        run: |
+          python app.py > /tmp/app.log 2>&1 &
+          sleep 4
+          curl -sf http://127.0.0.1:5000/api/health
+          curl -sf http://127.0.0.1:5000/api/books | grep -q "O Jardim Secreto"
+          curl -sf "http://127.0.0.1:5000/api/books?category=misterio" | grep -q "O Nome da Rosa"
+          curl -sf http://127.0.0.1:5000/covers/o-jardim-secreto.svg | grep -q "<svg"
+          curl -sf -X POST http://127.0.0.1:5000/api/orders \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Teste CI","email":"ci@example.com","payment_method":"pix","items":[{"slug":"torto-arado","quantity":1}]}' | grep -q '"ok":true'
+          curl -sf http://127.0.0.1:5000/api/orders/1 | grep -q "Teste CI"
+          curl -sf -o /dev/null -w "index: %{http_code}\n" http://127.0.0.1:5000/
+
+          # Admin: primeiro acesso define a senha e abre o painel
+          curl -sf -c /tmp/admin.jar -o /dev/null -w "admin setup: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/login \
+            --data-urlencode "name=CI Admin" --data-urlencode "email=admin@ci.com" \
+            --data-urlencode "password=biblioteca123" --data-urlencode "confirm=biblioteca123"
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "admin dashboard: %{http_code}\n" http://127.0.0.1:5000/admin/dashboard
+          curl -sf -b /tmp/admin.jar http://127.0.0.1:5000/admin/acervo | grep -q "Novo livro"
+          curl -sf -b /tmp/admin.jar http://127.0.0.1:5000/admin/emprestimos | grep -q "Registrar empréstimo"
+
+          # Leitor: cadastro, aprovação, login e catálogo
+          curl -sf -c /tmp/member.jar -o /dev/null -w "cadastro: %{http_code}\n" -X POST http://127.0.0.1:5000/conta/cadastro \
+            --data-urlencode "name=Leitor CI" --data-urlencode "email=leitor@ci.com"
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "aprovar: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/usuarios/1/status --data-urlencode "status=ativo"
+          curl -sf -c /tmp/member.jar -o /dev/null -w "login leitor: %{http_code}\n" -X POST http://127.0.0.1:5000/conta/login \
+            --data-urlencode "email=leitor@ci.com"
+          curl -sf -b /tmp/member.jar http://127.0.0.1:5000/conta/catalogo | grep -q "Catálogo da biblioteca"
+
+          # Separação de acessos: leitor não entra no admin (302) e vice-versa
+          curl -s -b /tmp/member.jar -o /dev/null -w "leitor->admin: %{http_code}\n" http://127.0.0.1:5000/admin/dashboard | grep -q 302
+          curl -s -b /tmp/admin.jar -o /dev/null -w "admin->leitor: %{http_code}\n" http://127.0.0.1:5000/conta/emprestimos | grep -q 302
+
+          # Empréstimo: registrar, ver na área do leitor e devolver
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "emprestimo: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/emprestimos/novo \
+            --data-urlencode "member_id=1" --data-urlencode "book_id=5" --data-urlencode "due_date=2099-01-01"
+          curl -sf -b /tmp/member.jar http://127.0.0.1:5000/conta/emprestimos | grep -q "Torto Arado"
+          curl -sf -b /tmp/admin.jar -o /dev/null -w "devolver: %{http_code}\n" -X POST http://127.0.0.1:5000/admin/emprestimos/1/devolver

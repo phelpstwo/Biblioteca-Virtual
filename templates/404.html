@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página não encontrada</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/painel.css">
+</head>
+<body class="auth">
+  <div class="auth__card">
+    <span class="auth__brand">Aurora Livros</span>
+    <h1 class="auth__title">Página não encontrada</h1>
+    <p class="auth__note">O endereço que você tentou acessar não existe. <a href="{% if request.path.startswith('/admin') %}/admin{% else %}/{% endif %}">Voltar</a>.</p>
+  </div>
+</body>
+</html>

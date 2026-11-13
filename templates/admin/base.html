@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Painel{% endblock %} · Aurora Livros</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/painel.css">
+</head>
+<body class="painel">
+  <header class="topbar">
+    <a class="topbar__brand" href="/admin/dashboard">Aurora Livros <span>· Administração</span></a>
+    <div class="topbar__actions">
+      <span class="topbar__user">{{ session.get("admin_name") }}</span>
+      <a class="btn btn--danger" href="/admin/logout">Sair</a>
+    </div>
+  </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="sidebar__nav">
+        <a href="/admin/dashboard" class="{% if request.path == '/admin/dashboard' %}is-active{% endif %}">Dashboard</a>
+        <a href="/admin/acervo" class="{% if request.path.startswith('/admin/acervo') or request.path.startswith('/admin/livros') %}is-active{% endif %}">Acervo</a>
+        <a href="/admin/emprestimos" class="{% if request.path.startswith('/admin/emprestimos') %}is-active{% endif %}">Empréstimos</a>
+        <a href="/admin/usuarios" class="{% if request.path.startswith('/admin/usuarios') %}is-active{% endif %}">Usuários</a>
+        <a href="/admin/atrasos" class="{% if request.path.startswith('/admin/atrasos') %}is-active{% endif %}">Atrasos e multas</a>
+        <a href="/admin/seguranca" class="{% if request.path.startswith('/admin/seguranca') %}is-active{% endif %}">Segurança</a>
+      </nav>
+    </aside>
+    <main class="content">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <p class="flash flash--{{ category }}">{{ message }}</p>
+        {% endfor %}
+      {% endwith %}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+</body>
+</html>

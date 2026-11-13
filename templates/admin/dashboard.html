@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h1 class="page-title">Dashboard</h1>
+  <div class="stats-grid">
+    <div class="stat"><span class="stat__number">{{ stats.total_books }}</span><span class="stat__label">Livros ativos</span></div>
+    <div class="stat"><span class="stat__number">{{ stats.total_copies }}</span><span class="stat__label">Exemplares</span></div>
+    <div class="stat"><span class="stat__number">{{ stats.available_copies }}</span><span class="stat__label">Disponíveis</span></div>
+    <div class="stat"><span class="stat__number">{{ stats.active_loans }}</span><span class="stat__label">Empréstimos ativos</span></div>
+    <div class="stat stat--alert"><span class="stat__number">{{ stats.overdue_loans }}</span><span class="stat__label">Atrasados</span></div>
+    <div class="stat"><span class="stat__number">{{ stats.members }}</span><span class="stat__label">Leitores</span></div>
+    <div class="stat stat--warn"><span class="stat__number">{{ stats.pending_members }}</span><span class="stat__label">Cadastros pendentes</span></div>
+    <div class="stat"><span class="stat__number">{{ stats.fila_reservations }}</span><span class="stat__label">Reservas na fila</span></div>
+  </div>
+  <section class="panel">
+    <h2 class="panel__title">Mais emprestados</h2>
+    {% if most_borrowed %}
+      <ol class="rank">
+        {% for book in most_borrowed %}
+          <li><span class="rank__title">{{ book.title }}</span><span class="rank__count">{{ book.total }} empréstimo{{ 's' if book.total != 1 else '' }}</span></li>
+        {% endfor %}
+      </ol>
+    {% else %}
+      <p class="empty">Nenhum empréstimo registrado ainda.</p>
+    {% endif %}
+  </section>
+{% endblock %}

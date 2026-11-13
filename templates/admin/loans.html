@@ -1,0 +1,59 @@
+{% extends "admin/base.html" %}
+{% block title %}Empréstimos{% endblock %}
+{% block content %}
+  <h1 class="page-title">Empréstimos</h1>
+  <section class="panel">
+    <h2 class="panel__title">Registrar empréstimo</h2>
+    <form class="form form--inline" method="post" action="/admin/emprestimos/novo">
+      <label class="field"><span>Usuário</span>
+        <select name="member_id" required>
+          <option value="">Selecione…</option>
+          {% for member in members %}
+            <option value="{{ member.id }}">{{ member.name }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label class="field"><span>Livro</span>
+        <select name="book_id" required>
+          <option value="">Selecione…</option>
+          {% for book in books %}
+            <option value="{{ book.id }}" {% if book.available <= 0 %}disabled{% endif %}>{{ book.title }} ({{ book.available }} disponível)</option>
+          {% endfor %}
+        </select>
+      </label>
+      <label class="field"><span>Devolução</span><input type="date" name="due_date" value="{{ default_due.isoformat() }}"></label>
+      <button class="btn btn--primary" type="submit">Registrar</button>
+    </form>
+  </section>
+  <div class="panel">
+    <h2 class="panel__title">Empréstimos</h2>
+    {% if loans %}
+      <table class="table">
+        <thead><tr><th>Usuário</th><th>Livro</th><th>Empréstimo</th><th>Devolução</th><th>Situação</th><th>Renov.</th><th>Multa</th><th></th></tr></thead>
+        <tbody>
+          {% for loan in loans %}
+            <tr class="{% if loan.state == 'atrasado' %}is-late{% endif %}">
+              <td>{{ loan.member_name }}</td>
+              <td>{{ loan.book_title }}</td>
+              <td>{{ loan.loan_date.strftime('%d/%m/%Y') }}</td>
+              <td>{{ loan.due_date.strftime('%d/%m/%Y') }}</td>
+              <td><span class="tag tag--{{ 'ok' if loan.state == 'ativo' else ('off' if loan.state == 'devolvido' else 'warn') }}">{{ loan.state|capitalize }}</span></td>
+              <td>{{ loan.renewals }}/{{ max_renewals }}</td>
+              <td>R$ {{ '%.2f'|format(loan.fine) }}</td>
+              <td class="actions">
+                {% if not loan.return_date %}
+                  <form method="post" action="/admin/emprestimos/{{ loan.id }}/devolver" class="inline-form"><button class="btn btn--primary btn--sm" type="submit">Devolver</button></form>
+                  <form method="post" action="/admin/emprestimos/{{ loan.id }}/renovar" class="inline-form"><button class="btn btn--ghost btn--sm" type="submit">Renovar</button></form>
+                {% else %}
+                  <span class="muted">devolvido em {{ loan.return_date.strftime('%d/%m/%Y') }}</span>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">Nenhum empréstimo registrado.</p>
+    {% endif %}
+  </div>
+{% endblock %}

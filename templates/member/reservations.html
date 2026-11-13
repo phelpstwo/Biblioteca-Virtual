@@ -1,0 +1,28 @@
+{% extends "member/base.html" %}
+{% block title %}Reservas{% endblock %}
+{% block content %}
+  <h1 class="page-title">Reservas</h1>
+  <div class="panel">
+    {% if reservations %}
+      <table class="table">
+        <thead><tr><th>Livro</th><th>Data</th><th>Situação</th><th></th></tr></thead>
+        <tbody>
+          {% for reservation in reservations %}
+            <tr>
+              <td>{{ reservation.title }}</td>
+              <td>{{ reservation.created_at.strftime('%d/%m/%Y') }}</td>
+              <td><span class="tag tag--{{ 'warn' if reservation.status == 'fila' else ('ok' if reservation.status == 'disponivel' else 'off') }}">{{ reservation.status|capitalize }}</span></td>
+              <td>
+                {% if reservation.status != 'cancelada' %}
+                  <form method="post" action="/conta/reservas/{{ reservation.id }}/cancelar" class="inline-form"><button class="btn btn--danger btn--sm" type="submit">Cancelar</button></form>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">Você não tem reservas.</p>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "member/base.html" %}
+{% block title %}Meus empréstimos{% endblock %}
+{% block content %}
+  <h1 class="page-title">Meus empréstimos</h1>
+  <div class="panel">
+    {% if loans %}
+      <table class="table">
+        <thead><tr><th>Livro</th><th>Empréstimo</th><th>Devolução</th><th>Situação</th><th>Renov.</th><th></th></tr></thead>
+        <tbody>
+          {% for loan in loans %}
+            <tr class="{% if loan.state == 'atrasado' %}is-late{% endif %}">
+              <td>{{ loan.title }}</td>
+              <td>{{ loan.loan_date.strftime('%d/%m/%Y') }}</td>
+              <td>{{ loan.due_date.strftime('%d/%m/%Y') }}</td>
+              <td><span class="tag tag--{{ 'ok' if loan.state == 'ativo' else 'warn' }}">{{ loan.state|capitalize }}</span></td>
+              <td>{{ loan.renewals }}/{{ max_renewals }}</td>
+              <td>
+                {% if loan.state == 'ativo' and loan.renewals < max_renewals %}
+                  <form method="post" action="/conta/emprestimos/{{ loan.id }}/renovar" class="inline-form"><button class="btn btn--ghost btn--sm" type="submit">Renovar</button></form>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">Você não tem empréstimos ativos.</p>
+    {% endif %}
+  </div>
+{% endblock %}

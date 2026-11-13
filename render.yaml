@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: aurora-livros
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    preDeployCommand: python scripts/init_remote_db.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DB_HOST
+        fromDatabase:
+          name: aurora-livros-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: aurora-livros-db
+          property: port
+      - key: DB_USER
+        fromDatabase:
+          name: aurora-livros-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: aurora-livros-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: aurora-livros-db
+          property: database
+
+databases:
+  - name: aurora-livros-db
+    plan: free
+    databaseName: biblioteca
+    user: aurora

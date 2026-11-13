@@ -1,297 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Livros — Biblioteca Virtual</title>
+  <meta name="description" content="Aurora Livros — uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.">
+  <meta name="theme-color" content="#16382a">
 
-    <!-- Título que irá aparecer na aba do navegador -->
-    <title>Aurora Livros</title>
-    <!-- Ícone que irá aparecer junto ao título -->
-    <link rel="icon" type="image/png" href="">
-    <link rel="stylesheet" href="style/style.css">
+  <!-- Compartilhamento -->
+  <meta property="og:title" content="Aurora Livros">
+  <meta property="og:description" content="Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/covers/o-jardim-secreto.svg">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/style.css">
 </head>
-
 <body>
-    <nav>
-        <!-- A parte da logo deve ficar no lado esquerdo -->
-        <div>
-            <!-- Adicionar imagem que irá servir de logo do site -->
-            <img src="" alt="">
-            <a href="">
-                <!-- Adicionar uma imagem ou texto com tipografia com o nome da loja -->
-                <p>Aurora Livros</p>
-            </a>
-        </div>
-        <!-- Os botões de acesso as páginas devem ficar centralizados -->
-        <div>
-            <button>Início</button>
-            <button>Catálogo</button>
-            <button>Autores</button>
-            <button>Contato</button>
-        </div>
-        <!-- Os botões de ação devem ficar do lado direito -->
-        <div>
-            <button>
-                <img src="" alt="">
-            </button>
-            <button>
-                <img src="" alt="">
-            </button>
-            <button>Aa</button>
-        </div>
-    </nav>
-    <hr>
-    <main>
-        <section>
-            <article>
-                <h2>LIVROS PARA GUARDAR POR PERTO</h2>
-                <p>Hisorias que ficam depois da última página.</p>
-                <p>Uma curadoria de clássicos e descobertas contemprâneas para transformar o seu tempo</p>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <div>
-                        <p>Explorar livros</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-            </article>
-            <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
-            <article>
-                <p>“Um leitor vivel mil vidas antes de morrer.”</p>
-                <p>George R. R. Martin</p>
-            </article>
-        </section>
-        <section>
-            <h2>NOSSA SELEÇÃO</h2>
-            <div>
-                <!-- Alinha horizontalmente o texto abaixo com o botão, cada um deve ficar nos extremos -->
-                <p>Escolhidos para você</p>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <div>
-                        <p>Ver catálogo completo</p>
-                    </div>
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                </button>
-            </div>
-            <article>
-                <div>
-                    <!-- Card do livro A -->
-                    <a href="#livroA">
-                        <!-- Imagem do livro A que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Clássicos</p>
-                    <!-- Título -->
-                    <p>O Jardim Secreto</p>
-                    <!-- Autor -->
-                    <p>por Frances Hodgson Burnett</p>
-                </div>
-                <div>
-                    <!-- Card do livro B -->
-                    <a href="#livroB">
-                        <!-- Imagem do livro B que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Fantasia</p>
-                    <!-- Título -->
-                    <p>A Biblioteca da Meia-Noite</p>
-                    <!-- Autor -->
-                    <p>por Matt Halg</p>
-                </div>
-                <div>
-                    <!-- Card do livro C -->
-                    <a href="#livroC">
-                        <!-- Imagem do livro C que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Romance</p>
-                    <!-- Título -->
-                    <p>Orgulho e Preconceito</p>
-                    <!-- Autor -->
-                    <p>por jane Austen</p>
-                </div>
-                <div>
-                    <!-- Card do livro D -->
-                    <a href="#livroD">
-                        <!-- Imagem do livro D que irá ficar dentro do card -->
-                        <img src="" alt="">
-                    </a>
-                    <!-- Categoria -->
-                    <p>Mistério</p>
-                    <!-- Título -->
-                    <p>O Nome da Rosa</p>
-                    <!-- Autor -->
-                    <p>por Umberto Eco</p>
-                </div>
-            </article>
-        </section>
-        <hr>
-        <section>
-            <h2>ENCONTRE SUA PRÓXIMA LEITURA</h2>
-            <p>Qual história chama por você?</p>
-            <div>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Romance</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Fantasia</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Mistério</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <!-- A imagem da numeração deve ficar na esquerda juntamente com o nome do tipo de categoria de livro
-                      Já o ícone "→" deve ficar na direita (usar align-items) -->
-                    <div>
-                        <img src="" alt="">
-                        <p>Clássicos</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
-            </div>
-        </section>
-        <hr>
-        <section>
-            <h2>MAIS AMADOS</h2>
-            <p>Os livros que todos comentam</p>
-            <article>
-                <div>
-                    <a href="#livroE">
-                        <hr>
-                        <div>
-                            <p>01</p>
-                            <img src="" alt="">
-                            <p>Torto Arado</p>
-                            <p>Itamar Vieira Junior</p>
-                        </div>
-                        <div>
-                            <p>R$ 52,90 →</p>
-                        </div>
-                    </a>
-                </div>
-                <!-- Alinhar esses itens horizontalmente -->
-                <div>
-                    <a href="#livroF">
-                        <hr>
-                        <div>
-                            <p>02</p>
-                            <img src="" alt="">
-                            <p>A Vida Invisível de Addie LaRue</p>
-                            <p>V. E. Schwab</p>
-                        </div>
-                        <div>
-                            <p>R$ 59,90 →</p>
-                        </div>
-                    </a>
-                </div>
-                <article>
-                    <!-- Alinhar esses itens verticalmente -->
-                    <article>
-                        <div>
-                            <a href="#livroG">
-                                <hr>
-                                <div>
-                                    <p>03</p>
-                                    <img src="" alt="">
-                                    <p>Assasinato no Expresso do Oriente</p>
-                                    <p>Agatha Christie</p>
-                                </div>
-                                <div>
-                                    <p>R$ 39,90 →</p>
-                                </div>
-                            </a>
-                        </div>
-                        <!-- Alinhar esses itens horizontalmente -->
-                        <div>
-                            <a href="#livroH">
-                                <hr>
-                                <div>
-                                    <p>04</p>
-                                    <img src="" alt="">
-                                    <p>Cem Anos de Solidão</p>
-                                    <p>Gabriel Garcia Marques</p>
-                                </div>
-                                <div>
-                                    <p>R$ 58,50 →</p>
-                                </div>
-                            </a>
-                        </div>
-                    </article>
-        </section>
-        <hr>
-    </main>
-    <footer>
-        <article>
-            <div>
-                <!-- Logo do site -->
-                <img src="" alt="">
-                <p>Aurora Livros</p>
-            </div>
-            <div>
-                <p>Histórias escolhidas com cuidado, para leer sem pressa.</p>
-            </div>
-        </article>
-        <article>
-            <div>
-                <p>Decrubra</p>
-                <div>
-                    <a href="#catalogo">Catalogo</a>
-                    <a href="#autores">Autores</a>
-                    <a href="#vale-presente">Vale-presente</a>
-                </div>
-            </div>
-            <div>
-                <p>Ajuda</p>
-                <div>
-                    <a href="#fale-conosco">Fale conosco</a>
-                    <a href="#envios-devolucoes">Envios e Devoluções</a>
-                    <a href="#privacidade">Privacidade</a>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Cartas da Aurora</p>
-                    <p>Novidades e boas leituras, uma vez por mês.</p>
-                </div>
-                <form action="">
-                    <p>Cartas da Aurora</p>
-                    <p>Novidade e boas leituras, uma vez por mês.</p>
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" placeholder="seu@email.com">
-                </form>
-            </div>
-        </article>
-        <hr>
-    </footer>
-</body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
+  <!-- ===================== Cabeçalho ===================== -->
+  <header class="header">
+    <nav class="nav" aria-label="Navegação principal">
+      <a class="nav__brand" href="#topo">
+        <img class="nav__logo-img" src="/static/favicon.svg" alt="Logo da Aurora Livros" width="42" height="42">
+        <span class="nav__brand-name">Aurora Livros</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
+      <div class="nav__menu" id="menu-principal">
+        <a class="nav__link" href="#topo">Início</a>
+        <a class="nav__link" href="#catalogo">Catálogo</a>
+        <a class="nav__link" href="#autores">Autores</a>
+        <a class="nav__link" href="#contato">Contato</a>
+        <a class="nav__link" href="/conta/login">Entrar</a>
+      </div>
+
+      <div class="nav__actions">
+        <button class="nav__action" type="button" aria-label="Buscar livros" data-open-search>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <button class="nav__action" type="button" aria-label="Favoritos" data-open-favorites>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path d="M12 20s-7-4.4-9.2-8.6C1.2 8.2 3 5 6.2 5c2 0 3.4 1.1 4.1 2.3h3.4C14.4 6.1 15.8 5 17.8 5c3.2 0 5 3.2 3.4 6.4C19 15.6 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" transform="scale(0.9) translate(1.3,1.3)"/>
+          </svg>
+          <span class="nav__badge" data-favorites-count hidden>0</span>
+        </button>
+        <button class="nav__action" type="button" aria-label="Carrinho de compras" data-open-cart>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path d="M6 8h12l-1 12H7L6 8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="nav__badge" data-cart-count hidden>0</span>
+        </button>
+        <button class="nav__action nav__action--font" type="button" aria-label="Alterar tamanho da fonte" aria-pressed="false" data-toggle-font>Aa</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- ===================== Destaque ===================== -->
+    <section class="hero" id="topo" aria-labelledby="hero-titulo">
+      <article class="hero__content">
+        <h1 class="hero__title" id="hero-titulo">Livros para guardar por perto</h1>
+        <p class="hero__text">Histórias que ficam depois da última página.</p>
+        <p class="hero__text">Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.</p>
+        <a class="hero__cta" href="#catalogo">
+          <span>Explorar livros</span>
+          <svg class="hero__cta-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+            <path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+      <article class="hero__quote">
+        <blockquote class="hero__blockquote">
+          <p>“Um leitor vive mil vidas antes de morrer.”</p>
+          <cite class="hero__cite">George R. R. Martin</cite>
+        </blockquote>
+      </article>
+    </section>
+
+    <!-- ===================== Catálogo ===================== -->
+    <section class="catalog" id="catalogo" aria-labelledby="catalogo-titulo">
+      <header class="catalog__header">
+        <h2 class="catalog__title" id="catalogo-titulo">Nossa seleção</h2>
+        <div class="catalog__row">
+          <p class="catalog__subtitle">Escolhidos para você</p>
+          <button class="catalog__link" type="button" data-open-search>
+            <span>Ver catálogo completo</span>
+            <svg class="catalog__link-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </header>
+      <div class="catalog__grid" data-catalog-grid>
+        <p class="placeholder-text">Carregando livros…</p>
+      </div>
+    </section>
+
+    <!-- ===================== Categorias ===================== -->
+    <section class="categories" id="categorias" aria-labelledby="categorias-titulo">
+      <h2 class="categories__title" id="categorias-titulo">Encontre sua próxima leitura</h2>
+      <p class="categories__subtitle">Qual história chama por você?</p>
+      <div class="categories__list" data-categories-list>
+        <p class="placeholder-text">Carregando categorias…</p>
+      </div>
+    </section>
+
+    <!-- ===================== Mais amados ===================== -->
+    <section class="ranking" id="ranking" aria-labelledby="ranking-titulo">
+      <h2 class="ranking__title" id="ranking-titulo">Mais amados</h2>
+      <p class="ranking__subtitle">Os livros que todos comentam</p>
+      <div class="ranking__list" data-ranking-list>
+        <p class="placeholder-text">Carregando ranking…</p>
+      </div>
+    </section>
+
+    <!-- ===================== Autores ===================== -->
+    <section class="authors" id="autores" aria-labelledby="autores-titulo">
+      <h2 class="authors__title" id="autores-titulo">Autores</h2>
+      <p class="authors__subtitle">Quem escreve as histórias que você ama</p>
+      <div class="authors__list" data-authors-list>
+        <p class="placeholder-text">Carregando autores…</p>
+      </div>
+    </section>
+
+    <!-- ===================== Vale-presente ===================== -->
+    <section class="gift" id="vale-presente" aria-labelledby="vale-presente-titulo">
+      <div class="gift__card">
+        <h2 class="gift__title" id="vale-presente-titulo">Vale-presente</h2>
+        <p class="gift__text">
+          Não sabe qual livro escolher? Presenteie com um vale-presente da Aurora Livros.
+          Escolhemos uma edição especial e enviamos com uma dedicatória escrita à mão.
+        </p>
+        <a class="gift__cta" href="#contato">Fale conosco</a>
+      </div>
+    </section>
+
+    <!-- ===================== Ajuda ===================== -->
+    <section class="help" id="ajuda" aria-labelledby="ajuda-titulo">
+      <h2 class="help__title" id="ajuda-titulo">Ajuda</h2>
+      <p class="help__subtitle">Envios, devoluções e dúvidas frequentes</p>
+      <div class="help__list">
+        <details class="help__item">
+          <summary class="help__question">Como funciona o envio?</summary>
+          <p class="help__answer">Enviamos para todo o Brasil com prazo de 3 a 10 dias úteis, dependendo da região. O frete é calculado no fechamento do pedido.</p>
+        </details>
+        <details class="help__item">
+          <summary class="help__question">Posso devolver ou trocar um livro?</summary>
+          <p class="help__answer">Sim. Você tem até 7 dias corridos após o recebimento para pedir a devolução, conforme o Código de Defesa do Consumidor.</p>
+        </details>
+        <details class="help__item">
+          <summary class="help__question">Como funciona o vale-presente?</summary>
+          <p class="help__answer">O vale-presente é emitido em PDF no valor escolhido e vale por 12 meses. Basta indicar o e-mail de quem vai receber.</p>
+        </details>
+        <details class="help__item">
+          <summary class="help__question">Meus dados estão seguros?</summary>
+          <p class="help__answer">Sim. Usamos apenas o seu e-mail para a newsletter e nunca compartilhamos dados com terceiros. Veja a seção de Privacidade.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===================== Privacidade ===================== -->
+    <section class="privacy" id="privacidade" aria-labelledby="privacidade-titulo">
+      <h2 class="privacy__title" id="privacidade-titulo">Privacidade</h2>
+      <p class="privacy__text">
+        Este projeto coleta apenas o e-mail informado na newsletter, usado exclusivamente para o envio das
+        Cartas da Aurora. Nenhum dado é vendido ou compartilhado com terceiros. Você pode pedir a remoção
+        do seu e-mail a qualquer momento pelo canal de contato. Projeto acadêmico da disciplina de Programação Web.
+      </p>
+    </section>
+  </main>
+
+  <!-- ===================== Rodapé ===================== -->
+  <footer class="footer" id="contato">
+    <div class="footer__brand">
+      <img class="footer__logo" src="/static/favicon.svg" alt="Logo da Aurora Livros" width="42" height="42">
+      <span class="footer__name">Aurora Livros</span>
+      <p class="footer__tagline">Histórias escolhidas com cuidado, para ler sem pressa.</p>
+    </div>
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h2 class="footer__title">Descubra</h2>
+        <ul class="footer__links">
+          <li><a href="#catalogo">Catálogo</a></li>
+          <li><a href="#autores">Autores</a></li>
+          <li><a href="#vale-presente">Vale-presente</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Ajuda</h2>
+        <ul class="footer__links">
+          <li><a href="#contato">Fale conosco</a></li>
+          <li><a href="#ajuda">Envios e devoluções</a></li>
+          <li><a href="#privacidade">Privacidade</a></li>
+          <li><a href="/conta/login">Área do leitor</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__title">Cartas da Aurora</h2>
+        <p class="footer__text">Novidades e boas leituras, uma vez por mês.</p>
+        <form class="newsletter" data-newsletter-form novalidate>
+          <label class="newsletter__label" for="email">E-mail</label>
+          <input class="newsletter__input" type="email" id="email" name="email" placeholder="seu@email.com" required>
+          <button class="newsletter__btn" type="submit">Assinar</button>
+          <p class="newsletter__feedback" data-newsletter-feedback role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 Aurora Livros — projeto da disciplina de Programação Web.</p>
+  </footer>
+
+  <!-- ===================== Modal do livro ===================== -->
+  <div class="modal" data-modal hidden>
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button class="modal__close" type="button" aria-label="Fechar" data-modal-close>×</button>
+      <img class="modal__cover" data-modal-cover src="" alt="" width="180" height="270">
+      <div class="modal__body">
+        <p class="modal__category" data-modal-category></p>
+        <h2 class="modal__title" id="modal-titulo" data-modal-title></h2>
+        <p class="modal__author" data-modal-author></p>
+        <p class="modal__price" data-modal-price></p>
+        <p class="modal__description" data-modal-description></p>
+        <div class="modal__actions">
+          <button class="modal__fav" type="button" data-modal-fav aria-pressed="false">Favoritar</button>
+          <button class="modal__buy" type="button" data-modal-buy>Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== Busca / catálogo completo ===================== -->
+  <div class="search" data-search hidden>
+    <div class="search__backdrop" data-search-close></div>
+    <div class="search__dialog" role="dialog" aria-modal="true" aria-labelledby="busca-titulo">
+      <button class="search__close" type="button" aria-label="Fechar busca" data-search-close>×</button>
+      <h2 class="search__title" id="busca-titulo">Buscar livros</h2>
+      <input class="search__input" type="search" placeholder="Buscar por título ou autor" aria-label="Buscar por título ou autor" data-search-input>
+      <div class="search__filters" data-search-filters></div>
+      <div class="search__results" data-search-results></div>
+    </div>
+  </div>
+
+  <!-- ===================== Favoritos ===================== -->
+  <div class="favorites" data-favorites hidden>
+    <div class="favorites__backdrop" data-favorites-close></div>
+    <div class="favorites__dialog" role="dialog" aria-modal="true" aria-labelledby="favoritos-titulo">
+      <button class="favorites__close" type="button" aria-label="Fechar favoritos" data-favorites-close>×</button>
+      <h2 class="favorites__title" id="favoritos-titulo">Meus favoritos</h2>
+      <div class="favorites__results" data-favorites-results></div>
+    </div>
+  </div>
+
+  <!-- ===================== Carrinho de compras ===================== -->
+  <div class="cart" data-cart hidden>
+    <div class="cart__backdrop" data-cart-close></div>
+    <div class="cart__dialog" role="dialog" aria-modal="true" aria-labelledby="carrinho-titulo">
+      <button class="cart__close" type="button" aria-label="Fechar carrinho" data-cart-close>×</button>
+      <h2 class="cart__title" id="carrinho-titulo">Carrinho de compras</h2>
+
+      <div class="cart__body" data-cart-body>
+        <div class="cart__items" data-cart-items></div>
+        <div class="cart__summary" data-cart-summary></div>
+
+        <form class="checkout" data-checkout-form novalidate>
+          <h3 class="checkout__title">Finalizar compra</h3>
+          <label class="checkout__label" for="checkout-nome">Nome completo</label>
+          <input class="checkout__input" type="text" id="checkout-nome" name="name" autocomplete="name" required>
+          <label class="checkout__label" for="checkout-email">E-mail</label>
+          <input class="checkout__input" type="email" id="checkout-email" name="email" autocomplete="email" required>
+          <label class="checkout__label" for="checkout-pagamento">Forma de pagamento</label>
+          <select class="checkout__input" id="checkout-pagamento" name="payment_method" required>
+            <option value="pix">Pix</option>
+            <option value="cartao">Cartão de crédito</option>
+            <option value="debito">Cartão de débito</option>
+          </select>
+          <button class="checkout__btn" type="submit" data-checkout-submit>Confirmar pedido</button>
+          <p class="checkout__feedback" data-checkout-feedback role="status" aria-live="polite"></p>
+          <p class="checkout__note">Ambiente de demonstração — nenhum pagamento real é processado.</p>
+        </form>
+      </div>
+
+      <div class="cart__success" data-cart-success hidden>
+        <p class="cart__success-title">Pedido confirmado!</p>
+        <p class="cart__success-text" data-cart-success-text></p>
+        <button class="checkout__btn" type="button" data-cart-close>Continuar navegando</button>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <p style="padding: 1rem; text-align: center;">
+      Esta página precisa de JavaScript para carregar os livros do banco de dados.
+    </p>
+  </noscript>
+
+  <script src="/static/js/app.js"></script>
+</body>
 </html>

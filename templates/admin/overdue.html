@@ -1,0 +1,31 @@
+{% extends "admin/base.html" %}
+{% block title %}Atrasos e multas{% endblock %}
+{% block content %}
+  <h1 class="page-title">Atrasos e multas</h1>
+  <div class="panel">
+    {% if loans %}
+      <table class="table">
+        <thead><tr><th>Usuário</th><th>Livro</th><th>Devolução</th><th>Dias de atraso</th><th>Multa</th><th></th></tr></thead>
+        <tbody>
+          {% for loan in loans %}
+            <tr>
+              <td>{{ loan.member_name }}<br><small>{{ loan.member_email }}</small></td>
+              <td>{{ loan.book_title }}</td>
+              <td>{{ loan.due_date.strftime('%d/%m/%Y') }}</td>
+              <td>{{ loan.days_late }}</td>
+              <td>R$ {{ '%.2f'|format(loan.fine) }}</td>
+              <td class="actions">
+                <form method="post" action="/admin/atrasos/{{ loan.id }}/multa" class="inline-form"><button class="btn btn--ghost btn--sm" type="submit">Aplicar multa (R$ {{ '%.2f'|format(loan.days_late * fine_per_day) }})</button></form>
+                {% if loan.fine > 0 %}
+                  <form method="post" action="/admin/atrasos/{{ loan.id }}/quitar" class="inline-form"><button class="btn btn--primary btn--sm" type="submit">Quitar multa</button></form>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p class="empty">Nenhum empréstimo atrasado.</p>
+    {% endif %}
+  </div>
+{% endblock %}

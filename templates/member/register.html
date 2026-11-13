@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro · Área do leitor</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/css/painel.css">
+</head>
+<body class="auth">
+  <div class="auth__card">
+    <a class="auth__brand" href="/">Aurora Livros</a>
+    <h1 class="auth__title">Criar conta de leitor</h1>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <p class="flash flash--{{ category }}">{{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+    <form class="auth__form" method="post">
+      <label class="field"><span>Nome</span><input type="text" name="name" required minlength="2" autocomplete="name"></label>
+      <label class="field"><span>E-mail</span><input type="email" name="email" required autocomplete="email"></label>
+      <button class="btn btn--primary" type="submit">Enviar cadastro</button>
+    </form>
+    <p class="auth__note">O cadastro fica aguardando a aprovação da biblioteca.</p>
+    <p class="auth__note"><a href="/conta/login">Já tenho conta</a> · <a href="/">Voltar para a loja</a></p>
+  </div>
+</body>
+</html>

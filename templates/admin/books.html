@@ -1,0 +1,37 @@
+{% extends "admin/base.html" %}
+{% block title %}Acervo{% endblock %}
+{% block content %}
+  <div class="page-head">
+    <h1 class="page-title">Acervo</h1>
+    <a class="btn btn--primary" href="/admin/livros/novo">+ Novo livro</a>
+  </div>
+  <div class="panel">
+    <table class="table">
+      <thead><tr><th>Título</th><th>Autor</th><th>Categoria</th><th>ISBN</th><th>Cópias</th><th>Disponíveis</th><th>Local</th><th>Status</th><th></th></tr></thead>
+      <tbody>
+        {% for book in books %}
+          <tr class="{% if not book.is_active %}is-inactive{% endif %}">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.category }}</td>
+            <td>{{ book.isbn or '—' }}</td>
+            <td>{{ book.copies }}</td>
+            <td>{{ book.available }}</td>
+            <td>{{ book.location or '—' }}</td>
+            <td><span class="tag tag--{{ 'ok' if book.is_active else 'off' }}">{{ 'Ativo' if book.is_active else 'Inativo' }}</span></td>
+            <td class="actions">
+              <a class="btn btn--ghost btn--sm" href="/admin/livros/{{ book.id }}/editar">Editar</a>
+              <form method="post" action="/admin/livros/{{ book.id }}/status" class="inline-form">
+                <input type="hidden" name="is_active" value="{{ '0' if book.is_active else '1' }}">
+                <button class="btn btn--ghost btn--sm" type="submit">{{ 'Inativar' if book.is_active else 'Reativar' }}</button>
+              </form>
+              <form method="post" action="/admin/livros/{{ book.id }}/excluir" class="inline-form" onsubmit="return confirm('Excluir este livro?');">
+                <button class="btn btn--danger btn--sm" type="submit">Excluir</button>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
