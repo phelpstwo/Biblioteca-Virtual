@@ -17,6 +17,11 @@
     font-size: 12px;
 }
 
+button {
+    border: none;
+    cursor: pointer;
+}
+
 body {
     background-color: #ebe1cf;
 }
@@ -143,4 +148,15 @@ hr {
 #home-quote-container {
     width: 35svw;
     margin-right: 3svw;
+}
+#home-quote {
+    font-family: 'Libre Caslon';
+    font-size: 2.2rem;
+    font-style: italic;
+    margin-bottom: 2svh;
+}
+
+#home-quote-autor {
+    font-family: sans-serif;
+    font-size: 1.1rem;
 }
