@@ -14,6 +14,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 12px;
 }
 
 body {
@@ -26,8 +27,9 @@ hr {
     background-color: #d9cca2;
 }
 
+
 #navbar {
-    height: 60px;
+    height: 12svh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,6 +39,7 @@ hr {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    margin-left: 3svw;
 }
 
 #logo {
@@ -44,15 +47,20 @@ hr {
     width: 40px;
 }
 
-#logo-tipografia {
+#logo-container {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: black;
     font-size: 24px;
     font-weight: 600;
+    gap: 1svw;
 }
 
-#logo-tipografia p {
+#logo-container p {
     font-family: 'Libre Caslon' !important;
+    font-size: 1.7rem;
 }
 
 #nav-pages {
@@ -74,6 +82,7 @@ hr {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-right: 3svw;
 }
 
 .nav-actions-buttons {
@@ -92,4 +101,46 @@ hr {
 
 .nav-actions-buttons:hover {
     background-color: #dfd3bf;
+}
+
+#home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 88svh;
+}
+
+#home-slogan-container {
+    width: 42svw;
+    margin-left: 3svw;
+}
+
+#home-slogan-container #phrase1 {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    margin: 1svh 0;
+}
+
+#home-slogan-container #phrase2 {
+    font-size: 4.5rem;
+    font-style: italic;
+    margin: 1svh 0;
+}
+
+#home-slogan-container #phrase3 {
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 2svh 0;
+}
+
+#home-slogan-container button {
+    color: #ebe1cf;
+    height: 7svh;
+    width: 12svw;
+    background-color: #a23705;
+}
+
+#home-quote-container {
+    width: 35svw;
+    margin-right: 3svw;
 }

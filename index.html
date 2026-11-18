@@ -18,8 +18,8 @@
         <!-- Deve ficar no lado esquerdo -->
         <div id="nav-logo">
             <!-- Adicionar imagem que irá servir de logo do site -->
-            <img id="logo" src="style/icons/logo.svg" alt="Aurora Livros">
-            <a id="logo-tipografia" href="">
+            <a id="logo-container" href="">
+                <img id="logo" src="style/icons/logo.svg" alt="Aurora Livros">
                 <!-- Adicionar uma imagem ou texto com tipografia com o nome da loja -->
                 <p>Aurora Livros</p>
             </a>
@@ -43,24 +43,24 @@
     </nav>
     <hr>
     <main>
-        <section>
-            <article>
-                <h2>LIVROS PARA GUARDAR POR PERTO</h2>
-                <p>Hisorias que ficam depois da última página.</p>
-                <p>Uma curadoria de clássicos e descobertas contemprâneas para transformar o seu tempo</p>
-                <button>
-                    <!-- Alinhar a imagem horizontalmente com o ícone "→", se possível -->
-                    <div>
-                        <p>Explorar livros</p>
-                    </div>
-                    <img src="" alt="">
-                </button>
+        <section id="home">
+            <article id="home-slogan-container">
+                <p id="phrase1">LIVROS PARA GUARDAR POR PERTO</p>
+                <p id="phrase2">Histórias que ficam depois da última página.</p>
+                <p id="phrase3">Uma curadoria de clássicos e descobertas contemprâneas para transformar o seu tempo.</p>
+                <button>Explorar livros →</button>
             </article>
             <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
-            <article>
-                <p>“Um leitor vivel mil vidas antes de morrer.”</p>
-                <p>George R. R. Martin</p>
+            <article id="home-phrase-container">
+                <p id="home-quote">“Um leitor vivel mil vidas antes de morrer.”</p>
+                <p id="home-quote-autor">George R. R. Martin</p>
             </article>
+        </section>
+        <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
+        <article>
+            <p>“Um leitor vivel mil vidas antes de morrer.”</p>
+            <p>George R. R. Martin</p>
+        </article>
         </section>
         <section>
             <h2>NOSSA SELEÇÃO</h2>
