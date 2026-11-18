@@ -1,0 +1,21 @@
+<svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @font-face {
+                font-family: 'Libre Caslon';
+                src: url('data:font/woff2.charset=utf-8;base64,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') format('woff2')
+            }
+            .logo-simbolo {
+                font-family: 'Libre Caslon';
+                font-size: 60px;
+                font-style: italic;
+                font-weight: 600;
+            }
+        </style>
+    </defs>
+    <circle cx="50" cy="50" r="48" stroke="black" stroke-width="2.4" fill="none"/>
+    <text class="logo-simbolo" x="48" y="70" text-anchor="middle">
+        A
+    </text>
+
+</svg>

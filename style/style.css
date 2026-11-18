@@ -1,0 +1,95 @@
+@import url('https://googleapis.com');
+
+@font-face {
+    font-family: 'Libre Caslon';
+    src: url('../style/fonts/LibreCaslonText/LibreCaslonText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Encode Sans';
+    src: url('../style/fonts/EncodeSans/EncodeSans-VariableFont_wdth\,wght.ttf') format('truetype');
+    font-weight: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ebe1cf;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #d9cca2;
+}
+
+#navbar {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+}
+
+#logo-tipografia {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#logo-tipografia p {
+    font-family: 'Libre Caslon' !important;
+}
+
+#nav-pages {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 12px;
+}
+
+#nav-pages button {
+    height: 60px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-actions-buttons {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background-color: transparent;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+.nav-actions-accessbility {
+    font-size: 20px;
+}
+
+.nav-actions-buttons:hover {
+    background-color: #dfd3bf;
+}

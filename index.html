@@ -8,37 +8,37 @@
     <!-- Título que irá aparecer na aba do navegador -->
     <title>Aurora Livros</title>
     <!-- Ícone que irá aparecer junto ao título -->
-    <link rel="icon" type="image/png" href="">
+    <link rel="icon" href="style/icons/logo.svg">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <nav>
-        <!-- A parte da logo deve ficar no lado esquerdo -->
-        <div>
+    <nav id="navbar">
+        <!-- Aplicar align-items nas divs -->
+        <!-- Deve ficar no lado esquerdo -->
+        <div id="nav-logo">
             <!-- Adicionar imagem que irá servir de logo do site -->
-            <img src="" alt="">
-            <a href="">
+            <img id="logo" src="style/icons/logo.svg" alt="Aurora Livros">
+            <a id="logo-tipografia" href="">
                 <!-- Adicionar uma imagem ou texto com tipografia com o nome da loja -->
                 <p>Aurora Livros</p>
             </a>
         </div>
-        <!-- Os botões de acesso as páginas devem ficar centralizados -->
-        <div>
+        <!-- Deve ficar centralizado -->
+        <div id="nav-pages">
             <button>Início</button>
             <button>Catálogo</button>
             <button>Autores</button>
             <button>Contato</button>
         </div>
-        <!-- Os botões de ação devem ficar do lado direito -->
-        <div>
-            <button>
-                <img src="" alt="">
+        <div id="nav-actions">
+            <button class="nav-actions-buttons">
+                <img id="fav-icon" src="style/icons/favorites.svg" alt="">
             </button>
-            <button>
-                <img src="" alt="">
+            <button class="nav-actions-buttons">
+                <img src="style/icons/bag.svg" alt="">
             </button>
-            <button>Aa</button>
+            <button class="nav-actions-buttons nav-actions-accessbility">Aa</button>
         </div>
     </nav>
     <hr>
