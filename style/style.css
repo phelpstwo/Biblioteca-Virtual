@@ -6,20 +6,21 @@
 }
 
 @font-face {
-    font-family: 'Encode Sans';
-    src: url('../style/fonts/EncodeSans/EncodeSans-VariableFont_wdth\,wght.ttf') format('truetype');
+    font-family: 'Special Elite';
+    src: url('../style/fonts/SpecialElite/SpecialElite-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../style/fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
     font-weight: 400;
 }
 
 * {
     margin: 0;
     padding: 0;
+    color: #1e1b12;
     font-size: 12px;
-}
-
-button {
-    border: none;
-    cursor: pointer;
 }
 
 body {
@@ -28,12 +29,12 @@ body {
 
 hr {
     border: none;
-    height: 1px;
+    height: 0.25svh;
     background-color: #d9cca2;
 }
 
 
-#navbar {
+#nav-container {
     height: 12svh;
     display: flex;
     align-items: center;
@@ -48,8 +49,8 @@ hr {
 }
 
 #logo {
-    height: 40px;
-    width: 40px;
+    height: 8svh;
+    width: 8svh;
 }
 
 #logo-container {
@@ -58,7 +59,7 @@ hr {
     align-items: center;
     text-decoration: none;
     color: black;
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 600;
     gap: 1svw;
 }
@@ -108,55 +109,96 @@ hr {
     background-color: #dfd3bf;
 }
 
-#home {
+#start-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 88svh;
+    height: 89svh;
 }
 
-#home-slogan-container {
+#start-slogan {
     width: 42svw;
     margin-left: 3svw;
 }
 
-#home-slogan-container #phrase1 {
-    font-family: sans-serif;
-    font-size: 1.1rem;
-    margin: 1svh 0;
-}
-
-#home-slogan-container #phrase2 {
-    font-size: 4.5rem;
-    font-style: italic;
-    margin: 1svh 0;
-}
-
-#home-slogan-container #phrase3 {
-    font-family: sans-serif;
-    font-size: 1.5rem;
-    margin: 2svh 0;
-}
-
-#home-slogan-container button {
-    color: #ebe1cf;
-    height: 7svh;
-    width: 12svw;
-    background-color: #a23705;
-}
-
-#home-quote-container {
-    width: 35svw;
-    margin-right: 3svw;
-}
-#home-quote {
-    font-family: 'Libre Caslon';
-    font-size: 2.2rem;
-    font-style: italic;
+#start-slogan #phrase1 {
+    font-family: 'Manrope';
+    font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 2svh;
 }
 
-#home-quote-autor {
-    font-family: sans-serif;
+#start-slogan #phrase2 {
+    font-family: 'Noto Serif';
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin: 1svh 0;
+}
+
+#start-slogan #phrase2 em {
+    font-family: 'Noto Serif';
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin-bottom: 2svh 0;
+}
+
+#start-slogan #phrase3 {
+    color: #54422f;
+    font-family: 'Manrope';
+    font-size: 1.5rem;
+    margin-bottom: 4svh;
+}
+
+#start-slogan button {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 7svh;
+    width: 12svw;
+    margin-left: 2svw;
+    border: none;
+    border-radius: 0.35vw;
+    background-color: #a23705;
+    cursor: pointer;
+}
+
+#start-slogan button p {
+    color: #ebe1cf;
     font-size: 1.1rem;
+}
+
+#start-slogan button img {
+    height: inherit;
+    width: 2svw;
+}
+
+#quote-container {
+    height: auto;
+    width: 35svw;
+    margin-right: 3svw;
+}
+
+#quote-text {
+    display: inline-flex;
+    font-family: 'Special Elite';
+    margin-bottom: 1.5svh;
+}
+
+#aspa1,
+#aspa2 {
+    font-size: 6rem;
+}
+
+#quote {
+    font-family: 'Special Elite';
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-bottom: 2svh 0;
+}
+
+#quote-autor {
+    margin-left: 3svw;
+    font-family: 'Manrope';
+    font-size: 1.1rem;
+    font-weight: 100;
 }

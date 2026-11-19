@@ -5,26 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título que irá aparecer na aba do navegador -->
     <title>Aurora Livros</title>
-    <!-- Ícone que irá aparecer junto ao título -->
     <link rel="icon" href="style/icons/logo.svg">
     <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
-    <nav id="navbar">
-        <!-- Aplicar align-items nas divs -->
-        <!-- Deve ficar no lado esquerdo -->
+    <nav id="nav-container">
         <div id="nav-logo">
-            <!-- Adicionar imagem que irá servir de logo do site -->
             <a id="logo-container" href="">
                 <img id="logo" src="style/icons/logo.svg" alt="Aurora Livros">
-                <!-- Adicionar uma imagem ou texto com tipografia com o nome da loja -->
                 <p>Aurora Livros</p>
             </a>
         </div>
-        <!-- Deve ficar centralizado -->
         <div id="nav-pages">
             <button>Início</button>
             <button>Catálogo</button>
@@ -43,17 +36,24 @@
     </nav>
     <hr>
     <main>
-        <section id="home">
-            <article id="home-slogan-container">
+        <section id="start-container">
+            <article id="start-slogan">
                 <p id="phrase1">LIVROS PARA GUARDAR POR PERTO</p>
-                <p id="phrase2">Histórias que ficam depois da última página.</p>
-                <p id="phrase3">Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.</p>
-                <button>Explorar livros →</button>
+                <p id="phrase2">Histórias que ficam <em>depois da última página.</em></p>
+                <p id="phrase3">Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.
+                </p>
+                <button>
+                    <p>Explorar livros</p>
+                    <img src="style/icons/right-arrow.svg" alt="">
+                </button>
             </article>
-            <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
-            <article id="home-quote-container">
-                <p id="home-quote">“Um leitor vive mil vidas antes de morrer.”</p>
-                <p id="home-quote-autor">George R. R. Martin</p>
+            <article id="quote-container">
+                <div id="quote-text">
+                    <p id="aspa1">“</p>
+                    <p id="quote">Um leitor vive mil vidas antes de morrer.</p>
+                    <p id="aspa2">”</p>
+                </div>
+                <em id="quote-autor">George R. R. Martin</em>
             </article>
         </section>
         <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
