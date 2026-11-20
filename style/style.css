@@ -218,11 +218,21 @@ hr {
     border: none;
     border-radius: .35vw;
     background-color: #a23705;
+    box-shadow: 1.1svh .6svw 1svw -.4svw;
     cursor: pointer;
+    scale: 1;
+    transition: 200ms ease-in;
+}
+
+#start-slogan button:hover {
+    scale: 1.04;
+    box-shadow: 1.4svh .8svw 1svw -.4svw;
+    transition: 100ms ease-in;
 }
 
 #start-slogan button p {
     color: #ebe1cf;
+    font-family: 'Manrope';
     font-size: 1.1rem;
     margin-left: 1svw;
 }
