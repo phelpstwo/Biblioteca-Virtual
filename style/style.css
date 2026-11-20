@@ -33,12 +33,20 @@ hr {
     background-color: #d9cca2;
 }
 
+main {
+    margin-top: 12svh;
+}
 
 #nav-container {
+    position: fixed;
+    top: 0;
     height: 12svh;
+    width: 100svw;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #ebe1cf;
+    z-index: 5;
 }
 
 #nav-logo {
@@ -172,12 +180,12 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 89svh;
+    height: 88svh;
+    margin: 0 3svw 12svh;
 }
 
 #start-slogan {
     width: 42svw;
-    margin-left: 3svw;
 }
 
 #start-slogan #title1 {
@@ -246,7 +254,6 @@ hr {
 #quote-container {
     height: auto;
     width: 40svw;
-    margin-right: 3svw;
 }
 
 #quote-text {

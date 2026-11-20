@@ -33,12 +33,20 @@ hr {
     background-color: #d9cca2;
 }
 
+main {
+    margin-top: 12svh;
+}
 
 #nav-container {
+    position: fixed;
+    top: 0;
     height: 12svh;
+    width: 100svw;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #ebe1cf;
+    z-index: 5;
 }
 
 #nav-logo {
