@@ -42,5 +42,52 @@
             <button class="nav-actions-buttons nav-actions-accessbility">Aa</button>
         </div>
     </nav>
+    <main id="contato-container">
+        <section id="contato-form">
+            <p id="contato-form-title">Entre em contato conosco</p>
+            <h1 id="contact-title">Vamos conversar?</h1>
+            <p id="contact-subtitle">Dúvidas, sugestões ou apenas vontade de falar sobre livros. Escreva para nós.</p>
+            <hr>
+            <div class="contato-info_item">
+                <p class="contato-info_label">E-mail:</p>
+                <p>contato@auroralivros.com</p>
+            </div>
+            <div class="contato-info_item">
+                <p class="contato-info_label">Atendimento:</p>
+                <p>Segunda a Sexta, das 9h às 18h</p>
+            </div>
+        </section>
+        <form id="contato-form" action="">
+            <div class="contato-form_field">
+                <label class="contato-form_label" for="nome">Nome</label>
+                <input class="contato-form_input" type="text" id="nome" required
+                    placeholder="Como podemos chamar você?">
+            </div>
+            <div class="contato-form_field">
+                <label class="contato-form_label" for="email">E-mail</label>
+                <input class="contato-form_input" type="email" id="email" required placeholder="seu@email.com">
+            </div>
+            <div class="contato-form_field">
+                <label class="contato-form_label" for="subject">Assunto</label>
+                <select class="contato-form_input" id="subject" name="subject">
+                    <option value="" disabled selected>Selecione o assunto</option>
+                    <option value="">Pedido</option>
+                    <option value="">Indicação de livro</option>
+                    <option value="">Reclamação</option>
+                    <option value="">outro</option>
+                </select>
+            </div>
+            <div class="contato-form_field">
+                <label class="contato-form_label" for="mensagem">Mensagem</label>
+                <textarea class="ccontact-form__input contact-form__input--textarea" id="mensagem" required
+                    placeholder="Conte para nós..."></textarea>
+            </div>
+            <button id="contato-button" type="submit">
+                <span>Enviar Mensagem</span>
+                <span>→</span>
+            </button>
+        </form>
+
+    </main>
     <hr>
 </body>
