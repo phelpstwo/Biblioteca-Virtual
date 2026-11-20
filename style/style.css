@@ -29,7 +29,7 @@ body {
 
 hr {
     border: none;
-    height: 0.25svh;
+    height: .25svh;
     background-color: #d9cca2;
 }
 
@@ -44,13 +44,7 @@ hr {
 #nav-logo {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
     margin-left: 3svw;
-}
-
-#logo {
-    height: 8svh;
-    width: 8svh;
 }
 
 #logo-container {
@@ -58,57 +52,120 @@ hr {
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: black;
+    color: #1e1b12;
     font-size: 2rem;
     font-weight: 600;
     gap: 1svw;
 }
 
+#logo {
+    height: inherit;
+    width: 8svh;
+}
+
 #logo-container p {
-    font-family: 'Libre Caslon' !important;
+    font-family: 'Libre Caslon';
     font-size: 1.7rem;
 }
 
 #nav-pages {
+    height: inherit;
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 12px;
+    gap: 1.5svw;
 }
 
-#nav-pages button {
-    height: 60px;
-    padding: 10px;
+#nav-pages a {
+    display: block;
+    height: inherit;
+}
+
+#nav-pages a button {
+    position: relative;
+    height: inherit;
+    padding: 2svh;
+    font-family: 'Manrope';
+    font-size: 1.1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    opacity: .7;
+    transition: all 100ms ease-in-out 100ms;
+}
+
+#nav-pages:hover a button {
+    opacity: .7;
+}
+
+#nav-pages a[aria-current="page"] button {
+    font-size: 1.3rem;
+    padding: 2svh;
+    padding-bottom: 2.5svh;
+    opacity: 1;
+}
+
+#nav-pages a[aria-current="page"] button::after {
+    position: absolute;
+    content: "";
+    height: .4svh;
+    width: 100%;
+    background-color: #1e1b12;
+    bottom: 0svw;
+    left: 0svw;
+}
+
+#nav-pages a button::after {
+    position: absolute;
+    content: "";
+    height: .4svh;
+    width: 0%;
+    background-color: #1e1b12;
+    bottom: 0svw;
+    left: 0svw;
+    transition: all 400ms ease-in 300ms;
+}
+
+#nav-pages a button:hover {
+    height: inherit;
+    font-size: 1.3rem;
+    padding: 2svh;
+    padding-bottom: 2.5svh;
     background-color: transparent;
     border: none;
-    cursor: pointer;
+    opacity: 1;
+    transition: 100ms ease-in-out 100ms;
 }
 
-
+#nav-pages a button:hover::after {
+    width: 100%;
+    transition: 200ms ease-in 300ms;
+}
 
 #nav-actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1.4svw;
     margin-right: 3svw;
 }
 
 .nav-actions-buttons {
     display: flex;
     align-items: center;
-    padding: 4px;
+    padding: 1svh;
     background-color: transparent;
     border: none;
-    border-radius: 18px;
+    border-radius: 4svw;
     cursor: pointer;
 }
 
 .nav-actions-accessbility {
-    font-size: 20px;
+    font-size: 1.75rem;
 }
 
 .nav-actions-buttons:hover {
-    background-color: #dfd3bf;
+    background-color: #ddceb3;
+    transition: 300ms;
 }
 
 #start-container {
@@ -123,28 +180,28 @@ hr {
     margin-left: 3svw;
 }
 
-#start-slogan #phrase1 {
+#start-slogan #title1 {
     font-family: 'Manrope';
     font-size: 1rem;
     font-weight: bold;
     margin-bottom: 2svh;
 }
 
-#start-slogan #phrase2 {
+#start-slogan #phrase1 {
     font-family: 'Noto Serif';
     font-size: 4.5rem;
     font-weight: 600;
     margin: 1svh 0;
 }
 
-#start-slogan #phrase2 em {
+#start-slogan #phrase1 em {
     font-family: 'Noto Serif';
     font-size: 4.5rem;
     font-weight: 600;
     margin-bottom: 2svh 0;
 }
 
-#start-slogan #phrase3 {
+#start-slogan #phrase2 {
     color: #54422f;
     font-family: 'Manrope';
     font-size: 1.5rem;
@@ -156,10 +213,10 @@ hr {
     justify-content: space-evenly;
     align-items: center;
     height: 7svh;
-    width: 12svw;
+    width: 13svw;
     margin-left: 2svw;
     border: none;
-    border-radius: 0.35vw;
+    border-radius: .35vw;
     background-color: #a23705;
     cursor: pointer;
 }
@@ -167,16 +224,18 @@ hr {
 #start-slogan button p {
     color: #ebe1cf;
     font-size: 1.1rem;
+    margin-left: 1svw;
 }
 
 #start-slogan button img {
     height: inherit;
     width: 2svw;
+    margin-right: 1svw;
 }
 
 #quote-container {
     height: auto;
-    width: 35svw;
+    width: 40svw;
     margin-right: 3svw;
 }
 

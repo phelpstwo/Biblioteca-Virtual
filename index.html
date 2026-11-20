@@ -5,29 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título que irá aparecer na aba do navegador -->
     <title>Aurora Livros</title>
-    <!-- Ícone que irá aparecer junto ao título -->
-    <link rel="icon" href="style/icons/logo.svg">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="style/icons/logo-tab.svg">
 </head>
 
 <body>
     <nav id="nav-container">
         <div id="nav-logo">
-            <!-- Adicionar imagem que irá servir de logo do site -->
             <a id="logo-container" href="">
                 <img id="logo" src="style/icons/logo.svg" alt="Aurora Livros">
-                <!-- Adicionar uma imagem ou texto com tipografia com o nome da loja -->
                 <p>Aurora Livros</p>
             </a>
         </div>
-        <!-- Deve ficar centralizado -->
         <div id="nav-pages">
-            <button>Início</button>
-            <button>Catálogo</button>
-            <button>Autores</button>
-            <a href="contato.html"><button>Contato</button></a>
+            <a href="index.html" aria-current="page">
+                <button>Início</button>
+            </a>
+            <a>
+                <button>Catálogo</button>
+            </a>
+            <a>
+                <button>Autores</button>
+            </a>
+            <a href="contato.html">
+                <button>Contato</button>
+            </a>
         </div>
         <div id="nav-actions">
             <button class="nav-actions-buttons">
@@ -43,15 +46,16 @@
     <main>
         <section id="start-container">
             <article id="start-slogan">
-                <p id="phrase1">LIVROS PARA GUARDAR POR PERTO</p>
-                <p id="phrase2">Histórias que ficam <em>depois da última página.</em></p>
-                <p id="phrase3">Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.
+                <h2 id="title1">LIVROS PARA GUARDAR POR PERTO</h2>
+                <p id="phrase1">Histórias que ficam <em>depois da última página.</em></p>
+                <p id="phrase2">Uma curadoria de clássicos e descobertas contemporâneas para transformar o seu tempo.
                 </p>
                 <button>
                     <p>Explorar livros</p>
-                    <img src="style/icons/right-arrow.svg" alt="">
+                    <img src="style/icons/right-arrow-light.svg" alt="">
                 </button>
             </article>
+            <!-- Citação — deve ficar alinhada horizontalmente com o article acima -->
             <article id="quote-container">
                 <div id="quote-text">
                     <p id="aspa1">“</p>
