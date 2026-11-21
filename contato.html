@@ -42,52 +42,52 @@
             <button class="nav-actions-buttons nav-actions-accessbility">Aa</button>
         </div>
     </nav>
-    <main id="contato-container">
-        <section id="contato-form">
-            <p id="contato-form-title">Entre em contato conosco</p>
+    <main id="contact">
+        <section id="contact-info">
+            <p id="contact-eyebrow">Entre em contato conosco</p>
             <h1 id="contact-title">Vamos conversar?</h1>
-            <p id="contact-subtitle">Dúvidas, sugestões ou apenas vontade de falar sobre livros. Escreva para nós.</p>
+            <p id="contact-text">Dúvidas, sugestões ou apenas vontade de falar sobre livros. Escreva para nós.</p>
             <hr>
-            <div class="contato-info_item">
-                <p class="contato-info_label">E-mail:</p>
+            <div class="contact-info__item">
+                <p class="contact-info__label">E-mail:</p>
                 <p>contato@auroralivros.com</p>
             </div>
-            <div class="contato-info_item">
-                <p class="contato-info_label">Atendimento:</p>
+            <div class="contact-info__item">
+                <p class="contact-info__label">Atendimento:</p>
                 <p>Segunda a Sexta, das 9h às 18h</p>
             </div>
         </section>
-        <form id="contato-form" action="">
-            <div class="contato-form_field">
-                <label class="contato-form_label" for="nome">Nome</label>
-                <input class="contato-form_input" type="text" id="nome" required
-                    placeholder="Como podemos chamar você?">
+        <form id="contact-form" action="">
+            <div class="float-field">
+                <input class="float-field__input" type="text" id="nome" name="nome" placeholder=" " required>
+                <label class="float-field__label" for="nome">Nome</label>
             </div>
-            <div class="contato-form_field">
-                <label class="contato-form_label" for="email">E-mail</label>
-                <input class="contato-form_input" type="email" id="email" required placeholder="seu@email.com">
+
+            <div class="float-field">
+                <input class="float-field__input" type="email" id="email" name="email" placeholder=" " required>
+                <label class="float-field__label" for="email">E-mail</label>
             </div>
-            <div class="contato-form_field">
-                <label class="contato-form_label" for="subject">Assunto</label>
-                <select class="contato-form_input" id="subject" name="subject">
+
+            <div class="float-field">
+                <select class="float-field__input" id="subject" name="subject" required>
                     <option value="" disabled selected>Selecione o assunto</option>
-                    <option value="">Pedido</option>
-                    <option value="">Indicação de livro</option>
-                    <option value="">Reclamação</option>
-                    <option value="">outro</option>
+                    <option value="pedido">Pedido</option>
+                    <option value="indicacao">Indicação de livro</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="outro">Outro</option>
                 </select>
+                <label class="float-field__label" for="subject">Assunto</label>
             </div>
-            <div class="contato-form_field">
-                <label class="contato-form_label" for="mensagem">Mensagem</label>
-                <textarea class="ccontact-form__input contact-form__input--textarea" id="mensagem" required
-                    placeholder="Conte para nós..."></textarea>
+
+            <div class="float-field">
+                <textarea class="float-field__input float-field__input--textarea" id="mensagem" name="mensagem"
+                    placeholder=" " required></textarea>
+                <label class="float-field__label float-field__label--textarea" for="mensagem">Mensagem</label>
             </div>
-            <button id="contato-button" type="submit">
+            <button id="contato-enviar" type="submit">
                 <span>Enviar Mensagem</span>
-                <span>→</span>
+                <img src="style/icons/right-arrow-light.svg" alt="">
             </button>
         </form>
-
     </main>
-    <hr>
 </body>
