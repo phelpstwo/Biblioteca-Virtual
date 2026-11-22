@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Libre Caslon';
+  src: url('../style/fonts/LibreCaslonText/LibreCaslonText-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libre Caslon';
+  src: url('../style/fonts/LibreCaslonText/LibreCaslonText-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+.site-footer {
+  background-color: #fdf4dc;
+  color: #1e1b12;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+  border-top: 1px solid #dfd2b1;
+  padding: 56px 0 36px;
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: text;
+}
+
+.site-footer *,
+.site-footer *::before,
+.site-footer *::after {
+  box-sizing: border-box;
+}
+
+.site-footer .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer .page-shell {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.site-footer .footer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr 0.85fr 1.15fr;
+  gap: 40px;
+  margin-bottom: 44px;
+}
+
+.site-footer .nav-logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-footer .nav-logo-img {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+.site-footer .nav-logo-text {
+  font-family: 'Libre Caslon', Georgia, serif;
+  font-size: 20.8px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  color: #1e1b12;
+}
+
+.site-footer .nav-logo-text em {
+  font-family: 'Libre Caslon', Georgia, serif;
+  font-size: inherit;
+  font-style: italic;
+  font-weight: 400;
+  color: #1e1b12;
+}
+
+.site-footer .footer-brand-desc {
+  margin-top: 14px;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.12px;
+  line-height: 1.55;
+  color: #726452;
+  max-width: 220px;
+}
+
+.site-footer .footer-col-title {
+  font-family: 'Libre Caslon', Georgia, serif;
+  font-size: 15.68px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  color: #1e1b12;
+}
+
+.site-footer .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer .footer-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.12px;
+  line-height: 1.5;
+  color: #54422f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-footer .footer-link:hover {
+  color: #1e1b12;
+  text-decoration: underline;
+}
+
+.site-footer .footer-link:focus-visible,
+.site-footer .nav-logo-link:focus-visible,
+.site-footer .newsletter-submit:focus-visible {
+  outline: 2px solid #a23705;
+  outline-offset: 2px;
+}
+
+.site-footer .footer-newsletter-desc {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.12px;
+  line-height: 1.5;
+  color: #726452;
+  margin-bottom: 16px;
+}
+
+.site-footer .newsletter-form {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #1e1b12;
+  padding-bottom: 6px;
+  gap: 8px;
+}
+
+.site-footer .newsletter-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.44px;
+  line-height: 1.5;
+  color: #1e1b12;
+  padding: 4px 0;
+  user-select: text;
+}
+
+.site-footer .newsletter-input::placeholder {
+  color: #726452;
+}
+
+.site-footer .newsletter-input:focus-visible {
+  outline: none;
+}
+
+.site-footer .newsletter-submit {
+  border: none;
+  background: transparent;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.site-footer .newsletter-submit img {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.site-footer .newsletter-feedback {
+  margin-top: 10px;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 12.48px;
+  line-height: 1.5;
+  color: #a23705;
+}
+
+.site-footer .footer-bottom {
+  border-top: 1px solid #dfd2b1;
+  padding-top: 22px;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11.52px;
+  line-height: 1.5;
+  color: #726452;
+}
+
+@media (max-width: 1024px) {
+  .site-footer .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-footer .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
