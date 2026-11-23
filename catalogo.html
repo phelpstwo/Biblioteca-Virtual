@@ -13,48 +13,32 @@
   <header class="site-header">
     <nav id="nav-container" class="page-shell nav-inner" aria-label="Navegação principal">
       <div id="nav-logo">
-        <a id="logo-container" class="nav-logo-link" href="index.html">
+        <a id="logo-container" class="nav-logo-link" href="inicio.html">
           <img id="logo" class="nav-logo-img" src="style/icons/logo.svg" alt="Aurora Livros">
           <span class="nav-logo-text">Aurora <em>livros</em></span>
         </a>
       </div>
 
       <div id="nav-pages" class="nav-pages">
-        <a href="index.html"><button type="button">Início</button></a>
+        <a href="inicio.html"><button type="button">Início</button></a>
         <a href="catalogo.html" aria-current="page"><button type="button">Catálogo</button></a>
-        <a><button type="button" aria-label="Autores">Autores</button></a>
+        <a href="autores.html"><button type="button" aria-label="Autores">Autores</button></a>
         <a href="contato.html"><button type="button">Contato</button></a>
       </div>
 
       <div id="nav-actions" class="nav-actions">
-        <button
-          id="open-fav-btn"
-          class="nav-action-btn nav-actions-buttons"
-          type="button"
-          aria-label="Abrir favoritos"
-        >
+        <button id="open-fav-btn" class="nav-action-btn nav-actions-buttons" type="button" aria-label="Abrir favoritos">
           <img src="style/icons/favorites.svg" alt="">
           <span id="fav-badge" class="nav-action-badge">0</span>
         </button>
 
-        <button
-          id="open-bag-btn"
-          class="nav-action-btn nav-actions-buttons"
-          type="button"
-          aria-label="Abrir sacola"
-        >
+        <button id="open-bag-btn" class="nav-action-btn nav-actions-buttons" type="button" aria-label="Abrir sacola">
           <img src="style/icons/bag.svg" alt="">
           <span id="bag-badge" class="nav-action-badge">0</span>
         </button>
 
-        <button
-          id="a11y-btn"
-          class="nav-action-btn nav-actions-buttons nav-a11y-btn"
-          type="button"
-          aria-label="Opções de acessibilidade"
-          aria-expanded="false"
-          aria-controls="a11y-popover"
-        >Aa</button>
+        <button id="a11y-btn" class="nav-action-btn nav-actions-buttons nav-a11y-btn" type="button"
+          aria-label="Opções de acessibilidade" aria-expanded="false" aria-controls="a11y-popover">Aa</button>
 
         <div id="a11y-popover" class="a11y-popover" role="dialog" aria-label="Acessibilidade" hidden>
           <p class="a11y-popover__title">Acessibilidade</p>
@@ -100,7 +84,7 @@
     <div class="page-shell">
       <div class="footer-grid">
         <div>
-          <a class="nav-logo-link" href="index.html">
+          <a class="nav-logo-link" href="inicio.html">
             <img class="nav-logo-img" src="style/icons/logo.svg" alt="Aurora Livros">
             <span class="nav-logo-text">Aurora <em>livros</em></span>
           </a>
@@ -130,14 +114,8 @@
           <p class="footer-newsletter-desc">Novidades e boas leituras, uma vez por mês.</p>
           <form id="newsletter-form" class="newsletter-form" novalidate>
             <label for="newsletter-email" class="sr-only">E-mail</label>
-            <input
-              id="newsletter-email"
-              class="newsletter-input"
-              type="email"
-              name="email"
-              placeholder="seu@email.com"
-              required
-            >
+            <input id="newsletter-email" class="newsletter-input" type="email" name="email" placeholder="seu@email.com"
+              required>
             <button class="newsletter-submit" type="submit" aria-label="Inscrever-se nas Cartas da Aurora">
               <img src="style/icons/right-arrow-dark.svg" alt="">
             </button>
