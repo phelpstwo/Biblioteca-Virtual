@@ -1,0 +1,342 @@
+@import url('https://googleapis.com');
+
+@font-face {
+    font-family: 'Libre Caslon';
+    src: url('../style/fonts/LibreCaslonText/LibreCaslonText-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Special Elite';
+    src: url('../style/fonts/SpecialElite/SpecialElite-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Manrope';
+    src: url('../style/fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Atkinson';
+    src: url('../style/fonts/Atkinson/AtkinsonHyperlegibleMono-VariableFont_wght.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #282210;
+    font-size: 12px;
+}
+
+.body {
+    background-color: #f9edd2;
+}
+
+hr {
+    border: none;
+    height: .3svh;
+    margin: 0 1svw;
+    background-color: #c9b78b;
+}
+
+.main__hr-top {
+    position: sticky;
+    top: 12svh;
+    height: .3svh;
+    margin: 0;
+    z-index: 5;
+}
+
+.top-bar {
+    position: sticky;
+    top: 0;
+    height: 12svh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9edd2;
+    z-index: 5;
+}
+
+
+.isologo {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3svw;
+    text-decoration: none;
+    color: #282210;
+    font-size: 2rem;
+    font-weight: 600;
+    gap: 1svw;
+}
+
+.isologo__icon {
+    height: inherit;
+    width: 8svh;
+}
+
+.isologo__text {
+    font-family: 'Libre Caslon';
+    font-size: 1.7rem;
+}
+
+.pages {
+    height: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1.5svw;
+}
+
+.pages__link {
+    display: block;
+    height: inherit;
+}
+
+.p-link__btn {
+    position: relative;
+    height: inherit;
+    padding: 2svh;
+    font-family: 'Manrope';
+    font-size: 1.1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    opacity: .7;
+    transition: all 100ms ease-in-out 100ms;
+}
+
+.p-link[aria-current="page"] .p-link__btn {
+    font-size: 1.3rem;
+    padding: 2svh;
+    padding-bottom: 2.5svh;
+    opacity: 1;
+}
+
+.p-link[aria-current="page"] .p-link__btn::after {
+    position: absolute;
+    content: "";
+    height: .4svh;
+    width: 100%;
+    background-color: #282210;
+    bottom: 0svw;
+    left: 0svw;
+}
+
+.p-link__btn::after {
+    position: absolute;
+    content: "";
+    height: .4svh;
+    width: 0%;
+    background-color: #282210;
+    bottom: 0svw;
+    left: 0svw;
+    transition: all 400ms ease-in 300ms;
+}
+
+.p-link__btn:hover {
+    height: inherit;
+    font-size: 1.3rem;
+    padding: 2svh;
+    padding-bottom: 2.5svh;
+    background-color: transparent;
+    border: none;
+    opacity: 1;
+    transition: 100ms ease-in-out 100ms;
+}
+
+.p-link__btn:hover::after {
+    width: 100%;
+    transition: 200ms ease-in 300ms;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1.4svw;
+    width: auto;
+    margin-right: 3svw;
+}
+
+.actions__btn {
+    display: flex;
+    align-items: center;
+    padding: 1svh;
+    background-color: transparent;
+    border: none;
+    border-radius: 4svw;
+    cursor: pointer;
+    transition: 200ms ease-in;
+}
+
+.actions__btn:hover {
+    background-color: #e4d2aa;
+    transition: 100ms ease-in;
+}
+
+.actions__btn--accessbility {
+    font-size: 1.75rem;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 48svw 40svw;
+    grid-template-rows: 1svh auto;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    row-gap: 2svh;
+    height: 87.7svh;
+    margin: 0 3svw 12svh;
+}
+
+.header__title {
+    grid-column: 1 / -1;
+    align-self: end;
+    font-family: 'Atkinson';
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 6svh;
+}
+
+.header__slogan {
+    width: auto;
+}
+
+.slogan__phrase1 {
+    font-family: 'Noto Serif';
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin-bottom: 1svh;
+}
+
+.slg__phrase1-hl {
+    font-family: 'Noto Serif';
+    font-size: 4.5rem;
+    font-weight: 600;
+    margin-bottom: 2svh 0;
+}
+
+.slogan__phrase2 {
+    color: #756534;
+    font-family: 'Manrope';
+    font-size: 1.5rem;
+    margin-bottom: 4svh;
+}
+
+.slogan__btn {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 7svh;
+    width: 13svw;
+    margin-left: 2svw;
+    border: none;
+    border-radius: .35svw;
+    background-color: #a23705;
+    box-shadow: 1.3svh .8svw 1svw -.6svw;
+    cursor: pointer;
+    scale: 1;
+    transition: 250ms ease-in;
+}
+
+.slg-btn:hover {
+    scale: 1.04;
+    box-shadow: 1.4svh 1svw 1svw -.4svw;
+    transition: 100ms ease-in;
+}
+
+.slg-btn__text {
+    color: #f9edd2;
+    font-family: 'Manrope';
+    font-size: 1.1rem;
+    margin-left: 1svw;
+}
+
+.slg-btn__icon {
+    height: inherit;
+    width: 2svw;
+    margin-right: 1svw;
+}
+
+.header__quote {
+    width: auto;
+}
+
+.h-quote__art {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 1.5svh;
+    font-family: 'Special Elite';
+}
+
+.q-art__line {
+    display: flex;
+    align-items: flex-start;
+    gap: .25em;
+}
+
+.q-art__aspa1,
+.q-art__aspa2 {
+    font-size: 6rem;
+    margin: 0;
+    font-size: calc(min(2.5rem, 2.4svw) * 2.4);
+    line-height: .4;
+    transform: translateY(1.3rem);
+}
+
+.q-art__text {
+    font-family: 'Special Elite';
+    font-size: min(2.5rem, 2.4svw);
+    font-style: italic;
+    white-space: nowrap;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.q-art__aspa1 {
+    animation: pop 1.2s ease-in both;
+}
+
+.q-art__line:first-child .q-art__text {
+    animation: typing 2.2s steps(24) 1.4s both;
+}
+
+.q-art__line:last-child .q-art__text {
+    animation: typing 1.6s steps(16) 3.8s both;
+    margin-left: 3.4svw;
+}
+
+.q-art__aspa2 {
+    animation: pop 600ms ease 5.4s both;
+}
+
+.h-quote__author {
+    margin-left: 3svw;
+    font-family: 'Manrope';
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 300;
+    animation: typing 1s steps(16) 6.1s both;
+}
+
+@keyframes typing {
+    from {
+        clip-path: inset(0 100% 0 0%);
+    }
+
+    to {
+        clip-path: inset(-.5svh -1svw -.5svh -1svw);
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
