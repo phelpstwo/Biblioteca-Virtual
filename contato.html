@@ -10,84 +10,82 @@
     <link rel="icon" href="style/icons/logo-tab.svg">
 </head>
 
-<body>
-    <nav id="nav-container">
-        <div id="nav-logo">
-            <a id="logo-container" href="">
-                <img id="logo" src="style/icons/logo.svg" alt="Aurora Livros">
-                <p>Aurora Livros</p>
+<body class="body">
+    <nav class="top-bar">
+        <a class="isologo" href="">
+            <img class="isologo__icon" src="style/icons/logo.svg" alt="Aurora Livros">
+            <p class="isologo__text">Aurora Livros</p>
+        </a>
+
+        <div class="pages">
+            <a class="p-link pages__link" href="index.html">
+                <button class="p-link__btn">Início</button>
+            </a>
+            <a class="p-link pages__link">
+                <button class="p-link__btn">Catálogo</button>
+            </a>
+            <a class="p-link pages__link">
+                <button class="p-link__btn">Autores</button>
+            </a>
+            <a class="p-link pages__link" href="contato.html" aria-current="page">
+                <button class="p-link__btn">Contato</button>
             </a>
         </div>
-        <div id="nav-pages">
-            <a href="index.html">
-                <button>Início</button>
-            </a>
-            <a>
-                <button>Catálogo</button>
-            </a>
-            <a>
-                <button>Autores</button>
-            </a>
-            <a href="contato.html" aria-current="page">
-                <button>Contato</button>
-            </a>
-        </div>
-        <div id="nav-actions">
-            <button class="nav-actions-buttons">
-                <img id="fav-icon" src="style/icons/favorites.svg" alt="">
+        <div class="actions">
+            <button class="actions__btn">
+                <img id="fav-icon" src="style/icons/favorites-unfilled.svg" alt="">
             </button>
-            <button class="nav-actions-buttons">
+            <button class="actions__btn">
                 <img src="style/icons/bag.svg" alt="">
             </button>
-            <button class="nav-actions-buttons nav-actions-accessbility">Aa</button>
+            <button class="actions__btn actions__btn--accessbility">Aa</button>
         </div>
     </nav>
-    <main id="contact">
-        <section id="contact-info">
-            <p id="contact-eyebrow">Entre em contato conosco</p>
-            <h1 id="contact-title">Vamos conversar?</h1>
-            <p id="contact-text">Dúvidas, sugestões ou apenas vontade de falar sobre livros. Escreva para nós.</p>
-            <hr>
-            <div class="contact-info__item">
-                <p class="contact-info__label">E-mail:</p>
-                <p>contato@auroralivros.com</p>
-            </div>
-            <div class="contact-info__item">
-                <p class="contact-info__label">Atendimento:</p>
-                <p>Segunda a Sexta, das 9h às 18h</p>
-            </div>
-        </section>
-        <form id="contact-form" action="">
-            <div class="float-field">
-                <input class="float-field__input" type="text" id="nome" name="nome" placeholder=" " required>
-                <label class="float-field__label" for="nome">Nome</label>
-            </div>
-
-            <div class="float-field">
-                <input class="float-field__input" type="email" id="email" name="email" placeholder=" " required>
-                <label class="float-field__label" for="email">E-mail</label>
-            </div>
-
-            <div class="float-field">
-                <select class="float-field__input" id="subject" name="subject" required>
-                    <option value="" disabled selected>Selecione o assunto</option>
-                    <option value="pedido">Pedido</option>
-                    <option value="indicacao">Indicação de livro</option>
-                    <option value="reclamacao">Reclamação</option>
-                    <option value="outro">Outro</option>
-                </select>
-                <label class="float-field__label" for="subject">Assunto</label>
-            </div>
-
-            <div class="float-field">
-                <textarea class="float-field__input float-field__input--textarea" id="mensagem" name="mensagem"
-                    placeholder=" " required></textarea>
-                <label class="float-field__label float-field__label--textarea" for="mensagem">Mensagem</label>
-            </div>
-            <button id="contato-enviar" type="submit">
-                <span>Enviar Mensagem</span>
-                <img src="style/icons/right-arrow-light.svg" alt="">
-            </button>
-        </form>
+    <hr class="body__hr-top">
+    <main class="main">
+        <article class="contact main__contact">
+            <section class="infos contact__texts">
+                <h2 class="infos__header1">ENTRE EM CONTATO CONOSCO</h2>
+                <p class="infos__phrase1">Vamos conversar?</p>
+                <p class="infos__phrase2">Duvidas, sugestões ou apenas vontade de falar sobre livros.</p>
+                <p class="infos__phrase2">Escreva para nós.</p>
+                <hr class="infos__hr">
+                <p class="infos__header2">E-mail:</p>
+                <p class="infos__email">contato@auroralivros.com</p>
+                <p class="infos__header2">Atendimento:</p>
+                <p class="infos__schedule">Segunda a sexta, das 9h às 18h</p>
+            </section>
+            <section class="form contact__form">
+                <form class="form-fields form__fields" action="">
+                    <div class="float-field">
+                        <input class="float-field__input" type="text" id="nome" name="nome" placeholder=" " required>
+                        <label class="float-field__label" for="nome">Nome</label>
+                    </div>
+                    <div class="float-field">
+                        <input class="float-field__input" type="email" id="email" name="email" placeholder=" " required>
+                        <label class="float-field__label" for="email">E-mail</label>
+                    </div>
+                    <div class="float-field">
+                        <select class="float-field__input" id="subject" name="subject" required>
+                            <option value="" disabled selected>Selecione o assunto</option>
+                            <option value="pedido">Pedido</option>
+                            <option value="indicacao">Indicação de livro</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <label class="float-field__label" for="subject">Assunto</label>
+                    </div>
+                    <div class="float-field">
+                        <textarea class="float-field__input float-field__input--textarea" id="mensagem" name="mensagem"
+                            placeholder=" " required></textarea>
+                        <label class="float-field__label" for="mensagem">Conte para nós</label>
+                    </div>
+                    <button class="form-btn form-fields__btn" type="submit">
+                        <span class="form-btn__text">Enviar mensagem</span>
+                        <img class="form-btn__icon" src="style/icons/right-arrow-light.svg" alt="">
+                    </button>
+                </form>
+            </section>
+        </article>
     </main>
 </body>
