@@ -262,6 +262,7 @@ hr {
     align-self: center;
     height: 7svh;
     width: 13svw;
+    margin-top: auto;
     border: none;
     border-bottom: .6svh solid #282210;
     border-radius: .35vw;
