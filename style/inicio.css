@@ -199,32 +199,32 @@ hr {
     margin-top: 6svh;
 }
 
-.header__slogan {
+.header__cta {
     width: auto;
 }
 
-.slogan__phrase1 {
+.cta__phrase1 {
     font-family: 'Noto Serif';
     font-size: 4.5rem;
     font-weight: 600;
     margin-bottom: 1svh;
 }
 
-.slg__phrase1-hl {
+.cta__phrase1-hl {
     font-family: 'Noto Serif';
     font-size: 4.5rem;
     font-weight: 600;
     margin-bottom: 2svh 0;
 }
 
-.slogan__phrase2 {
+.cta__phrase2 {
     color: #756534;
     font-family: 'Manrope';
     font-size: 1.5rem;
     margin-bottom: 4svh;
 }
 
-.slogan__btn {
+.cta__btn {
     display: inline-flex;
     justify-content: space-evenly;
     align-items: center;
@@ -240,20 +240,20 @@ hr {
     transition: 250ms ease-in;
 }
 
-.slg-btn:hover {
+.cta-btn:hover {
     scale: 1.04;
     box-shadow: 1.4svh 1svw 1svw -.4svw;
     transition: 100ms ease-in;
 }
 
-.slg-btn__text {
+.cta-btn__text {
     color: #f9edd2;
     font-family: 'Manrope';
     font-size: 1.1rem;
     margin-left: 1svw;
 }
 
-.slg-btn__icon {
+.cta-btn__icon {
     height: inherit;
     width: 2svw;
     margin-right: 1svw;
