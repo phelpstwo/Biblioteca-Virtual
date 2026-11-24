@@ -163,14 +163,34 @@ hr {
 }
 
 .actions__btn {
-    display: flex;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
     align-items: center;
-    padding: .3rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 1svh;
     background-color: transparent;
     border: none;
-    border-radius: 2rem;
     cursor: pointer;
     transition: 200ms ease-in;
+}
+
+.nav-action-badge {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 999px;
+    background-color: black;
+    color: #f9edd2;
+    font-family: 'Manrope';
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 17px;
+    text-align: center;
 }
 
 .actions__btn:hover {
