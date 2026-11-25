@@ -91,33 +91,35 @@
         </article>
         <hr>
     </main>
-    <footer class="footer">
+        <footer class="footer">
         <article class="footer__isologo">
-            <div class="fter-isologo">
-                <img class="fter-isologo__icon" src="style/icons/logo.svg" alt="">
-                <p class="fter-isologo__text">Aurora Livros</p>
-            </div>
-            <div class="footer-isologo__slogan">Histórias escolhidas com cuidado, para ler sem pressa.</div>
+            <a class="footer-isologo" href="inicio.html">
+                <img class="footer-isologo__icon" src="style/icons/logo.svg" alt="">
+                <p class="footer-isologo__text">Aurora Livros</p>
+            </a>
+            <p class="footer-isologo__slogan">Histórias escolhidas com cuidado, para ler sem pressa.</p>
         </article>
-        <article class="discovery-help">
-            <p class="footer-links__header">Decrubra</p>
-            <a class="footer-links" href="#catalogo">Catalogo</a>
-            <a class="footer-links" href="#autores">Autores</a>
-            <a class="footer-links" href="#vale-presente">Vale-presente</a>
-        </article>
-        <article class="discovery-help">
+        <nav class="discovery-help" aria-label="Descubra">
+            <p class="footer-links__header">Descubra</p>
+            <a class="footer-links" href="catalogo.html">Catálogo</a>
+            <a class="footer-links" href="autores.html">Autores</a>
+            <a class="footer-links" href="#">Vale-presente</a>
+        </nav>
+        <nav class="discovery-help" aria-label="Ajuda">
             <p class="footer-links__header">Ajuda</p>
-            <a class="footer-links" href="#fale-conosco">Fale conosco</a>
-            <a class="footer-links" href="#envios-devolucoes">Envios e Devoluções</a>
-            <a class="footer-links" href="#privacidade">Privacidade</a>
-        </article>
+            <a class="footer-links" href="contato.html">Fale conosco</a>
+            <a class="footer-links" href="#">Envios e devoluções</a>
+            <a class="footer-links" href="#">Privacidade</a>
+        </nav>
         <article class="footer-form">
             <p class="footer-form__header">Cartas da Aurora</p>
-            <p class="footer-form__phrase footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
+            <p class="footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
             <form class="footer-field" action="">
-                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com">
-                <button class="footer-field__btn">→</button>
+                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com"
+                    aria-label="Seu e-mail" required>
+                <button class="footer-field__btn" type="submit" aria-label="Assinar">→</button>
             </form>
         </article>
+        <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
 </body>
