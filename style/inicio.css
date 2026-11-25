@@ -221,7 +221,7 @@ hr {
     color: #282210;
 }
 
-.eyebrow {
+.eyebrow1 {
     grid-column: 1 / -1;
     align-self: end;
     font-family: 'Atkinson';
@@ -648,4 +648,77 @@ hr {
     scale: 1.01;
     box-shadow: .6rem .6rem 1rem -.4rem;
     transition: 100ms ease-in;
+}
+
+.lecture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    flex-flow: column;
+    padding: 4rem 2rem 4rem;
+    color: #282210;
+    background-color: #efe2be;
+}
+
+.eyebrow2 {
+    font-family: 'Atkinson';
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.lecture__header {
+    font-family: 'Noto Serif';
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.lecture__buttons {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+.lec-btn {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem;
+    height: 3rem;
+    width: 13rem;
+    border-style: none;
+    border: .09rem solid #c9b78b;
+    background-color: #f9edd2;
+    color: #282210;
+    transition: 300ms ease-in;
+}
+
+.lec-btn:hover {
+    border-color: #282210;
+    transform: translateY(-.15rem);
+    transition: 200ms ease-in 150ms;
+}
+
+.lec-btn__ic-nm {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.btn-ic__number {
+    font-family: 'Libre Caslon';
+    font-size: .6rem;
+}
+
+.btn-ic__name {
+    font-family: 'Libre Caslon';
+    font-weight: 500;
+}
+
+.lec-btn__arrow {
+    font-family: 'Manrope';
+    font-size: 1.1rem;
 }
