@@ -32,7 +32,7 @@
         </div>
         <div class="actions">
             <button class="actions__btn">
-                <img class="actions__btn--fav-icon" src="style/icons/favorites-unfilled.svg" alt="">
+                <img class="actions__btn--fav-icon" id="fav-icon" src="style/icons/favorites-unfilled.svg" alt="">
                 <span id="fav-badge" class="nav-action-badge">0</span>
             </button>
             <button class="actions__btn">
@@ -45,7 +45,7 @@
     <main class="main">
         <hr class="main__hr-top">
         <header class="header">
-            <p class="header__title">LIVROS PARA GUARDAR POR PERTO</p>
+            <p class="eyebrow">LIVROS PARA GUARDAR POR PERTO</p>
             <article class="cta header__cta">
                 <h1 class="cta__phrase1">Histórias que ficam <em class="cta__phrase1-hl">depois da última página.</em>
                 </h1>
@@ -54,7 +54,7 @@
                 </p>
                 <button class="cta-btn cta__btn">
                     <span class="cta-btn__text">Explorar livros</span>
-                    <img class="cta-btn__icon" src="style/icons/right-arrow-light.svg" alt="">
+                    <span class="cta-btn__arrow">→</span>
                 </button>
             </article>
             <article class="h-quote header__quote">
@@ -72,46 +72,106 @@
             </article>
         </header>
         <section class="selection">
-            <h2 class="selection__title">NOSSA SELEÇÃO</h2>
+            <h2 class="eyebrow">NOSSA SELEÇÃO</h2>
             <div class="slct-actions selection__actions">
                 <p class="slct-actions__title">Escolhidos para você</p>
                 <button class="slct-act-btn slct-actions__btn">
                     <span class="slct-act-btn__text">Ver catálogo completo</span>
-                    <img class="slct-act-btn__icon" src="style/icons/right-arrow-dark.svg" alt="">
+                    <span class="slct-act-btn__text slct-actions-btn__text--arrow">→</span>
                 </button>
             </div>
             <article class="slct-books selection__books">
                 <div class="slct-cards">
                     <a class="slct-cards__link" href="#livroA">
-                        <img src="images/books/jardim_secreto2.jpg" alt="">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">O JARDIM SECRETO</p>
+                            <p class="book-card__author">FRANCES HODGSON BURNETT</p>
+                        </div>
                     </a>
-                    <p class="book-category">Clássicos</p>
-                    <p>O Jardim Secreto</p>
-                    <p>por Frances Hodgson Burnett</p>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
+                        <a class="book-info__title" href="#livroA">O Jardim Secreto</a>
+                        <p class="book-info__author">por Frances Hodgson Burnett</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.9</strong>
+                        <small class="book-stars__score">(328)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 48,90</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
                 </div>
                 <div class="slct-cards">
                     <a class="slct-cards__link" href="#livroB">
-                        <img src="images/books/biblioteca_da_meia_noite.jpg" alt="">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">A BIBLIOTECA DA MEIA-NOITE</p>
+                            <p class="book-card__author">MATT HALG</p>
+                        </div>
                     </a>
-                    <p class="book-category">Fantasia</p>
-                    <p>A Biblioteca da Meia-Noite</p>
-                    <p>por Matt Halg</p>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
+                        <a class="book-info__title" href="#livroB">A Biblioteca da Meia-Noite</a>
+                        <p class="book-info__author">por Matt Halg</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.9</strong>
+                        <small class="book-stars__score">(328)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 54,90</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
                 </div>
                 <div class="slct-cards">
                     <a class="slct-cards__link" href="#livroC">
-                        <img src="images/books/orgulho_e_preconceito.webp" alt="">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">ORGULHO E PRECONCEITO</p>
+                            <p class="book-card__author">JANE AUSTEN</p>
+                        </div>
                     </a>
-                    <p class="book-category">Romance</p>
-                    <p>Orgulho e Preconceito</p>
-                    <p>por jane Austen</p>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#romance">ROMANCE</a>
+                        <a class="book-info__title" href="#livroC">Orgulho e Preconceito</a>
+                        <p class="book-info__author">por Jane Austen</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.9</strong>
+                        <small class="book-stars__score">(328)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 42,50</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
                 </div>
                 <div class="slct-cards">
                     <a class="slct-cards__link" href="#livroD">
-                        <img src="images/books/o_nome_da_rosa.jpg" alt="">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">O NOME DA ROSA</p>
+                            <p class="book-card__author">UMBERTO ECO</p>
+                        </div>
                     </a>
-                    <p class="book-category">Mistério</p>
-                    <p>O Nome da Rosa</p>
-                    <p>por Umberto Eco</p>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
+                        <a class="book-info__title" href="#livroD">O Nome da Rosa</a>
+                        <p class="book-info__author">por Umberto Eco</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.9</strong>
+                        <small class="book-stars__score">(328)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 63,90</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
                 </div>
             </article>
         </section>

@@ -210,23 +210,23 @@ hr {
 
 .header {
     display: grid;
-    grid-template-columns: 48svw 40svw;
-    grid-template-rows: 1svh auto;
+    grid-template-columns: 28rem 26rem;
+    grid-template-rows: auto auto;
     justify-content: space-between;
     align-content: center;
     align-items: center;
-    row-gap: 2svh;
-    height: 87.7svh;
-    margin: 0 3svw 12svh;
+    row-gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 2rem 6rem;
+    color: #282210;
 }
 
-.header__title {
+.eyebrow {
     grid-column: 1 / -1;
     align-self: end;
     font-family: 'Atkinson';
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: 600;
-    margin-top: 6svh;
 }
 
 .header__cta {
@@ -235,36 +235,35 @@ hr {
 
 .cta__phrase1 {
     font-family: 'Noto Serif';
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 1svh;
+    margin-bottom: .5rem;
 }
 
 .cta__phrase1-hl {
     font-family: 'Noto Serif';
-    font-size: 4.5rem;
+    font-size: 3rem;
     font-weight: 600;
-    margin-bottom: 2svh 0;
 }
 
 .cta__phrase2 {
     color: #756534;
     font-family: 'Manrope';
-    font-size: 1.5rem;
-    margin-bottom: 4svh;
+    font-size: 1rem;
+    margin-bottom: 2rem;
 }
 
 .cta__btn {
     display: inline-flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 7svh;
-    width: 13svw;
-    margin-left: 2svw;
+    height: 2.5rem;
+    width: 10rem;
+    margin-left: 2rem;
     border: none;
-    border-radius: .35svw;
+    border-radius: .25rem;
     background-color: #a23705;
-    box-shadow: 1.3svh .8svw 1svw -.6svw;
+    box-shadow: .4rem .6rem 1rem -.38rem;
     cursor: pointer;
     scale: 1;
     transition: 250ms ease-in;
@@ -272,21 +271,22 @@ hr {
 
 .cta-btn:hover {
     scale: 1.04;
-    box-shadow: 1.4svh 1svw 1svw -.4svw;
+    box-shadow: .4rem .6rem 1rem -.2rem;
     transition: 100ms ease-in;
 }
 
 .cta-btn__text {
     color: #f9edd2;
     font-family: 'Manrope';
-    font-size: 1.1rem;
-    margin-left: 1svw;
+    font-size: 1rem;
+    margin-left: 1rem;
 }
 
-.cta-btn__icon {
-    height: inherit;
-    width: 2svw;
-    margin-right: 1svw;
+.cta-btn__arrow {
+    color: #f9edd2;
+    font-family: 'Manrope';
+    font-size: 1.2rem;
+    margin-right: .75rem;
 }
 
 .header__quote {
@@ -297,7 +297,7 @@ hr {
     display: flex;
     flex-direction: column;
     gap: 0;
-    margin-bottom: 1.5svh;
+    margin-bottom: 1rem;
     font-family: 'Special Elite';
 }
 
@@ -311,14 +311,14 @@ hr {
 .q-art__aspa2 {
     font-size: 6rem;
     margin: 0;
-    font-size: calc(min(2.5rem, 2.4svw) * 2.4);
+    font-size: calc(min(2.5rem, 1.5rem) * 2.4);
     line-height: .4;
-    transform: translateY(1.3rem);
+    transform: translateY(.9rem);
 }
 
 .q-art__text {
     font-family: 'Special Elite';
-    font-size: min(2.5rem, 2.4svw);
+    font-size: min(2.5rem, 1.5rem);
     font-style: italic;
     white-space: nowrap;
     line-height: 1.4;
@@ -346,7 +346,7 @@ hr {
     margin-left: 3svw;
     font-family: 'Manrope';
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 300;
     animation: typing 1s steps(16) 6.1s both;
 }
@@ -369,4 +369,283 @@ hr {
     to {
         opacity: 1;
     }
+}
+
+.selection {
+    margin: 0 2rem 4rem;
+    color: #282210;
+}
+
+.selection__actions {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 3rem;
+}
+
+.slct-actions__title {
+    font-family: 'Noto Serif';
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: .5rem;
+}
+
+.slct-act-btn {
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: center;
+    height: 2rem;
+    width: 10rem;
+    margin-top: auto;
+    border: none;
+    border-bottom: .15rem solid #282210;
+    border-radius: .25rem;
+    background-color: transparent;
+    box-shadow: .5rem .5rem 1rem -.5rem;
+    cursor: pointer;
+    scale: 1;
+    transition: 250ms ease-in;
+}
+
+.slct-act-btn:hover {
+    scale: 1.04;
+    background-color: #e1d0a8;
+    box-shadow: .6rem .6rem 1rem -.4rem;
+    transition: 100ms ease-in;
+}
+
+.slct-act-btn__text {
+    color: #282210;
+    font-family: 'Manrope';
+    font-size: .8rem;
+}
+
+.slct-books {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    flex-flow: row wrap;
+    max-width: 100%;
+    gap: 2rem;
+}
+
+.slct-cards {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    max-width: 20%;
+    min-width: 20%;
+    border-radius: .35rem;
+    background-color: #efe2be;
+}
+
+.slct-cards__link {
+    aspect-ratio: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    text-decoration: none;
+    background-color: firebrick;
+    border-radius: .135rem .4rem .4rem .135rem;
+    transition: 300ms ease-in;
+}
+
+.slct-cards__link:hover {
+    transform: rotate(-.8deg) translateY(-.1rem);
+    transform-origin: center left;
+    transition: 200ms ease-in 300ms;
+}
+
+.slct-cards:nth-child(1) .slct-cards__book,
+.slct-cards:nth-child(1) .slct-cards__link {
+    background-color: #526651;
+}
+
+.slct-cards:nth-child(1) .slct-cards__link {
+    background-image: linear-gradient(to left, #526651 98%, #5e7b5d 2%);
+}
+
+.slct-cards:nth-child(2) .slct-cards__book,
+.slct-cards:nth-child(2) .slct-cards__link {
+    background-color: #273a4b;
+}
+
+.slct-cards:nth-child(2) .slct-cards__link {
+    background-image: linear-gradient(to left, #273a4b 98%, #344d63 2%);
+
+}
+
+.slct-cards:nth-child(3) .slct-cards__book,
+.slct-cards:nth-child(3) .slct-cards__link {
+    background-color: #945f57;
+}
+
+.slct-cards:nth-child(3) .slct-cards__link {
+    background-image: linear-gradient(to left, #945f57 98%, #a9726a 2%);
+}
+
+.slct-cards:nth-child(4) .slct-cards__book,
+.slct-cards:nth-child(4) .slct-cards__link {
+    background-color: #8b5e27;
+}
+
+.slct-cards:nth-child(4) .slct-cards__link {
+    background-image: linear-gradient(to left, #8b5e27 98%, #9e6e32 2%);
+}
+
+.slct-cards__separation {
+    margin: auto .5rem 0;
+    height: .1rem;
+}
+
+.book-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 93%;
+    width: auto;
+    aspect-ratio: 3 / 4;
+    color: rgba(249, 237, 210, .8);
+    border: .07rem solid rgba(239, 226, 190, .4);
+    border-radius: .135rem .4rem .4rem .135rem;
+    transition: 300ms ease-in;
+}
+
+.book-card__title {
+    text-align: center;
+    font-family: 'Libre Caslon';
+    font-size: .8rem;
+    font-weight: 600;
+    margin: 0 .5rem 2rem;
+}
+
+.slct-cards:nth-child(1) .book-card__title::after,
+.slct-cards:nth-child(4) .book-card__title::after {
+    position: absolute;
+    content: " ";
+    height: .01rem;
+    width: 20%;
+    background-color: rgba(249, 237, 210, .8);
+    left: 3.75rem;
+    bottom: 6rem;
+}
+
+.slct-cards:nth-child(2) .book-card__title::after,
+.slct-cards:nth-child(3) .book-card__title::after {
+    position: absolute;
+    content: " ";
+    height: .01rem;
+    width: 20%;
+    background-color: rgba(249, 237, 210, .8);
+    left: 3.75rem;
+    bottom: 5.5rem;
+}
+
+.book-card__author {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: .4rem;
+}
+
+
+.slct-cards__infos {
+    display: flex;
+    flex-flow: column;
+    margin: 0 1rem 0;
+    color: #282210;
+}
+
+.book-info__category {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Atkinson';
+    font-size: .6rem;
+    font-weight: 300;
+    margin-bottom: .8rem;
+}
+
+.book-info__category:hover {
+    text-decoration: underline;
+    text-decoration-thickness: .05rem;
+    text-decoration-color: #282210;
+    color: inherit;
+}
+
+.book-info__title {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Libre Caslon';
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+.book-info__title:hover {
+    text-decoration: underline;
+    text-decoration-thickness: .08rem;
+    text-decoration-color: #282210;
+    color: inherit;
+}
+
+.book-info__author {
+    font-family: sans-serif;
+    font-size: .6rem;
+    font-weight: 300;
+}
+
+.book-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+    margin: auto 1rem .5rem;
+    font-family: 'Libre Caslon';
+}
+
+.book-rating__stars {
+    color: darkgoldenrod;
+    font-size: .6rem;
+}
+
+.book-stars__score {
+    font-size: .6rem;
+}
+
+.cards-shop {
+    display: inline-flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: .5rem .5rem 0;
+}
+
+.cards-shop__price {
+    font-family: 'Noto Serif';
+    font-size: .8rem;
+}
+
+.cards-shop__btn {
+    font-family: sans-serif;
+    font-size: .6rem;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 .2rem;
+    background-color: transparent;
+    border-style: none;
+    border: .09rem solid #282210;
+    border-radius: .15rem;
+    box-shadow: .55rem .55rem 1rem -.5rem;
+    cursor: pointer;
+    scale: 1;
+    transition: 250ms ease-in;
+}
+
+.cards-shop__btn:hover {
+    scale: 1.01;
+    box-shadow: .6rem .6rem 1rem -.4rem;
+    transition: 100ms ease-in;
 }
