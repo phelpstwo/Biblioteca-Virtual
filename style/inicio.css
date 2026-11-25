@@ -828,3 +828,151 @@ hr {
     font-size: 1.3rem;
     cursor: pointer;
 }
+.mais-amados {
+    padding: 3.5rem clamp(1.5rem, 5.5vw, 4.6rem) 4.75rem;
+    background-color: #fff5df;
+    color: #111116;
+}
+
+.mais-amados__rotulo {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    letter-spacing: .1rem;
+}
+
+.mais-amados__titulo {
+    margin: 1.25rem 0 2.25rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 3.6vw, 3rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -.12rem;
+}
+
+.mais-amados__lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.mais-amados__item {
+    min-width: 0;
+}
+
+.mais-amados__link {
+    display: block;
+    padding: 1.4rem 0;
+    border-top: 1px solid #e8d8a6;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 200ms ease;
+}
+
+.mais-amados__link:hover {
+    background-color: rgb(232 216 166 / 16%);
+}
+
+.mais-amados__link:focus-visible {
+    outline: 2px solid #8b4f31;
+    outline-offset: 4px;
+}
+
+.mais-amados__conteudo {
+    display: grid;
+    grid-template-columns: 2.5rem 2.75rem minmax(0, 1fr) auto 1rem;
+    align-items: center;
+    gap: .9rem;
+    min-height: 4.25rem;
+}
+
+.mais-amados__posicao {
+    margin: 0;
+    color: #8b4f31;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .95rem;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.mais-amados__capa {
+    position: relative;
+    display: flex;
+    width: 2.75rem;
+    height: 4.25rem;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem;
+    border-radius: .2rem;
+    box-shadow: 0 .75rem 1.25rem rgb(59 43 24 / 18%);
+}
+
+.mais-amados__capa::before {
+    position: absolute;
+    inset: .45rem;
+    border: 1px solid rgb(255 245 223 / 55%);
+    content: "";
+}
+
+.mais-amados__capa--torto-arado {
+    background: linear-gradient(90deg, #684734 0 20%, #8d674e 20% 100%);
+}
+
+.mais-amados__capa--addie-larue {
+    background: linear-gradient(90deg, #41364e 0 20%, #62516e 20% 100%);
+}
+
+.mais-amados__capa--expresso-oriente {
+    background: linear-gradient(90deg, #79372e 0 20%, #a14b3e 20% 100%);
+}
+
+.mais-amados__capa--cem-anos {
+    background: linear-gradient(90deg, #2e555b 0 20%, #447a80 20% 100%);
+}
+
+.mais-amados__capa-texto {
+    position: relative;
+    color: #fff5df;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .25rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.mais-amados__detalhes {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: .15rem;
+}
+
+.mais-amados__nome {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.mais-amados__autor {
+    margin: 0;
+    color: #634638;
+    font-family: Arial, sans-serif;
+    font-size: .75rem;
+    line-height: 1.3;
+}
+
+.mais-amados__preco {
+    margin: 0;
+    font-family: Bodoni Moda, serif;
+    font-size: 1rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.mais-amados__seta {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+}
