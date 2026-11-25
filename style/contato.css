@@ -43,7 +43,7 @@ hr {
     background-color: #c9b78b;
 }
 
-.body__hr-top {
+.main__hr-top {
     position: sticky;
     top: 3.5rem;
     height: .1rem;
@@ -167,29 +167,35 @@ hr {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    padding: 1svh;
+    padding: 1.1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: 200ms ease-in;
 }
 
+.actions__btn--fav-icon {
+    height: 1.3rem;
+    width: 1.3rem;
+    padding-top: .03rem;
+    margin-right: .1rem;
+}
+
 .nav-action-badge {
     position: absolute;
-    top: 0px;
-    left: 20px;
-    min-width: 17px;
-    height: 17px;
-    border-radius: 999px;
-    background-color: black;
+    top: 0rem;
+    left: 1.5rem;
+    min-width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 1);
     color: #f9edd2;
     font-family: 'Manrope';
     font-size: 0.65rem;
     font-weight: 700;
-    line-height: 17px;
     text-align: center;
 }
 
@@ -339,7 +345,7 @@ hr {
     border: none;
     border-radius: .25rem;
     background-color: #a63a05;
-    box-shadow: .4rem .5rem 2rem -.38rem;
+    box-shadow: .4rem .5rem 1rem -.38rem;
     cursor: pointer;
     scale: 1;
     transition: 250ms ease-in;
@@ -347,7 +353,7 @@ hr {
 
 .form-btn:hover {
     scale: 1.04;
-    box-shadow: .4rem .6rem .8rem -.2rem;
+    box-shadow: .4rem .6rem 1rem -.2rem;
     transition: 100ms ease-in;
 }
 

@@ -13,6 +13,7 @@
 @font-face {
     font-family: 'Manrope';
     src: url('../style/fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+    /* font-weight: 400; */
 }
 
 @font-face {
@@ -20,11 +21,16 @@
     src: url('../style/fonts/Atkinson/AtkinsonHyperlegibleMono-VariableFont_wght.ttf') format('truetype');
 }
 
-* {
+html {
+    font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    color: #282210;
-    font-size: 12px;
+    box-sizing: border-box;
 }
 
 .body {
@@ -33,28 +39,27 @@
 
 hr {
     border: none;
-    height: .3svh;
-    margin: 0 1svw;
+    height: .1rem;
     background-color: #c9b78b;
 }
 
 .main__hr-top {
     position: sticky;
-    top: 12svh;
-    height: .3svh;
-    margin: 0;
+    top: 3.5rem;
+    height: .1rem;
     z-index: 5;
 }
 
 .top-bar {
     position: sticky;
     top: 0;
-    height: 12svh;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #f9edd2;
     z-index: 5;
+    padding: 0 2rem;
 }
 
 
@@ -62,22 +67,21 @@ hr {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-left: 3svw;
     text-decoration: none;
     color: #282210;
     font-size: 2rem;
     font-weight: 600;
-    gap: 1svw;
+    gap: .7rem;
 }
 
 .isologo__icon {
-    height: inherit;
-    width: 8svh;
+    height: 2.4rem;
+    width: auto;
 }
 
 .isologo__text {
     font-family: 'Libre Caslon';
-    font-size: 1.7rem;
+    font-size: 1.3rem;
 }
 
 .pages {
@@ -85,7 +89,7 @@ hr {
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
-    gap: 1.5svw;
+    gap: 1rem;
 }
 
 .pages__link {
@@ -96,9 +100,9 @@ hr {
 .p-link__btn {
     position: relative;
     height: inherit;
-    padding: 2svh;
+    padding: .7rem;
     font-family: 'Manrope';
-    font-size: 1.1rem;
+    font-size: .9rem;
     background-color: transparent;
     cursor: pointer;
     border: none;
@@ -107,45 +111,46 @@ hr {
 }
 
 .p-link[aria-current="page"] .p-link__btn {
-    font-size: 1.3rem;
-    padding: 2svh;
-    padding-bottom: 2.5svh;
+    font-size: 1.05rem;
+    padding-top: .7rem;
+    padding-bottom: .8rem;
     opacity: 1;
 }
 
 .p-link[aria-current="page"] .p-link__btn::after {
     position: absolute;
     content: "";
-    height: .4svh;
+    height: .12rem;
     width: 100%;
     background-color: #282210;
-    bottom: 0svw;
-    left: 0svw;
+    bottom: 0%;
+    left: 0%;
 }
 
 .p-link__btn::after {
     position: absolute;
     content: "";
-    height: .4svh;
+    height: .15rem;
     width: 0%;
     background-color: #282210;
-    bottom: 0svw;
-    left: 0svw;
-    transition: all 400ms ease-in 300ms;
+    bottom: 0%;
+    left: 0%;
+    transition: all 500ms ease-in 300ms;
 }
 
 .p-link__btn:hover {
     height: inherit;
-    font-size: 1.3rem;
-    padding: 2svh;
-    padding-bottom: 2.5svh;
+    font-size: 1.05rem;
+    padding-top: .7rem;
+    padding-bottom: .8rem;
     background-color: transparent;
     border: none;
     opacity: 1;
-    transition: 100ms ease-in-out 100ms;
+    transition: 100ms ease-in-out 200ms;
 }
 
 .p-link__btn:hover::after {
+    height: .12rem;
     width: 100%;
     transition: 200ms ease-in 300ms;
 }
@@ -153,9 +158,8 @@ hr {
 .actions {
     display: flex;
     align-items: center;
-    gap: 1.4svw;
+    gap: 1rem;
     width: auto;
-    margin-right: 3svw;
 }
 
 .actions__btn {
@@ -163,29 +167,35 @@ hr {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
-    padding: 1svh;
+    padding: 1.1rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
     transition: 200ms ease-in;
 }
 
+.actions__btn--fav-icon {
+    height: 1.3rem;
+    width: 1.3rem;
+    padding-top: .03rem;
+    margin-right: .1rem;
+}
+
 .nav-action-badge {
     position: absolute;
-    top: 0px;
-    left: 20px;
-    min-width: 17px;
-    height: 17px;
-    border-radius: 999px;
-    background-color: black;
+    top: 0rem;
+    left: 1.5rem;
+    min-width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 1);
     color: #f9edd2;
     font-family: 'Manrope';
-    font-size: 0.9rem;
+    font-size: 0.65rem;
     font-weight: 700;
-    line-height: 17px;
     text-align: center;
 }
 
@@ -195,7 +205,7 @@ hr {
 }
 
 .actions__btn--accessbility {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
 }
 
 .header {
