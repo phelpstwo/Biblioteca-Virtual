@@ -280,48 +280,34 @@
         </section>
         <hr>
     </main>
-    <footer>
-        <article>
-            <div>
-                <!-- Logo do site -->
-                <img src="" alt="">
-                <p>Aurora Livros</p>
+    <footer class="footer">
+        <article class="footer__isologo">
+            <div class="fter-isologo">
+                <img class="fter-isologo__icon" src="style/icons/logo.svg" alt="">
+                <p class="fter-isologo__text">Aurora Livros</p>
             </div>
-            <div>
-                <p>Histórias escolhidas com cuidado, para leer sem pressa.</p>
-            </div>
+            <div class="footer-isologo__slogan">Histórias escolhidas com cuidado, para ler sem pressa.</div>
         </article>
-        <article>
-            <div>
-                <p>Decrubra</p>
-                <div>
-                    <a href="#catalogo">Catalogo</a>
-                    <a href="#autores">Autores</a>
-                    <a href="#vale-presente">Vale-presente</a>
-                </div>
-            </div>
-            <div>
-                <p>Ajuda</p>
-                <div>
-                    <a href="#fale-conosco">Fale conosco</a>
-                    <a href="#envios-devolucoes">Envios e Devoluções</a>
-                    <a href="#privacidade">Privacidade</a>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <p>Cartas da Aurora</p>
-                    <p>Novidades e boas leituras, uma vez por mês.</p>
-                </div>
-                <form action="">
-                    <p>Cartas da Aurora</p>
-                    <p>Novidade e boas leituras, uma vez por mês.</p>
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" placeholder="seu@email.com">
-                </form>
-            </div>
+        <article class="discovery-help">
+            <p class="footer-links__header">Decrubra</p>
+            <a class="footer-links" href="#catalogo">Catalogo</a>
+            <a class="footer-links" href="#autores">Autores</a>
+            <a class="footer-links" href="#vale-presente">Vale-presente</a>
         </article>
-        <hr>
+        <article class="discovery-help">
+            <p class="footer-links__header">Ajuda</p>
+            <a class="footer-links" href="#fale-conosco">Fale conosco</a>
+            <a class="footer-links" href="#envios-devolucoes">Envios e Devoluções</a>
+            <a class="footer-links" href="#privacidade">Privacidade</a>
+        </article>
+        <article class="footer-form">
+            <p class="footer-form__header">Cartas da Aurora</p>
+            <p class="footer-form__phrase footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
+            <form class="footer-field" action="">
+                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com">
+                <button class="footer-field__btn">→</button>
+            </form>
+        </article>
     </footer>
 </body>
 
