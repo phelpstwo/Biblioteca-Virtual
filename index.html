@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aurora Livros</title>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="icon" href="style/icons/logo-tab.svg">
+</head>
+
+<body class="body">
+    <nav class="top-bar">
+        <a class="isologo" href="">
+            <img class="isologo__icon" src="style/icons/logo.svg" alt="Aurora Livros">
+            <p class="isologo__text">Aurora Livros</p>
+        </a>
+        <div class="pages">
+            <a class="p-link pages__link" href="index.html" aria-current="page">
+                <button class="p-link__btn">Início</button>
+            </a>
+            <a class="p-link pages__link" href="catalogo.html">
+                <button class="p-link__btn">Catálogo</button>
+            </a>
+            <a class="p-link pages__link" href="autores.html">
+                <button class="p-link__btn">Autores</button>
+            </a>
+            <a class="p-link pages__link" href="contato.html">
+                <button class="p-link__btn">Contato</button>
+            </a>
+        </div>
+        <div class="actions">
+            <button class="actions__btn">
+                <img class="actions__btn--fav-icon" id="fav-icon" src="style/icons/favorites-unfilled.svg" alt="">
+                <span id="fav-badge" class="nav-action-badge">0</span>
+            </button>
+            <button class="actions__btn">
+                <img src="style/icons/bag.svg" alt="">
+                <span id="bag-badge" class="nav-action-badge">0</span>
+            </button>
+            <button class="actions__btn actions__btn--accessbility">Aa</button>
+        </div>
+    </nav>
+    <main class="main">
+        <hr class="main__hr-top">
+        <header class="header">
+            <p class="eyebrow1">LIVROS PARA GUARDAR POR PERTO</p>
+            <article class="cta header__cta">
+                <h1 class="cta__phrase1">Histórias que ficam <em class="cta__phrase1-hl">depois da última página.</em>
+                </h1>
+                <p class="cta__phrase2">Uma curadoria de clássicos e descobertas contemporâneas para transformar o
+                    seu tempo.
+                </p>
+                <button class="cta-btn cta__btn">
+                    <span class="cta-btn__text">Explorar livros</span>
+                    <span class="cta-btn__arrow">→</span>
+                </button>
+            </article>
+            <article class="h-quote header__quote">
+                <div class="quote-art h-quote__art">
+                    <div class="q-art__line">
+                        <span class="q-art__aspa1">“</span>
+                        <span class="q-art__text">Um leitor vive mil vidas</span>
+                    </div>
+                    <div class="q-art__line">
+                        <span class="q-art__text">antes de morrer.</span>
+                        <span class="q-art__aspa2">”</span>
+                    </div>
+                </div>
+                <em class="h-quote__author">George R. R. Martin</em>
+            </article>
+        </header>
+        <section class="selection">
+            <h2 class="eyebrow2">NOSSA SELEÇÃO</h2>
+            <div class="slct-actions selection__actions">
+                <p class="slct-actions__title">Escolhidos para você</p>
+                <button class="slct-act-btn slct-actions__btn">
+                    <span class="slct-act-btn__text">Ver catálogo completo</span>
+                    <span class="slct-act-btn__text slct-actions-btn__text--arrow">→</span>
+                </button>
+            </div>
+            <article class="slct-books selection__books">
+                <div class="slct-cards">
+                    <a class="slct-cards__link" href="#livroA">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">O JARDIM SECRETO</p>
+                            <p class="book-card__author">FRANCES HODGSON BURNETT</p>
+                        </div>
+                    </a>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
+                        <a class="book-info__title" href="#livroA">O Jardim Secreto</a>
+                        <p class="book-info__author">por Frances Hodgson Burnett</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.9</strong>
+                        <small class="book-stars__score">(328)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 48,90</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                <div class="slct-cards">
+                    <a class="slct-cards__link" href="#livroB">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">A BIBLIOTECA DA MEIA-NOITE</p>
+                            <p class="book-card__author">MATT HALG</p>
+                        </div>
+                    </a>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
+                        <a class="book-info__title" href="#livroB">A Biblioteca da Meia-Noite</a>
+                        <p class="book-info__author">por Matt Halg</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.8</strong>
+                        <small class="book-stars__score">(912)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 54,90</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                <div class="slct-cards">
+                    <a class="slct-cards__link" href="#livroC">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">ORGULHO E PRECONCEITO</p>
+                            <p class="book-card__author">JANE AUSTEN</p>
+                        </div>
+                    </a>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#romance">ROMANCE</a>
+                        <a class="book-info__title" href="#livroC">Orgulho e Preconceito</a>
+                        <p class="book-info__author">por Jane Austen</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.9</strong>
+                        <small class="book-stars__score">(1.204)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 42,50</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+                <div class="slct-cards">
+                    <a class="slct-cards__link" href="#livroD">
+                        <div class="book-card slct-cards__book">
+                            <p class="book-card__title">O NOME DA ROSA</p>
+                            <p class="book-card__author">UMBERTO ECO</p>
+                        </div>
+                    </a>
+                    <div class="book-info slct-cards__infos">
+                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
+                        <a class="book-info__title" href="#livroD">O Nome da Rosa</a>
+                        <p class="book-info__author">por Umberto Eco</p>
+                    </div>
+                    <div class="book-rating slct-cards__stars">
+                        <p class="book-rating__stars">★★★★★</p>
+                        <strong class="book-stars__score">4.7</strong>
+                        <small class="book-stars__score">(486)</small>
+                    </div>
+                    <hr class="slct-cards__separation">
+                    <div class="cards-shop sclt-cards__shop">
+                        <strong class="cards-shop__price">R$ 63,90</strong>
+                        <button class="cards-shop__btn">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <hr>
+        <section class="lecture">
+            <h2 class="eyebrow2">ENCONTRE SUA PRÓXIMA LEITURA</h2>
+            <p class="lecture__header">Qual história chama por você?</p>
+            <div class="lecture__buttons">
+                <button class="lec-btn">
+                    <div class="lec-btn__ic_nm">
+                        <span class="btn-ic__number">01</span>
+                        <span class="btn-ic__name">Romance</span>
+                    </div>
+                    <span class="lec-btn__arrow">→</span>
+                </button>
+                <button class="lec-btn">
+                    <div class="lec-btn__ic_nm">
+                        <span class="btn-ic__number">02</span>
+                        <span class="btn-ic__name">Fantasia</span>
+                    </div>
+                    <span class="lec-btn__arrow">→</span>
+                </button>
+                <button class="lec-btn">
+                    <div class="btn-ic lec-btn__ic_nm">
+                        <span class="btn-ic__number">03</span>
+                        <span class="btn-ic__name">Mistério</span>
+                    </div>
+                    <span class="lec-btn__arrow">→</span>
+                </button>
+                <button class="lec-btn">
+                    <div class="lec-btn__ic_nm">
+                        <span class="btn-ic__number">04</span>
+                        <span class="btn-ic__name">Clássicos</span>
+                    </div>
+                    <span class="lec-btn__arrow">→</span>
+                </button>
+            </div>
+        </section>
+        <hr>
+        <section class="mais-amados">
+            <p class="mais-amados__rotulo">MAIS AMADOS</p>
+            <h2 class="mais-amados__titulo">Os livros que todos comentam</h2>
+            <div class="mais-amados__lista">
+                <article class="mais-amados__item">
+                    <a class="mais-amados__link" href="#livroE">
+                        <div class="mais-amados__conteudo">
+                            <p class="mais-amados__posicao">01</p>
+                            <div class="mais-amados__capa mais-amados__capa--torto-arado" role="img"
+                                aria-label="Capa de Torto Arado">
+                                <span class="mais-amados__capa-texto">TORTO ARADO</span>
+                            </div>
+                            <div class="mais-amados__detalhes">
+                                <h3 class="mais-amados__nome">Torto Arado</h3>
+                                <p class="mais-amados__autor">Itamar Vieira Junior</p>
+                            </div>
+                            <p class="mais-amados__preco">R$ 52,90</p>
+                            <span class="mais-amados__seta" aria-hidden="true">→</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="mais-amados__item">
+                    <a class="mais-amados__link" href="#livroF">
+                        <div class="mais-amados__conteudo">
+                            <p class="mais-amados__posicao">02</p>
+                            <div class="mais-amados__capa mais-amados__capa--addie-larue" role="img"
+                                aria-label="Capa de A Vida Invisível de Addie LaRue">
+                                <span class="mais-amados__capa-texto">ADDIE LARUE</span>
+                            </div>
+                            <div class="mais-amados__detalhes">
+                                <h3 class="mais-amados__nome">A Vida Invisível de Addie LaRue</h3>
+                                <p class="mais-amados__autor">V. E. Schwab</p>
+                            </div>
+                            <p class="mais-amados__preco">R$ 59,90</p>
+                            <span class="mais-amados__seta" aria-hidden="true">→</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="mais-amados__item">
+                    <a class="mais-amados__link" href="#livroG">
+                        <div class="mais-amados__conteudo">
+                            <p class="mais-amados__posicao">03</p>
+                            <div class="mais-amados__capa mais-amados__capa--expresso-oriente" role="img"
+                                aria-label="Capa de Assassinato no Expresso do Oriente">
+                                <span class="mais-amados__capa-texto">EXPRESSO DO ORIENTE</span>
+                            </div>
+                            <div class="mais-amados__detalhes">
+                                <h3 class="mais-amados__nome">Assassinato no Expresso do Oriente</h3>
+                                <p class="mais-amados__autor">Agatha Christie</p>
+                            </div>
+                            <p class="mais-amados__preco">R$ 39,90</p>
+                            <span class="mais-amados__seta" aria-hidden="true">→</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="mais-amados__item">
+                    <a class="mais-amados__link" href="#livroH">
+                        <div class="mais-amados__conteudo">
+                            <p class="mais-amados__posicao">04</p>
+                            <div class="mais-amados__capa mais-amados__capa--cem-anos" role="img"
+                                aria-label="Capa de Cem Anos de Solidão">
+                                <span class="mais-amados__capa-texto">CEM ANOS DE SOLIDÃO</span>
+                            </div>
+                            <div class="mais-amados__detalhes">
+                                <h3 class="mais-amados__nome">Cem Anos de Solidão</h3>
+                                <p class="mais-amados__autor">Gabriel García Márquez</p>
+                            </div>
+                            <p class="mais-amados__preco">R$ 58,50</p>
+                            <span class="mais-amados__seta" aria-hidden="true">→</span>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <hr>
+    </main>
+    <footer class="footer">
+        <article class="footer__isologo">
+            <a class="footer-isologo" href="inicio.html">
+                <img class="footer-isologo__icon" src="style/icons/logo.svg" alt="">
+                <p class="footer-isologo__text">Aurora Livros</p>
+            </a>
+            <p class="footer-isologo__slogan">Histórias escolhidas com cuidado, para ler sem pressa.</p>
+        </article>
+        <nav class="discovery-help" aria-label="Descubra">
+            <p class="footer-links__header">Descubra</p>
+            <a class="footer-links" href="catalogo.html">Catálogo</a>
+            <a class="footer-links" href="autores.html">Autores</a>
+            <a class="footer-links" href="vale-presente.html">Vale-presente</a>
+        </nav>
+        <nav class="discovery-help" aria-label="Ajuda">
+            <p class="footer-links__header">Ajuda</p>
+            <a class="footer-links" href="contato.html">Fale conosco</a>
+            <a class="footer-links" href="#">Envios e devoluções</a>
+            <a class="footer-links" href="#">Privacidade</a>
+        </nav>
+        <article class="footer-form">
+            <p class="footer-form__header">Cartas da Aurora</p>
+            <p class="footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
+            <form class="footer-field" action="">
+                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com"
+                    aria-label="Seu e-mail" required>
+                <button class="footer-field__btn" type="submit" aria-label="Assinar">→</button>
+            </form>
+        </article>
+        <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
+    </footer>
+</body>
+
+</html>
