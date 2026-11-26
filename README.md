@@ -6,8 +6,8 @@ Site de uma livraria/biblioteca virtual chamada **Aurora Livros**, com curadoria
 ## Prints do site em diferentes tipos de tela:
 
 <img width="515" height="325" alt="WhatsApp Image 2026-11-25 at 23 12 44 (2)" src="https://github.com/user-attachments/assets/8acbf10b-d0f5-46e3-8b27-e01e7528f908" />
-<img width="372" height="436" alt="WhatsApp Image 2026-11-25 at 23 12 44 (1)" src="https://github.com/user-attachments/assets/fe3e52da-43f5-4626-be7c-a37685b16aea" />
-<img width="382" height="425" alt="WhatsApp Image 2026-11-25 at 23 12 44" src="https://github.com/user-attachments/assets/e031e73c-aa63-4320-bb07-e1e2c05cbea4" />
+<img width="372" height="325" alt="WhatsApp Image 2026-11-25 at 23 12 44 (1)" src="https://github.com/user-attachments/assets/fe3e52da-43f5-4626-be7c-a37685b16aea" />
+<img width="382" height="325" alt="WhatsApp Image 2026-11-25 at 23 12 44" src="https://github.com/user-attachments/assets/e031e73c-aa63-4320-bb07-e1e2c05cbea4" />
 
 
 ## ✨ Funcionalidades
