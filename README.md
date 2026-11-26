@@ -74,4 +74,9 @@ Este projeto é um protótipo de interface. Não há JavaScript nem back-end, en
 - Os botões de **carrinho** e **favoritos** são apenas visuais.
 - Os formulários de **contato** e **newsletter** não enviam dados para nenhum servidor.
 
-
+## Nome dos integrantes:
+   Héber Ebenézer
+   Kyvia Wenne
+   João Gabriel
+   Pedro Arthur
+   Philipe Gabriel
