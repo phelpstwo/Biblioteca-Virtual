@@ -4,7 +4,7 @@
 Site de uma livraria/biblioteca virtual chamada **Aurora Livros**, com curadoria de clássicos e lançamentos contemporâneos. O projeto é um front-end estático, feito só com **HTML e CSS**, com foco em design editorial, responsividade e acessibilidade.
 
 ## Prints do site em diferentes tipos de tela:
-<img width="1030" height="650" alt="WhatsApp Image 2026-11-25 at 23 12 44 (2)" src="https://github.com/user-attachments/assets/8acbf10b-d0f5-46e3-8b27-e01e7528f908" width="700" />
+<img width="1030" height="650" alt="WhatsApp Image 2026-11-25 at 23 12 44 (2)" src="https://github.com/user-attachments/assets/8acbf10b-d0f5-46e3-8b27-e01e7528f908" width="515" height="325" />
 <img width="785" height="877" alt="WhatsApp Image 2026-11-25 at 23 12 44 (1)" src="https://github.com/user-attachments/assets/fe3e52da-43f5-4626-be7c-a37685b16aea" width="700" />
 <img width="763" height="851" alt="WhatsApp Image 2026-11-25 at 23 12 44" src="https://github.com/user-attachments/assets/e031e73c-aa63-4320-bb07-e1e2c05cbea4" width="700" />
 
