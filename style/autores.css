@@ -313,6 +313,8 @@ hr {
     cursor: pointer;
     scale: 1;
     transition: 250ms ease-in;
+    color: inherit;
+    text-decoration: none;
 }
 
 .card-btn:hover {
@@ -330,8 +332,8 @@ hr {
 
 .footer {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.6fr;
-    grid-template-columns: 3fr 1fr 1fr 1.6fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     gap: 2rem 3rem;
     align-items: start;
     padding: 2.5rem 2rem 1.5rem;

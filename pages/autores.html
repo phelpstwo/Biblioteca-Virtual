@@ -8,6 +8,7 @@
     <title>Aurora Livros</title>
     <link rel="stylesheet" href="style/autores.css">
     <link rel="icon" href="style/icons/logo-tab.svg">
+    <link rel="stylesheet" href="style/modal.css">
 </head>
 
 <body class="body">
@@ -54,43 +55,43 @@
                 <div class="author-card__sigla">PH</div>
                 <h3 class="author-card__name">Philipe Gabriel</h3>
                 <p class="author-card__description">Romance, ironia e observação social</p>
-                <button class="card-btn">
-                    <span class="card-btn__text">Conhecer obras →</span>
-                </button>
+                <a class="card-btn" href="https://github.com/phelpstwo" target="_blank" rel="noopener noreferrer" aria-label="Conhecer desenvolvedor de Philipe Gabriel no GitHub">
+                    <span class="card-btn__text">Conhecer desenvolvedor →</span>
+                </a>
             </article>
             <article class="authors__cards">
                 <div class="author-card__sigla">HE</div>
                 <h3 class="author-card__name">Héber Ebenezer</h3>
                 <p class="author-card__description">Memória, terra e identidade brasileira</p>
-                <button class="card-btn">
-                    <span class="card-btn__text">Conhecer obras →</span>
-                </button>
+                <a class="card-btn" href="https://github.com/Ebenezer-cds" target="_blank" rel="noopener noreferrer" aria-label="Conhecer desenvolvedor de Héber Ebenezer no GitHub">
+                    <span class="card-btn__text">Conhecer desenvolvedor →</span>
+                </a>
             </article>
             <article class="authors__cards">
                 <div class="author-card__sigla">GT</div>
                 <h3 class="author-card__name author-card__name--name-icon">Gabriel Teles</h3>
                 <h3 class="author-card__name author-card__name--frog"></h3>
                 <p class="author-card__description">Mistérios engenhosos e atemporais</p>
-                <button class="card-btn">
-                    <span class="card-btn__text">Conhecer obras →</span>
-                </button>
+                <a class="card-btn" href="https://github.com/gaabananada" target="_blank" rel="noopener noreferrer" aria-label="Conhecer desenvolvedor de Gabriel Teles no GitHub">
+                    <span class="card-btn__text">Conhecer desenvolvedor →</span>
+                </a>
             </article>
             <article class="authors__cards">
                 <div class="author-card__sigla">KW</div>
                 <h3 class="author-card__name">Kyvia Wenne</h3>
                 <p class="author-card__description">Realismo mágico e histórias latino-americanas</p>
-                <button class="card-btn">
-                    <span class="card-btn__text">Conhecer obras →</span>
-                </button>
+                <a class="card-btn" href="https://github.com/Ky-Wayne" target="_blank" rel="noopener noreferrer" aria-label="Conhecer desenvolvedor de Kyvia Wenne no GitHub">
+                    <span class="card-btn__text">Conhecer desenvolvedor →</span>
+                </a>
             </article>
             <article class="authors__cards">
                 <div class="author-card__sigla">AM</div>
                 <h3 class="author-card__name author-card__name--name-icon">Arthur Mendes</h3>
                 <h3 class="author-card__name author-card__name--claud"></h3>
-                <p class="author-card__description">Realismo mágico e histórias latino-americanas</p>
-                <button class="card-btn">
-                    <span class="card-btn__text">Conhecer obras →</span>
-                </button>
+                <p class="author-card__description">Escreve em linhas paralelas o que não poderia ser dito em falas tortas</p>
+                <a class="card-btn" href="https://github.com/arthmendz" target="_blank" rel="noopener noreferrer" aria-label="Conhecer desenvolvedor de Arthur Mendes no GitHub">
+                    <span class="card-btn__text">Conhecer desenvolvedor →</span>
+                </a>
             </article>
         </section>
         <hr>
@@ -112,20 +113,12 @@
         <nav class="discovery-help" aria-label="Ajuda">
             <p class="footer-links__header">Ajuda</p>
             <a class="footer-links" href="contato.html">Fale conosco</a>
-            <a class="footer-links" href="#">Envios e devoluções</a>
-            <a class="footer-links" href="#">Privacidade</a>
+            <a class="footer-links" href="#envios">Envios e devoluções</a>
+            <a class="footer-links" href="#privacidade">Privacidade</a>
         </nav>
-        <article class="footer-form">
-            <p class="footer-form__header">Cartas da Aurora</p>
-            <p class="footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
-            <form class="footer-field" action="">
-                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com"
-                    aria-label="Seu e-mail" required>
-                <button class="footer-field__btn" type="submit" aria-label="Assinar">→</button>
-            </form>
-        </article>
         <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

@@ -246,6 +246,11 @@ hr {
     color: #282210;
 }
 
+.filter-buttons {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
 .catalog__radio {
     position: absolute;
     opacity: 0;
@@ -254,9 +259,42 @@ hr {
 
 .filter {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 2rem;
+}
+
+.voucher {
+    display: block;
+    text-decoration: none;
+    outline-style: none;
+    padding: 1rem;
+    border-bottom: .15rem solid #282210;
+    border-radius: .25rem;
+    background-color: #efe2be;
+    box-shadow: .5rem .5rem 1rem -.5rem rgba(0, 0, 0, 0.7);
+    scale: 1;
+    transition: 250ms ease-in;
+}
+
+.voucher:hover {
+    scale: 1.04;
+    background-color: #e1d0a8;
+    box-shadow: .6rem .6rem 1rem -.4rem rgba(0, 0, 0, 0.8);
+    transition: 100ms ease-in;
+}
+
+.voucher-btn {
+    outline-style: none;
+    color: #282210;
+    font-family: 'Manrope';
+    font-size: .8rem;
+    font-weight: 600;
+    border: none;
+    border-style: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .filter__btn {
@@ -305,11 +343,7 @@ hr {
     font-size: .8rem;
 }
 
-#filtro-todos:checked~.catalog__count--todos,
-#filtro-romance:checked~.catalog__count--romance,
-#filtro-fantasia:checked~.catalog__count--fantasia,
-#filtro-misterio:checked~.catalog__count--misterio,
-#filtro-classicos:checked~.catalog__count--classicos {
+#catalog-count {
     display: block;
 }
 
@@ -334,6 +368,10 @@ hr {
     flex-flow: column;
     border-radius: .35rem;
     background-color: #efe2be;
+}
+
+.slct-cards[hidden] {
+    display: none;
 }
 
 .slct-cards__link {
@@ -509,6 +547,9 @@ hr {
 }
 
 .cards-shop__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-family: sans-serif;
     font-size: .6rem;
     height: 1.5rem;
@@ -521,6 +562,8 @@ hr {
     cursor: pointer;
     scale: 1;
     transition: 250ms ease-in;
+    color: inherit;
+    text-decoration: none;
 }
 
 .cards-shop__btn:hover {
@@ -545,7 +588,7 @@ hr {
 
 .footer {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.6fr;
+    grid-template-columns: 2fr 1fr 1fr;
     gap: 2rem 3rem;
     align-items: start;
     padding: 2.5rem 2rem 1.5rem;
@@ -706,15 +749,19 @@ hr {
         gap: .25rem .5rem;
         padding: .5rem 1rem;
     }
+
     .isologo {
         gap: .35rem;
     }
+
     .isologo__icon {
         height: 1.8rem;
     }
+
     .isologo__text {
         font-size: 1rem;
     }
+
     .pages {
         grid-column: 1/-1;
         grid-row: 2;
@@ -722,68 +769,84 @@ hr {
         justify-content: space-between;
         gap: 0;
     }
+
     .p-link__btn {
         padding-inline: .35rem;
         font-size: .76rem;
     }
+
     .actions {
         grid-column: 2;
         grid-row: 1;
         gap: 0;
     }
+
     .actions__btn {
         width: 1.8rem;
         height: 1.8rem;
         padding: .75rem;
     }
+
     .nav-action-badge {
         left: 1.15rem;
     }
+
     .main {
         margin-top: 1rem;
     }
+
     .header {
         margin: 1.25rem 0;
         padding-inline: 1rem;
     }
+
     .header__title {
         font-size: 2.4rem;
         line-height: 1.1;
     }
+
     .header__phrase1 {
         font-size: 1.05rem;
         line-height: 1.4;
     }
+
     .catalog {
         padding-inline: 1rem;
         margin-bottom: 3rem;
     }
+
     .filter {
         gap: .5rem;
         margin-bottom: 1.5rem;
     }
+
     .filter__btn {
         flex: 1 1 calc(50% - .5rem);
         min-height: 2.75rem;
         padding: .6rem .5rem;
     }
+
     .catalog__books {
         grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
     }
+
     .slct-cards__link {
         margin: .75rem;
     }
+
     .cards-shop {
         align-items: center;
         gap: .5rem;
     }
+
     .cards-shop__btn {
         height: auto;
         min-height: 2rem;
         margin-bottom: .5rem;
         padding: .35rem;
     }
+
     .footer {
         grid-template-columns: 1fr;
         gap: 1.25rem;

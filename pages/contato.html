@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,7 @@
     <title>Aurora Livros</title>
     <link rel="stylesheet" href="style/contato.css">
     <link rel="icon" href="style/icons/logo-tab.svg">
+    <link rel="stylesheet" href="style/modal.css">
 </head>
 
 <body class="body">
@@ -53,7 +54,7 @@
                 <p class="cta__phrase">Escreva para nós.</p>
                 <hr class="cta__hr">
                 <p class="cta__header2">E-mail:</p>
-                <p class="cta__email">contato@auroralivros.com</p>
+                <a class="cta__email" href="mailto:auroralibellum@gmail.com">auroralibellum@gmail.com</a>
                 <p class="cta__header2">Atendimento:</p>
                 <p class="cta__schedule">Segunda a sexta, das 9h às 18h</p>
             </section>
@@ -108,18 +109,10 @@
         <nav class="discovery-help" aria-label="Ajuda">
             <p class="footer-links__header">Ajuda</p>
             <a class="footer-links" href="contato.html">Fale conosco</a>
-            <a class="footer-links" href="#">Envios e devoluções</a>
-            <a class="footer-links" href="#">Privacidade</a>
+            <a class="footer-links" href="#envios">Envios e devoluções</a>
+            <a class="footer-links" href="#privacidade">Privacidade</a>
         </nav>
-        <article class="footer-form">
-            <p class="footer-form__header">Cartas da Aurora</p>
-            <p class="footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
-            <form class="footer-field" action="">
-                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com"
-                    aria-label="Seu e-mail" required>
-                <button class="footer-field__btn" type="submit" aria-label="Assinar">→</button>
-            </form>
-        </article>
         <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
+    <script src="script.js" defer></script>
 </body>
