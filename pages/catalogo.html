@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catálogo — Aurora Livros</title>
-    <link rel="stylesheet" href="style/catalogo.css">
-    <link rel="icon" href="style/icons/logo-tab.svg">
-    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="../style/catalogo.css">
+    <link rel="icon" href="../style/icons/logo-tab.svg">
 </head>
 
 <body class="body">
     <nav class="top-bar">
-        <a class="isologo" href="index.html">
-            <img class="isologo__icon" src="style/icons/logo.svg" alt="Aurora Livros">
+        <a class="isologo" href="../index.html">
+            <img class="isologo__icon" src="../style/icons/logo.svg" alt="Aurora Livros">
             <p class="isologo__text">Aurora Livros</p>
         </a>
         <section class="pages">
-            <a class="p-link pages__link" href="index.html">
+            <a class="p-link pages__link" href="../index.html">
                 <button class="p-link__btn">Início</button>
             </a>
             <a class="p-link pages__link" href="catalogo.html" aria-current="page">
@@ -33,11 +32,11 @@
         </section>
         <section class="actions">
             <button class="actions__btn">
-                <img class="actions__btn--fav-icon" src="style/icons/favorites-unfilled.svg" alt="">
+                <img class="actions__btn--fav-icon" src="../style/icons/favorites-unfilled.svg" alt="">
                 <span class="nav-action-badge">0</span>
             </button>
             <button class="actions__btn">
-                <img src="style/icons/bag.svg" alt="">
+                <img src="../style/icons/bag.svg" alt="">
                 <span class="nav-action-badge">0</span>
             </button>
             <button class="actions__btn actions__btn--accessbility">Aa</button>
@@ -57,20 +56,19 @@
             <input class="catalog__radio" type="radio" name="categoria" id="filtro-misterio">
             <input class="catalog__radio" type="radio" name="categoria" id="filtro-classicos">
             <div class="filter" role="group" aria-label="Filtrar livros por categoria">
-                <div class="filter-buttons">
-                    <label class="filter__btn" for="filtro-todos">Todos</label>
-                    <label class="filter__btn" for="filtro-romance">Romance</label>
-                    <label class="filter__btn" for="filtro-fantasia">Fantasia</label>
-                    <label class="filter__btn" for="filtro-misterio">Mistério</label>
-                    <label class="filter__btn" for="filtro-classicos">Clássicos</label>
-                </div>
-                <a class="voucher" href="vale-presente.html">
-                    <button class="voucher-btn">Vale-presente</button>
-                </a>
+                <label class="filter__btn" for="filtro-todos">Todos</label>
+                <label class="filter__btn" for="filtro-romance">Romance</label>
+                <label class="filter__btn" for="filtro-fantasia">Fantasia</label>
+                <label class="filter__btn" for="filtro-misterio">Mistério</label>
+                <label class="filter__btn" for="filtro-classicos">Clássicos</label>
             </div>
-            <p class="catalog__count" id="catalog-count" aria-live="polite">Carregando livros...</p>
-            <div class="catalog__books">
-                <article class="slct-cards slct-cards--jardim slct-cards--classicos">
+            <p class="catalog__count catalog__count--todos" aria-live="polite">8 livros encontrados</p>
+            <p class="catalog__count catalog__count--romance" aria-live="polite">2 livros encontrados</p>
+            <p class="catalog__count catalog__count--fantasia" aria-live="polite">2 livros encontrados</p>
+            <p class="catalog__count catalog__count--misterio" aria-live="polite">2 livros encontrados</p>
+            <p class="catalog__count catalog__count--classicos" aria-live="polite">2 livros encontrados</p>
+            <div id="catalog__books" class="catalog__books">
+                <article id="slct-cards--classicos" class="slct-cards slct-cards--jardim slct-cards--classicos">
                     <a class="slct-cards__link" href="#livro-jardim">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">O JARDIM SECRETO</p>
@@ -78,7 +76,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=classicos">CLÁSSICOS</a>
+                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
                         <a class="book-info__title" href="#livro-jardim">O Jardim Secreto</a>
                         <p class="book-info__author">por Frances Hodgson Burnett</p>
                     </div>
@@ -101,7 +99,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=fantasia">FANTASIA</a>
+                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
                         <a class="book-info__title" href="#livro-biblioteca">A Biblioteca da Meia-Noite</a>
                         <p class="book-info__author">por Matt Haig</p>
                     </div>
@@ -124,7 +122,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=romance">ROMANCE</a>
+                        <a class="book-info__category" href="#romance">ROMANCE</a>
                         <a class="book-info__title" href="#livro-orgulho">Orgulho e Preconceito</a>
                         <p class="book-info__author">por Jane Austen</p>
                     </div>
@@ -147,7 +145,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=misterio">MISTÉRIO</a>
+                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
                         <a class="book-info__title" href="#livro-rosa">O Nome da Rosa</a>
                         <p class="book-info__author">por Umberto Eco</p>
                     </div>
@@ -163,14 +161,14 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--torto slct-cards--romance">
-                    <a class="slct-cards__link" href="#livro-torto">
+                    <a id="livro-torto" class="slct-cards__link" href="#livro-torto">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">TORTO ARADO</p>
                             <p class="book-card__author">ITAMAR VIEIRA JUNIOR</p>
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=romance">ROMANCE</a>
+                        <a class="book-info__category" href="#romance">ROMANCE</a>
                         <a class="book-info__title" href="#livro-torto">Torto Arado</a>
                         <p class="book-info__author">por Itamar Vieira Junior</p>
                     </div>
@@ -186,14 +184,14 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--addie slct-cards--fantasia">
-                    <a class="slct-cards__link" href="#livro-addie">
+                    <a id="livro-addie" class="slct-cards__link" href="#livro-addie">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">A VIDA INVISÍVEL DE ADDIE LARUE</p>
                             <p class="book-card__author">V. E. SCHWAB</p>
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=fantasia">FANTASIA</a>
+                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
                         <a class="book-info__title" href="#livro-addie">A Vida Invisível de Addie LaRue</a>
                         <p class="book-info__author">por V. E. Schwab</p>
                     </div>
@@ -209,14 +207,14 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--expresso slct-cards--misterio">
-                    <a class="slct-cards__link" href="#livro-expresso">
+                    <a id="livro-expresso" class="slct-cards__link" href="#livro-expresso">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">ASSASSINATO NO EXPRESSO DO ORIENTE</p>
                             <p class="book-card__author">AGATHA CHRISTIE</p>
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=misterio">MISTÉRIO</a>
+                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
                         <a class="book-info__title" href="#livro-expresso">Assassinato no Expresso do Oriente</a>
                         <p class="book-info__author">por Agatha Christie</p>
                     </div>
@@ -232,14 +230,14 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--cem-anos slct-cards--classicos">
-                    <a class="slct-cards__link" href="#livro-cem-anos">
+                    <a id="livro-cem-anos" class="slct-cards__link" href="#livro-cem-anos">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">CEM ANOS DE SOLIDÃO</p>
                             <p class="book-card__author">GABRIEL GARCÍA MÁRQUEZ</p>
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="?categoria=classicos">CLÁSSICOS</a>
+                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
                         <a class="book-info__title" href="#livro-cem-anos">Cem Anos de Solidão</a>
                         <p class="book-info__author">por Gabriel García Márquez</p>
                     </div>
@@ -260,8 +258,8 @@
     </main>
     <footer class="footer">
         <article class="footer__isologo">
-            <a class="footer-isologo" href="index.html">
-                <img class="footer-isologo__icon" src="style/icons/logo.svg" alt="">
+            <a class="footer-isologo" href="../index.html">
+                <img class="footer-isologo__icon" src="../style/icons/logo.svg" alt="">
                 <p class="footer-isologo__text">Aurora Livros</p>
             </a>
             <p class="footer-isologo__slogan">Histórias escolhidas com cuidado, para ler sem pressa.</p>
@@ -275,12 +273,32 @@
         <nav class="discovery-help" aria-label="Ajuda">
             <p class="footer-links__header">Ajuda</p>
             <a class="footer-links" href="contato.html">Fale conosco</a>
-            <a class="footer-links" href="#envios">Envios e devoluções</a>
-            <a class="footer-links" href="#privacidade">Privacidade</a>
+            <a class="footer-links" href="#">Envios e devoluções</a>
+            <a class="footer-links" href="#">Privacidade</a>
         </nav>
+        <article class="footer-form">
+            <p class="footer-form__header">Cartas da Aurora</p>
+            <p class="footer-isologo__slogan">Novidades e boas leituras, uma vez por mês.</p>
+            <form class="footer-field" action="">
+                <input class="footer-field__input" type="email" name="email" placeholder="seu@email.com"
+                    aria-label="Seu e-mail" required>
+                <button class="footer-field__btn" type="submit" aria-label="Assinar">→</button>
+            </form>
+        </article>
         <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
-    <script src="script.js" defer></script>
+    <script>
+        const categoria = new URLSearchParams(window.location.search).get('categoria');
+
+        if (categoria) {
+            const radio = document.getElementById('filtro-' + categoria);
+
+            if (radio) {
+                radio.checked = true; // o CSS já cuida de filtrar os livros
+                document.querySelector('.catalog').scrollIntoView();
+            }
+        }
+    </script>
 </body>
 
 </html>

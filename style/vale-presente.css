@@ -376,7 +376,7 @@
 
 .footer {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr 1.6fr;
     gap: 2rem 3rem;
     align-items: start;
     padding: 2.5rem max(2rem, calc((100% - 76rem) / 2)) 1.5rem;
