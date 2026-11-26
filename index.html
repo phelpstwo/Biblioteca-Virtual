@@ -53,8 +53,8 @@
                     seu tempo.
                 </p>
                 <button class="cta-btn cta__btn">
-                    <span class="cta-btn__text">Explorar livros</span>
-                    <span class="cta-btn__arrow">→</span>
+                    <a class="cta-btn__text" href="#selection">Começe a jornada!</a>
+                    <!-- <span class="cta-btn__arrow">→</span> -->
                 </button>
             </article>
             <article class="h-quote header__quote">
@@ -72,11 +72,11 @@
             </article>
         </header>
         <section class="selection">
-            <h2 class="eyebrow2">NOSSA SELEÇÃO</h2>
+            <h2 id="selection" class="eyebrow2">NOSSA SELEÇÃO</h2>
             <div class="slct-actions selection__actions">
                 <p class="slct-actions__title">Escolhidos para você</p>
                 <button class="slct-act-btn slct-actions__btn">
-                    <span class="slct-act-btn__text">Ver catálogo completo</span>
+                    <a class="slct-act-btn__text" href="catalogo.html">Ver catálogo completo</a>
                     <span class="slct-act-btn__text slct-actions-btn__text--arrow">→</span>
                 </button>
             </div>
@@ -89,8 +89,8 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
-                        <a class="book-info__title" href="#livroA">O Jardim Secreto</a>
+                        <a class="book-info__category" href="catalogo.html?categoria=classicos">CLÁSSICOS</a>
+                        <a class="book-info__title" href="catalogo.html#catalog__books">O Jardim Secreto</a>
                         <p class="book-info__author">por Frances Hodgson Burnett</p>
                     </div>
                     <div class="book-rating slct-cards__stars">
@@ -112,8 +112,8 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
-                        <a class="book-info__title" href="#livroB">A Biblioteca da Meia-Noite</a>
+                        <a class="book-info__category" href="catalogo.html?categoria=fantasia">FANTASIA</a>
+                        <a class="book-info__title" href="catalogo.html#catalog__books">A Biblioteca da Meia-Noite</a>
                         <p class="book-info__author">por Matt Halg</p>
                     </div>
                     <div class="book-rating slct-cards__stars">
@@ -135,8 +135,8 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#romance">ROMANCE</a>
-                        <a class="book-info__title" href="#livroC">Orgulho e Preconceito</a>
+                        <a class="book-info__category" href="catalogo.html?categoria=romance">ROMANCE</a>
+                        <a class="book-info__title" href="catalogo.html#catalog__books">Orgulho e Preconceito</a>
                         <p class="book-info__author">por Jane Austen</p>
                     </div>
                     <div class="book-rating slct-cards__stars">
@@ -158,8 +158,8 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
-                        <a class="book-info__title" href="#livroD">O Nome da Rosa</a>
+                        <a class="book-info__category" href="catalogo.html?categoria=misterio">MISTÉRIO</a>
+                        <a class="book-info__title" href="catalogo.html#catalog__books">O Nome da Rosa</a>
                         <p class="book-info__author">por Umberto Eco</p>
                     </div>
                     <div class="book-rating slct-cards__stars">
@@ -180,34 +180,34 @@
             <h2 class="eyebrow2">ENCONTRE SUA PRÓXIMA LEITURA</h2>
             <p class="lecture__header">Qual história chama por você?</p>
             <div class="lecture__buttons">
-                <button class="lec-btn">
+                <a class="lec-btn" href="catalogo.html?categoria=romance">
                     <div class="lec-btn__ic_nm">
                         <span class="btn-ic__number">01</span>
                         <span class="btn-ic__name">Romance</span>
                     </div>
                     <span class="lec-btn__arrow">→</span>
-                </button>
-                <button class="lec-btn">
+                </a>
+                <a class="lec-btn" href="catalogo.html?categoria=fantasia">
                     <div class="lec-btn__ic_nm">
                         <span class="btn-ic__number">02</span>
                         <span class="btn-ic__name">Fantasia</span>
                     </div>
                     <span class="lec-btn__arrow">→</span>
-                </button>
-                <button class="lec-btn">
+                </a>
+                <a class="lec-btn" href="catalogo.html?categoria=misterio">
                     <div class="btn-ic lec-btn__ic_nm">
                         <span class="btn-ic__number">03</span>
                         <span class="btn-ic__name">Mistério</span>
                     </div>
                     <span class="lec-btn__arrow">→</span>
-                </button>
-                <button class="lec-btn">
+                </a>
+                <a class="lec-btn" href="catalogo.html?categoria=classicos">
                     <div class="lec-btn__ic_nm">
                         <span class="btn-ic__number">04</span>
                         <span class="btn-ic__name">Clássicos</span>
                     </div>
                     <span class="lec-btn__arrow">→</span>
-                </button>
+                </a>
             </div>
         </section>
         <hr>
@@ -216,7 +216,7 @@
             <h2 class="mais-amados__titulo">Os livros que todos comentam</h2>
             <div class="mais-amados__lista">
                 <article class="mais-amados__item">
-                    <a class="mais-amados__link" href="#livroE">
+                    <a class="mais-amados__link" href="catalogo.html#livro-torto">
                         <div class="mais-amados__conteudo">
                             <p class="mais-amados__posicao">01</p>
                             <div class="mais-amados__capa mais-amados__capa--torto-arado" role="img"
@@ -233,7 +233,7 @@
                     </a>
                 </article>
                 <article class="mais-amados__item">
-                    <a class="mais-amados__link" href="#livroF">
+                    <a class="mais-amados__link" href="catalogo.html#livro-addie">
                         <div class="mais-amados__conteudo">
                             <p class="mais-amados__posicao">02</p>
                             <div class="mais-amados__capa mais-amados__capa--addie-larue" role="img"
@@ -250,7 +250,7 @@
                     </a>
                 </article>
                 <article class="mais-amados__item">
-                    <a class="mais-amados__link" href="#livroG">
+                    <a class="mais-amados__link" href="catalogo.html#livro-expresso">
                         <div class="mais-amados__conteudo">
                             <p class="mais-amados__posicao">03</p>
                             <div class="mais-amados__capa mais-amados__capa--expresso-oriente" role="img"
@@ -267,7 +267,7 @@
                     </a>
                 </article>
                 <article class="mais-amados__item">
-                    <a class="mais-amados__link" href="#livroH">
+                    <a class="mais-amados__link" href="catalogo.html#livro-cem-anos">
                         <div class="mais-amados__conteudo">
                             <p class="mais-amados__posicao">04</p>
                             <div class="mais-amados__capa mais-amados__capa--cem-anos" role="img"
@@ -289,7 +289,7 @@
     </main>
     <footer class="footer">
         <article class="footer__isologo">
-            <a class="footer-isologo" href="inicio.html">
+            <a class="footer-isologo" href="index.html">
                 <img class="footer-isologo__icon" src="style/icons/logo.svg" alt="">
                 <p class="footer-isologo__text">Aurora Livros</p>
             </a>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,15 @@
     <link rel="stylesheet" href="style/vale-presente.css">
     <link rel="icon" href="style/icons/logo-tab.svg">
 </head>
+
 <body class="body">
     <nav class="top-bar" aria-label="Navegação principal">
-        <a class="isologo" href="inicio.html">
+        <a class="isologo" href="index.html">
             <img class="isologo__icon" src="style/icons/logo.svg" alt="">
             <span class="isologo__text">Aurora Livros</span>
         </a>
         <div class="pages">
-            <a class="p-link pages__link" href="inicio.html"><span class="p-link__btn">Início</span></a>
+            <a class="p-link pages__link" href="index.html"><span class="p-link__btn">Início</span></a>
             <a class="p-link pages__link" href="catalogo.html"><span class="p-link__btn">Catálogo</span></a>
             <a class="p-link pages__link" href="autores.html"><span class="p-link__btn">Autores</span></a>
             <a class="p-link pages__link" href="contato.html"><span class="p-link__btn">Contato</span></a>
@@ -28,7 +30,8 @@
                 <img class="actions__icon" src="style/icons/bag.svg" alt="">
                 <span class="nav-action-badge">0</span>
             </button>
-            <button class="actions__btn actions__btn--accessbility" type="button" aria-label="Acessibilidade">Aa</button>
+            <button class="actions__btn actions__btn--accessbility" type="button"
+                aria-label="Acessibilidade">Aa</button>
         </div>
     </nav>
     <hr class="body__hr-top">
@@ -37,7 +40,8 @@
         <header class="header">
             <p class="header__eyebrow">UM PRESENTE EM FORMA DE HISTÓRIA</p>
             <h1 class="header__title">Resgate seu vale-presente</h1>
-            <p class="header__phrase">Informe o código do seu vale para consultar o saldo e usar seu crédito na próxima leitura.</p>
+            <p class="header__phrase">Informe o código do seu vale para consultar o saldo e usar seu crédito na próxima
+                leitura.</p>
         </header>
         <section class="redeem" aria-label="Resgate de vale-presente">
             <article class="redeem__panel">
@@ -47,9 +51,8 @@
                 <form class="voucher-form" action="vale-presente.html" method="get">
                     <label class="voucher-form__label" for="voucher-code">Código do vale-presente</label>
                     <input class="voucher-form__input" id="voucher-code" name="codigo" type="text"
-                        placeholder="Ex.: AURORA-AB12-CD34" autocomplete="off" autocapitalize="characters"
-                        minlength="8" maxlength="24" pattern="[A-Za-z0-9-]{8,24}"
-                        aria-describedby="voucher-help" required>
+                        placeholder="Ex.: AURORA-AB12-CD34" autocomplete="off" autocapitalize="characters" minlength="8"
+                        maxlength="24" pattern="[A-Za-z0-9-]{8,24}" aria-describedby="voucher-help" required>
                     <p class="voucher-form__help" id="voucher-help">Use somente letras, números e hífen.</p>
                     <button class="voucher-form__button" type="submit">
                         <span>Consultar vale-presente</span>
@@ -77,14 +80,15 @@
                 </ol>
                 <div class="redeem__note">
                     <p class="redeem__note-title">Precisa de ajuda?</p>
-                    <p class="redeem__note-text">Se o código não funcionar, <a class="redeem__link" href="contato.html">fale com a gente</a>.</p>
+                    <p class="redeem__note-text">Se o código não funcionar, <a class="redeem__link"
+                            href="contato.html">fale com a gente</a>.</p>
                 </div>
             </aside>
         </section>
     </main>
     <footer class="footer">
         <article class="footer__isologo">
-            <a class="footer-isologo" href="inicio.html">
+            <a class="footer-isologo" href="index.html">
                 <img class="footer-isologo__icon" src="style/icons/logo.svg" alt="">
                 <span class="footer-isologo__text">Aurora Livros</span>
             </a>
@@ -114,4 +118,5 @@
         <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
 </body>
+
 </html>

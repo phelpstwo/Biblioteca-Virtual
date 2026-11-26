@@ -12,12 +12,12 @@
 
 <body class="body">
     <nav class="top-bar">
-        <a class="isologo" href="inicio.html">
+        <a class="isologo" href="index.html">
             <img class="isologo__icon" src="style/icons/logo.svg" alt="Aurora Livros">
             <p class="isologo__text">Aurora Livros</p>
         </a>
         <section class="pages">
-            <a class="p-link pages__link" href="inicio.html">
+            <a class="p-link pages__link" href="index.html">
                 <button class="p-link__btn">Início</button>
             </a>
             <a class="p-link pages__link" href="catalogo.html" aria-current="page">
@@ -67,8 +67,8 @@
             <p class="catalog__count catalog__count--fantasia" aria-live="polite">2 livros encontrados</p>
             <p class="catalog__count catalog__count--misterio" aria-live="polite">2 livros encontrados</p>
             <p class="catalog__count catalog__count--classicos" aria-live="polite">2 livros encontrados</p>
-            <div class="catalog__books">
-                <article class="slct-cards slct-cards--jardim slct-cards--classicos">
+            <div id="catalog__books" class="catalog__books">
+                <article id="slct-cards--classicos" class="slct-cards slct-cards--jardim slct-cards--classicos">
                     <a class="slct-cards__link" href="#livro-jardim">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">O JARDIM SECRETO</p>
@@ -161,7 +161,7 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--torto slct-cards--romance">
-                    <a class="slct-cards__link" href="#livro-torto">
+                    <a id="livro-torto" class="slct-cards__link" href="#livro-torto">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">TORTO ARADO</p>
                             <p class="book-card__author">ITAMAR VIEIRA JUNIOR</p>
@@ -184,7 +184,7 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--addie slct-cards--fantasia">
-                    <a class="slct-cards__link" href="#livro-addie">
+                    <a id="livro-addie" class="slct-cards__link" href="#livro-addie">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">A VIDA INVISÍVEL DE ADDIE LARUE</p>
                             <p class="book-card__author">V. E. SCHWAB</p>
@@ -207,7 +207,7 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--expresso slct-cards--misterio">
-                    <a class="slct-cards__link" href="#livro-expresso">
+                    <a id="livro-expresso" class="slct-cards__link" href="#livro-expresso">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">ASSASSINATO NO EXPRESSO DO ORIENTE</p>
                             <p class="book-card__author">AGATHA CHRISTIE</p>
@@ -230,7 +230,7 @@
                     </div>
                 </article>
                 <article class="slct-cards slct-cards--cem-anos slct-cards--classicos">
-                    <a class="slct-cards__link" href="#livro-cem-anos">
+                    <a id="livro-cem-anos" class="slct-cards__link" href="#livro-cem-anos">
                         <div class="book-card slct-cards__book">
                             <p class="book-card__title">CEM ANOS DE SOLIDÃO</p>
                             <p class="book-card__author">GABRIEL GARCÍA MÁRQUEZ</p>
@@ -287,6 +287,18 @@
         </article>
         <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
+    <script>
+        const categoria = new URLSearchParams(window.location.search).get('categoria');
+
+        if (categoria) {
+            const radio = document.getElementById('filtro-' + categoria);
+
+            if (radio) {
+                radio.checked = true; // o CSS já cuida de filtrar os livros
+                document.querySelector('.catalog').scrollIntoView();
+            }
+        }
+    </script>
 </body>
 
 </html>
