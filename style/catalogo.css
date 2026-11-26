@@ -650,3 +650,143 @@ hr {
     font-family: sans-serif;
     font-size: .8rem;
 }
+
+@media (max-width: 62rem) {
+    .top-bar {
+        padding-inline: 1.25rem;
+    }
+
+    .pages {
+        gap: .25rem;
+    }
+
+    .p-link__btn {
+        padding-inline: .45rem;
+        font-size: .8rem;
+    }
+
+    .actions {
+        gap: .25rem;
+    }
+
+    .header {
+        padding-inline: 1.5rem;
+    }
+
+    .header__title {
+        font-size: clamp(2.5rem, 6vw, 3.5rem);
+    }
+
+    .header__phrase1 {
+        font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+    }
+
+    .catalog {
+        padding-inline: 1.5rem;
+    }
+
+    .catalog__books {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 36rem) {
+    .top-bar {
+        height: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: .25rem .5rem;
+        padding: .5rem 1rem;
+    }
+    .isologo {
+        gap: .35rem;
+    }
+    .isologo__icon {
+        height: 1.8rem;
+    }
+    .isologo__text {
+        font-size: 1rem;
+    }
+    .pages {
+        grid-column: 1/-1;
+        grid-row: 2;
+        height: 2.5rem;
+        justify-content: space-between;
+        gap: 0;
+    }
+    .p-link__btn {
+        padding-inline: .35rem;
+        font-size: .76rem;
+    }
+    .actions {
+        grid-column: 2;
+        grid-row: 1;
+        gap: 0;
+    }
+    .actions__btn {
+        width: 1.8rem;
+        height: 1.8rem;
+        padding: .75rem;
+    }
+    .nav-action-badge {
+        left: 1.15rem;
+    }
+    .main {
+        margin-top: 1rem;
+    }
+    .header {
+        margin: 1.25rem 0;
+        padding-inline: 1rem;
+    }
+    .header__title {
+        font-size: 2.4rem;
+        line-height: 1.1;
+    }
+    .header__phrase1 {
+        font-size: 1.05rem;
+        line-height: 1.4;
+    }
+    .catalog {
+        padding-inline: 1rem;
+        margin-bottom: 3rem;
+    }
+    .filter {
+        gap: .5rem;
+        margin-bottom: 1.5rem;
+    }
+    .filter__btn {
+        flex: 1 1 calc(50% - .5rem);
+        min-height: 2.75rem;
+        padding: .6rem .5rem;
+    }
+    .catalog__books {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+    }
+    .slct-cards__link {
+        margin: .75rem;
+    }
+    .cards-shop {
+        align-items: center;
+        gap: .5rem;
+    }
+    .cards-shop__btn {
+        height: auto;
+        min-height: 2rem;
+        margin-bottom: .5rem;
+        padding: .35rem;
+    }
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        padding: 1.5rem 1rem;
+    }
+}
