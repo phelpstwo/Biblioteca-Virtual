@@ -282,15 +282,7 @@ hr {
     color: #f9edd2;
     font-family: 'Manrope';
     font-size: 1rem;
-    /* margin-left: 1rem; */
 }
-
-/* .cta-btn__arrow {
-    color: #f9edd2;
-    font-family: 'Manrope';
-    font-size: 1.2rem;
-    margin-right: .75rem;
-} */
 
 .header__quote {
     width: auto;
@@ -737,8 +729,8 @@ hr {
 
 .footer {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.6fr;
-    grid-template-columns: 3fr 1fr 1fr 1.6fr;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 3fr 1fr 1fr;
     gap: 2rem 3rem;
     align-items: start;
     padding: 2.5rem 2rem 1.5rem;

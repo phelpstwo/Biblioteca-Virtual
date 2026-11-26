@@ -39,7 +39,7 @@
 }
 
 .body__hr-top,
-.main > hr {
+.main>hr {
     height: .1rem;
     border: 0;
     background: var(--color-line);
@@ -376,7 +376,7 @@
 
 .footer {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1.6fr;
+    grid-template-columns: 3fr 1fr 1fr;
     gap: 2rem 3rem;
     align-items: start;
     padding: 2.5rem max(2rem, calc((100% - 76rem) / 2)) 1.5rem;
@@ -551,65 +551,80 @@
     .pages__link {
         flex: 0 0 auto;
     }
+
     .p-link__btn {
         padding-inline: .3rem;
         font-size: .72rem;
         white-space: nowrap;
     }
+
     .p-link[aria-current="page"] .p-link__btn,
     .p-link__btn:hover {
         font-size: .72rem;
     }
+
     .actions {
         grid-column: 2;
         grid-row: 1;
         gap: 0;
     }
+
     .actions__btn {
         width: 1.8rem;
         height: 1.8rem;
     }
+
     .nav-action-badge {
         right: -.05rem;
         min-width: .9rem;
         height: .9rem;
         font-size: .58rem;
     }
+
     .header {
         padding: 1.5rem 1rem 1.25rem;
     }
+
     .header__eyebrow,
     .redeem__eyebrow {
         font-size: .68rem;
     }
+
     .header__title {
         font-size: 2.25rem;
     }
+
     .header__phrase {
         margin-top: .65rem;
         font-size: 1rem;
     }
+
     .redeem {
         grid-template-columns: minmax(0, 1fr);
         gap: 1rem;
         padding: 0 1rem 2.5rem;
     }
+
     .redeem__panel,
     .redeem__steps {
         padding: 1.2rem;
     }
+
     .redeem__title,
     .redeem__steps-title {
         font-size: 1.45rem;
     }
+
     .voucher-form__button {
         min-height: 3rem;
     }
+
     .footer {
         grid-template-columns: minmax(0, 1fr);
         gap: 1.25rem;
         padding: 1.5rem 1rem 1rem;
     }
+
     .footer__copy {
         grid-column: 1;
     }

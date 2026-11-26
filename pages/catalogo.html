@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Catálogo — Aurora Livros</title>
-    <link rel="stylesheet" href="../style/catalogo.css">
     <link rel="icon" href="../style/icons/logo-tab.svg">
+    <link rel="stylesheet" href="../style/modal.css">
+    <link rel="stylesheet" href="../style/catalogo.css">
 </head>
 
 <body class="body">
@@ -81,7 +82,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
+                        <a class="book-info__category" href="?categoria=classicos">CLÁSSICOS</a>
                         <a class="book-info__title" href="#livro-jardim">O Jardim Secreto</a>
                         <p class="book-info__author">por Frances Hodgson Burnett</p>
                     </div>
@@ -104,7 +105,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
+                        <a class="book-info__category" href="?categoria=fantasia">FANTASIA</a>
                         <a class="book-info__title" href="#livro-biblioteca">A Biblioteca da Meia-Noite</a>
                         <p class="book-info__author">por Matt Haig</p>
                     </div>
@@ -127,7 +128,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#romance">ROMANCE</a>
+                        <a class="book-info__category" href="?categoria=romance">ROMANCE</a>
                         <a class="book-info__title" href="#livro-orgulho">Orgulho e Preconceito</a>
                         <p class="book-info__author">por Jane Austen</p>
                     </div>
@@ -150,7 +151,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
+                        <a class="book-info__category" href="?categoria=misterio">MISTÉRIO</a>
                         <a class="book-info__title" href="#livro-rosa">O Nome da Rosa</a>
                         <p class="book-info__author">por Umberto Eco</p>
                     </div>
@@ -173,7 +174,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#romance">ROMANCE</a>
+                        <a class="book-info__category" href="?categoria=romance">ROMANCE</a>
                         <a class="book-info__title" href="#livro-torto">Torto Arado</a>
                         <p class="book-info__author">por Itamar Vieira Junior</p>
                     </div>
@@ -196,7 +197,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#fantasia">FANTASIA</a>
+                        <a class="book-info__category" href="?categoria=fantasia">FANTASIA</a>
                         <a class="book-info__title" href="#livro-addie">A Vida Invisível de Addie LaRue</a>
                         <p class="book-info__author">por V. E. Schwab</p>
                     </div>
@@ -219,7 +220,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#misterio">MISTÉRIO</a>
+                        <a class="book-info__category" href="?categoria=misterio">MISTÉRIO</a>
                         <a class="book-info__title" href="#livro-expresso">Assassinato no Expresso do Oriente</a>
                         <p class="book-info__author">por Agatha Christie</p>
                     </div>
@@ -242,7 +243,7 @@
                         </div>
                     </a>
                     <div class="book-info slct-cards__infos">
-                        <a class="book-info__category" href="#classicos">CLÁSSICOS</a>
+                        <a class="book-info__category" href="?categoria=classicos">CLÁSSICOS</a>
                         <a class="book-info__title" href="#livro-cem-anos">Cem Anos de Solidão</a>
                         <p class="book-info__author">por Gabriel García Márquez</p>
                     </div>
@@ -278,8 +279,8 @@
         <nav class="discovery-help" aria-label="Ajuda">
             <p class="footer-links__header">Ajuda</p>
             <a class="footer-links" href="contato.html">Fale conosco</a>
-            <a class="footer-links" href="#">Envios e devoluções</a>
-            <a class="footer-links" href="#">Privacidade</a>
+            <a class="footer-links" href="contato.html">Envios e devoluções</a>
+            <a class="footer-links" href="contato.html">Privacidade</a>
         </nav>
         <article class="footer-form">
             <p class="footer-form__header">Cartas da Aurora</p>
@@ -292,18 +293,7 @@
         </article>
         <p class="footer__copy">© 2026 Aurora Livros · Feito para quem ama ler.</p>
     </footer>
-    <script>
-        const categoria = new URLSearchParams(window.location.search).get('categoria');
-
-        if (categoria) {
-            const radio = document.getElementById('filtro-' + categoria);
-
-            if (radio) {
-                radio.checked = true; // o CSS já cuida de filtrar os livros
-                document.querySelector('.catalog').scrollIntoView();
-            }
-        }
-    </script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

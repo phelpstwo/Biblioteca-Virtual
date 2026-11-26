@@ -261,6 +261,10 @@ hr {
     font-weight: 600;
 }
 
+.cta__email {
+    color: #a63a05;
+}
+
 .cta__email,
 .cta__schedule {
     font-family: sans-serif;
@@ -375,7 +379,7 @@ hr {
 
 .footer {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1.6fr;
+    grid-template-columns: 3fr 1fr 1fr;
     gap: 2rem 3rem;
     align-items: start;
     padding: 2.5rem 2rem 1.5rem;
@@ -482,6 +486,7 @@ hr {
     font-family: sans-serif;
     font-size: .6rem;
 }
+
 @media (max-width: 62rem) {
     .top-bar {
         padding-inline: 1.25rem;
@@ -536,15 +541,19 @@ hr {
         gap: .25rem .5rem;
         padding: .5rem 1rem;
     }
+
     .isologo {
         gap: .35rem;
     }
+
     .isologo__icon {
         height: 1.8rem;
     }
+
     .isologo__text {
         font-size: 1rem;
     }
+
     .pages {
         grid-column: 1/-1;
         grid-row: 2;
@@ -552,54 +561,67 @@ hr {
         justify-content: space-between;
         gap: 0;
     }
+
     .p-link__btn {
         padding-inline: .35rem;
         font-size: .76rem;
     }
+
     .actions {
         grid-column: 2;
         grid-row: 1;
         gap: 0;
     }
+
     .actions__btn {
         width: 1.8rem;
         height: 1.8rem;
         padding: .75rem;
     }
+
     .nav-action-badge {
         left: 1.15rem;
     }
+
     .main {
         margin-top: 1rem;
     }
+
     .article {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 0 1rem 2.5rem;
     }
+
     .cta__header1 {
         font-size: 2rem;
     }
+
     .cta__phrase {
         font-size: 1.05rem;
         line-height: 1.5;
     }
+
     .form__fields {
         gap: .85rem;
         padding: 1rem;
     }
+
     .float-field__label {
         font-size: 1rem;
     }
+
     .form-btn {
         width: 100%;
         min-height: 2.75rem;
         justify-content: space-between;
         padding-inline: .75rem;
     }
+
     .form-btn__text {
         margin-left: 0;
     }
+
     .footer {
         grid-template-columns: 1fr;
         gap: 1.25rem;
