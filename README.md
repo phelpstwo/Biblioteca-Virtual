@@ -86,7 +86,7 @@ A consulta ao Google Books depende de conexão com a internet. Se a API não ret
 
 ## Observações
 
-- O projeto ainda está em desenvolvimento e apresenta apenas uma versão inicial. Posto isso, ainda podem ser apresentados problemas de funcionalidade e de estrutura. Agradecemos a paciência e compreensão!
+- O projeto ainda está em desenvolvimento e ainda podem ser apresentados problemas de funcionalidade e de estrutura.
 p.s: arthmendz <3
 
 ## Equipe
