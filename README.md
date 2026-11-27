@@ -56,7 +56,7 @@ Biblioteca-Virtual-main/
     └── icons/                  # Ícones e logotipos em SVG
 ```
 
-## 🚀 Como executar
+## Como executar
 
 Não há dependências nem etapa de build. Basta clonar o repositório e abrir o site no navegador.
 
