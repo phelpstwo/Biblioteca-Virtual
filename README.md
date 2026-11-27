@@ -1,7 +1,7 @@
 # Biblioteca-Virtual
-# 📚 Aurora Livros — Biblioteca Virtual
+Aurora Livros — Biblioteca Virtual
 
-Site de uma livraria/biblioteca virtual chamada **Aurora Livros**, com curadoria de clássicos e lançamentos contemporâneos. O projeto é um front-end estático, feito só com **HTML e CSS**, com foco em design editorial, responsividade e acessibilidade.
+Projeto de uma livraria virtual com curadoria de clássicos e descobertas contemporâneas. A interface foi construída com HTML, CSS e JavaScript, com páginas responsivas para explorar livros, autores e serviços da Aurora.
 
 ## Prints do site em diferentes tipos de tela:
 
@@ -10,39 +10,50 @@ Site de uma livraria/biblioteca virtual chamada **Aurora Livros**, com curadoria
 <img width="333" height="325" alt="WhatsApp Image 2026-11-25 at 23 12 44" src="https://github.com/user-attachments/assets/e031e73c-aa63-4320-bb07-e1e2c05cbea4" />
 
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-- **Página inicial** com destaque, seleção de livros, seção "Os livros que todos comentam" e citação em destaque
-- **Catálogo** com 8 livros e filtro por categoria (Romance, Fantasia, Mistério e Clássicos) feito apenas com CSS, usando `radio` + `label`, sem JavaScript
-- **Autores**: página dedicada aos escritores do acervo
-- **Contato**: formulário com campos de rótulo flutuante (nome, e-mail, assunto e mensagem)
-- **Rodapé** com navegação e campo de assinatura de newsletter
-- **Layout responsivo** com breakpoints para tablet e celular
-- **Acessibilidade**: `aria-label`, `aria-current` e `aria-live` na contagem de resultados do catálogo, além de tipografia de alta legibilidade
+- **Página inicial** com destaques, recomendações e acesso às demais áreas do site.
+- **Catálogo** com livros organizados por Romance, Fantasia, Mistério e Clássicos; filtros por categoria e contador de resultados.
+- **Detalhes dos livros** em janela modal, com sinopses e informações complementares consultadas na API Google Books.
+- **Capas e livros adicionais** carregados da API Google Books quando disponíveis.
+- **Sacola e favoritos** com dados guardados no armazenamento local do navegador.
+- **Página de autores** com apresentação da equipe do projeto.
+- **Página de contato** com envio pelo EmailJS (quando configurado) e alternativa para abrir o aplicativo de e-mail.
+- **Resgate de vale-presente** com código demonstrativo incluído no projeto.
+- **Ajuste de acessibilidade** para ampliar a legibilidade, com preferência salva no navegador.
+- **Layout responsivo**, fontes locais e elementos de navegação com rótulos acessíveis.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - HTML5
-- CSS3 (Grid, Flexbox, `clamp()`, `@font-face` e media queries)
-- Fontes locais: **Libre Caslon Text**, **Manrope**, **Special Elite** e **Atkinson Hyperlegible Mono**
+- CSS3: Grid, Flexbox, variáveis, `clamp()` e media queries
+- JavaScript (sem etapa de build)
+- API Google Books para dados de livros
+- EmailJS para o formulário de contato
+- Fontes locais: Atkinson Hyperlegible Mono, Libre Caslon Text, Manrope e Special Elite
 
-## 📁 Estrutura do projeto
+## Estrutura do projeto
 
 ```
-Biblioteca-Virtual/
-├── inicio.html        # Página inicial
-├── catalogo.html      # Catálogo com filtro por categoria
-├── autores.html       # Página de autores
-├── contato.html       # Formulário de contato
-├── style.css          # Estilos gerais
+Biblioteca-Virtual-main/
+├── index.html                  # Página inicial
+├── script.js                   # Interações e integrações do site
+├── style.css                   # Estilos compartilhados
+├── pages/
+│   ├── autores.html
+│   ├── catalogo.html
+│   ├── contato.html
+│   └── vale-presente.html
 └── style/
-    ├── inicio.css
-    ├── catalogo.css
     ├── autores.css
+    ├── catalogo.css
     ├── contato.css
     ├── footer.css
-    ├── fonts/         # Fontes utilizadas
-    └── icons/         # Ícones e logo em SVG
+    ├── index.css
+    ├── modal.css
+    ├── vale-presente.css
+    ├── fonts/                  # Fontes locais
+    └── icons/                  # Ícones e logotipos em SVG
 ```
 
 ## 🚀 Como executar
@@ -66,17 +77,22 @@ Depois, escolha uma das opções:
   python -m http.server 8000
   ```
   e acesse `http://localhost:8000/inicio.html`.
+  
+## Configuração do formulário
 
-## ⚠️ Observações
+O formulário de contato usa EmailJS. Para conectá-lo à sua conta, atualize as propriedades `servico`, `chave` e `modeloContato` no objeto `EMAILJS`, no início de `script.js`, e configure o modelo para receber `nome`, `email`, `assunto` e `mensagem`. Se o envio não estiver disponível, o site tenta abrir uma mensagem preenchida no aplicativo de e-mail padrão.
 
-Este projeto é um protótipo de interface. Não há JavaScript nem back-end, então:
+A consulta ao Google Books depende de conexão com a internet. Se a API não retornar dados, o site mantém o conteúdo já presente na página.
 
-- Os botões de **carrinho** e **favoritos** são apenas visuais.
-- Os formulários de **contato** e **newsletter** não enviam dados para nenhum servidor.
+## Observações
 
-## Nome dos integrantes:
-   Héber Ebenézer,
-   Kyvia Wenne,
-   João Gabriel,
-   Pedro Arthur e
-   Philipe Gabriel
+- O projeto ainda está em desenvolvimento e apresenta apenas uma versão inicial. Posto isso, ainda podem ser apresentados problemas de funcionalidade e de estrutura. Agradecemos a paciência e compreensão!
+p.s: arthmendz <3
+
+## Equipe
+
+- Héber Ebenézer
+- Kyvia Wenne
+- João Gabriel
+- Pedro Arthur
+- Philipe Gabriel
